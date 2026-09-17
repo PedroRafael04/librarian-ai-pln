@@ -1,0 +1,9 @@
+# Coleta e pré-processamento (CPU-only).
+pypdf>=5.1.0           # extração de texto dos PDFs
+numpy>=1.26.0          # vetores de gênero do gabarito
+requests>=2.32.0       # Project Gutenberg, Google Books, Open Library
+rapidfuzz>=3.9.0       # casamento fuzzy título/autor
+matplotlib>=3.9.0      # renderização dos PDFs sintéticos (fetch_samples.py)
+
+# Desenvolvimento
+pytest>=8.0.0
