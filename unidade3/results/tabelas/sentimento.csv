@@ -1,0 +1,9 @@
+title,genre,mean_valence,negative_pages,most_negative_page,most_positive_page
+Dracula,terror,-0.0773,0.66,42,34
+Frankenstein,terror,0.0536,0.4533,105,34
+Great Expectations,drama,-0.059,0.6067,12,1
+Moby Dick,acao,-0.1241,0.68,38,2
+Pride and Prejudice,romance,0.124,0.32,15,122
+The Adventures of Sherlock Holmes,misterio,-0.0732,0.58,58,2
+The Picture of Dorian Gray,filosofico,-0.0077,0.56,143,101
+The Time Machine,ficcao_cientifica,-0.2225,0.8095,33,1

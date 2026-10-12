@@ -1,9 +1,16 @@
-# Coleta e pré-processamento (CPU-only).
+# Coleta e pré-processamento (CPU-only). Para a GPU, veja requirements-cuda.txt.
 pypdf>=5.1.0           # extração de texto dos PDFs
 numpy>=1.26.0          # vetores de gênero do gabarito
 requests>=2.32.0       # Project Gutenberg, Google Books, Open Library
 rapidfuzz>=3.9.0       # casamento fuzzy título/autor
-matplotlib>=3.9.0      # renderização dos PDFs sintéticos (fetch_samples.py)
+matplotlib>=3.9.0      # renderização dos PDFs sintéticos e gráficos
+
+# Unidade 3: representações textuais e tarefas de PLN
+scikit-learn>=1.5.0    # BoW, TF-IDF, clusterização, PCA, classificadores
+scipy>=1.13.0
+gensim>=4.3.3          # Word2Vec
+transformers>=4.46.0   # BERT (embeddings, NER, sentimento) e zero-shot NLI
+torch>=2.4.0           # CPU via PyPI; para CUDA, instale antes o requirements-cuda.txt
 
 # Desenvolvimento
 pytest>=8.0.0

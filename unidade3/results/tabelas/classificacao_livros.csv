@@ -1,0 +1,127 @@
+method,book_id,title,genre,predicted,top3,p_predicted,top1_correct,top3_correct,n_docs
+bow/logreg,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, drama, romance",0.3551,False,True,50
+bow/logreg,Little Women - Louisa May Alcott,Little Women,drama,terror,"terror, drama, acao",0.3682,False,True,50
+bow/logreg,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, ficcao_cientifica, filosofico",0.8416,False,True,28
+bow/logreg,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, romance",0.3059,True,True,50
+bow/logreg,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama",0.4864,True,True,24
+bow/logreg,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio",0.5559,True,True,50
+bow/logreg,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, misterio",0.497,True,True,50
+bow/random_forest,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, romance, drama",0.2473,False,True,50
+bow/random_forest,Little Women - Louisa May Alcott,Little Women,drama,terror,"terror, drama, romance",0.2299,False,True,50
+bow/random_forest,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, acao",0.3203,False,True,28
+bow/random_forest,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,terror,"terror, romance, acao",0.2324,False,False,50
+bow/random_forest,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, acao",0.2894,True,True,24
+bow/random_forest,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, acao",0.2476,True,True,50
+bow/random_forest,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.3274,True,True,50
+tfidf/logreg,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, drama, misterio",0.2072,False,False,50
+tfidf/logreg,Little Women - Louisa May Alcott,Little Women,drama,terror,"terror, drama, filosofico",0.1844,False,True,50
+tfidf/logreg,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.2472,False,True,28
+tfidf/logreg,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, terror, drama",0.1905,True,True,50
+tfidf/logreg,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama",0.2082,True,True,24
+tfidf/logreg,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio",0.2202,True,True,50
+tfidf/logreg,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.2248,True,True,50
+tfidf/random_forest,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, romance, drama",0.221,False,True,50
+tfidf/random_forest,Little Women - Louisa May Alcott,Little Women,drama,terror,"terror, drama, romance",0.2066,False,True,50
+tfidf/random_forest,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.3171,False,True,28
+tfidf/random_forest,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,terror,"terror, misterio, romance",0.2123,False,True,50
+tfidf/random_forest,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, filosofico",0.2515,True,True,24
+tfidf/random_forest,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, acao",0.2482,True,True,50
+tfidf/random_forest,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.2776,True,True,50
+word2vec/logreg,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, misterio, drama",0.2493,False,False,50
+word2vec/logreg,Little Women - Louisa May Alcott,Little Women,drama,drama,"drama, filosofico, terror",0.2479,True,True,50
+word2vec/logreg,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, ficcao_cientifica",0.3551,False,True,28
+word2vec/logreg,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, terror",0.2907,True,True,50
+word2vec/logreg,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama",0.2549,True,True,24
+word2vec/logreg,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio",0.3612,True,True,50
+word2vec/logreg,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, misterio, terror",0.3397,True,True,50
+word2vec/random_forest,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, misterio, drama",0.3977,False,False,50
+word2vec/random_forest,Little Women - Louisa May Alcott,Little Women,drama,terror,"terror, drama, filosofico",0.311,False,True,50
+word2vec/random_forest,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.5724,False,True,28
+word2vec/random_forest,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, terror",0.3339,True,True,50
+word2vec/random_forest,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama",0.4007,True,True,24
+word2vec/random_forest,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio",0.347,True,True,50
+word2vec/random_forest,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.4456,True,True,50
+bert/logreg,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,drama,"drama, terror, romance",0.2569,False,True,50
+bert/logreg,Little Women - Louisa May Alcott,Little Women,drama,drama,"drama, filosofico, terror",0.2584,True,True,50
+bert/logreg,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, acao, ficcao_cientifica",0.3652,False,False,28
+bert/logreg,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, filosofico",0.2635,True,True,50
+bert/logreg,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, drama, misterio",0.2151,True,True,24
+bert/logreg,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, drama",0.4528,True,True,50
+bert/logreg,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, drama, terror",0.3741,True,True,50
+bert/random_forest,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, drama, filosofico",0.2855,False,False,50
+bert/random_forest,Little Women - Louisa May Alcott,Little Women,drama,drama,"drama, filosofico, terror",0.2395,True,True,50
+bert/random_forest,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, acao, ficcao_cientifica",0.3404,False,False,28
+bert/random_forest,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, terror",0.2393,True,True,50
+bert/random_forest,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,drama,"drama, terror, misterio",0.2177,False,True,24
+bert/random_forest,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, drama",0.3002,True,True,50
+bert/random_forest,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.3006,True,True,50
+bow/logreg/masc,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,romance,"romance, terror, drama",0.4323,True,True,50
+bow/logreg/masc,Little Women - Louisa May Alcott,Little Women,drama,romance,"romance, drama, terror",0.3265,False,True,50
+bow/logreg/masc,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.7694,False,True,28
+bow/logreg/masc,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,romance,"romance, misterio, terror",0.7385,False,True,50
+bow/logreg/masc,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, romance",0.3439,True,True,24
+bow/logreg/masc,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, romance",0.5231,True,True,50
+bow/logreg/masc,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.6609,True,True,50
+bow/random_forest/masc,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, romance, drama",0.2161,False,True,50
+bow/random_forest/masc,Little Women - Louisa May Alcott,Little Women,drama,romance,"romance, drama, terror",0.2262,False,True,50
+bow/random_forest/masc,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.2696,False,True,28
+bow/random_forest/masc,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,romance,"romance, terror, misterio",0.2462,False,True,50
+bow/random_forest/masc,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, romance",0.229,True,True,24
+bow/random_forest/masc,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, acao",0.2324,True,True,50
+bow/random_forest/masc,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.2886,True,True,50
+tfidf/logreg/masc,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, drama, misterio",0.1985,False,False,50
+tfidf/logreg/masc,Little Women - Louisa May Alcott,Little Women,drama,drama,"drama, terror, filosofico",0.1892,True,True,50
+tfidf/logreg/masc,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.2339,False,True,28
+tfidf/logreg/masc,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, terror, drama",0.1879,True,True,50
+tfidf/logreg/masc,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama",0.1931,True,True,24
+tfidf/logreg/masc,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio",0.2217,True,True,50
+tfidf/logreg/masc,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, drama, terror",0.2283,True,True,50
+tfidf/random_forest/masc,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, romance, drama",0.2118,False,True,50
+tfidf/random_forest/masc,Little Women - Louisa May Alcott,Little Women,drama,romance,"romance, drama, terror",0.2257,False,True,50
+tfidf/random_forest/masc,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.2785,False,True,28
+tfidf/random_forest/masc,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,romance,"romance, misterio, terror",0.1935,False,True,50
+tfidf/random_forest/masc,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama",0.216,True,True,24
+tfidf/random_forest/masc,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, acao",0.2397,True,True,50
+tfidf/random_forest/masc,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.2948,True,True,50
+word2vec/logreg/masc,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, drama, misterio",0.2146,False,False,50
+word2vec/logreg/masc,Little Women - Louisa May Alcott,Little Women,drama,drama,"drama, filosofico, misterio",0.2729,True,True,50
+word2vec/logreg/masc,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.2979,False,True,28
+word2vec/logreg/masc,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, filosofico",0.2589,True,True,50
+word2vec/logreg/masc,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,"misterio, terror, drama",0.2218,False,True,24
+word2vec/logreg/masc,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio",0.3707,True,True,50
+word2vec/logreg/masc,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, drama, misterio",0.3173,True,True,50
+word2vec/random_forest/masc,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, drama, misterio",0.3006,False,False,50
+word2vec/random_forest/masc,Little Women - Louisa May Alcott,Little Women,drama,drama,"drama, filosofico, terror",0.3916,True,True,50
+word2vec/random_forest/masc,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, drama",0.4151,False,True,28
+word2vec/random_forest/masc,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,drama,"drama, misterio, terror",0.3414,False,True,50
+word2vec/random_forest/masc,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,"misterio, terror, drama",0.3225,False,True,24
+word2vec/random_forest/masc,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio",0.3822,True,True,50
+word2vec/random_forest/masc,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.4355,True,True,50
+bert/logreg/masc,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,drama,"drama, terror, filosofico",0.2475,False,False,50
+bert/logreg/masc,Little Women - Louisa May Alcott,Little Women,drama,filosofico,"filosofico, drama, romance",0.2978,False,True,50
+bert/logreg/masc,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, acao",0.3611,False,True,28
+bert/logreg/masc,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, filosofico",0.3383,True,True,50
+bert/logreg/masc,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,"misterio, terror, drama",0.2929,False,True,24
+bert/logreg/masc,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio",0.4078,True,True,50
+bert/logreg/masc,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, drama, misterio",0.3878,True,True,50
+bert/random_forest/masc,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,drama,"drama, terror, filosofico",0.2589,False,False,50
+bert/random_forest/masc,Little Women - Louisa May Alcott,Little Women,drama,filosofico,"filosofico, romance, drama",0.3045,False,True,50
+bert/random_forest/masc,Siddhartha - Hermann Hesse,Siddhartha,filosofico,terror,"terror, filosofico, acao",0.3115,False,True,28
+bert/random_forest/masc,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, filosofico",0.282,True,True,50
+bert/random_forest/masc,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,"misterio, terror, drama",0.2783,False,True,24
+bert/random_forest/masc,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, acao",0.336,True,True,50
+bert/random_forest/masc,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, drama",0.3528,True,True,50
+lexico_tfidf,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,romance,"romance, acao, filosofico",0.2618,True,True,50
+lexico_tfidf,Little Women - Louisa May Alcott,Little Women,drama,romance,"romance, drama, filosofico",0.3793,False,True,50
+lexico_tfidf,Siddhartha - Hermann Hesse,Siddhartha,filosofico,romance,"romance, drama, filosofico",0.5501,False,True,28
+lexico_tfidf,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,misterio,"misterio, filosofico, drama",0.3853,True,True,50
+lexico_tfidf,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,filosofico,"filosofico, terror, misterio",0.293,False,True,24
+lexico_tfidf,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, acao",0.2398,True,True,50
+lexico_tfidf,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,acao,"acao, terror, filosofico",0.4426,True,True,50
+zeroshot_bart_mnli,Jane Eyre - Charlotte Bronte,Jane Eyre,romance,terror,"terror, filosofico, misterio",0.4763,False,False,50
+zeroshot_bart_mnli,Little Women - Louisa May Alcott,Little Women,drama,terror,"terror, filosofico, misterio",0.3754,False,False,50
+zeroshot_bart_mnli,Siddhartha - Hermann Hesse,Siddhartha,filosofico,filosofico,"filosofico, terror, misterio",0.3406,True,True,28
+zeroshot_bart_mnli,The Mysterious Affair at Styles - Agatha Christie,The Mysterious Affair at Styles,misterio,terror,"terror, misterio, filosofico",0.403,False,True,50
+zeroshot_bart_mnli,The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, filosofico",0.6478,True,True,24
+zeroshot_bart_mnli,The War of the Worlds - H G Wells,The War of the Worlds,ficcao_cientifica,terror,"terror, acao, misterio",0.6434,False,False,50
+zeroshot_bart_mnli,Treasure Island - Robert Louis Stevenson,Treasure Island,acao,terror,"terror, acao, misterio",0.5333,False,True,50

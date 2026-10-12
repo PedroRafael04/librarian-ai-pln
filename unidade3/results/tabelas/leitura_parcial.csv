@@ -1,0 +1,57 @@
+representation,masked,title,genre,predicted,top3,generation_top1,final_jsd
+bow,False,Jane Eyre,romance,terror,"terror, drama, romance","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+bow,False,Little Women,drama,terror,"terror, drama, filosofico","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+bow,False,Siddhartha,filosofico,terror,"terror, ficcao_cientifica, filosofico","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0002
+bow,False,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, romance","misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",0.0
+bow,False,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0002
+bow,False,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio","ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",0.0
+bow,False,Treasure Island,acao,acao,"acao, terror, ficcao_cientifica","acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",0.0
+tfidf,False,Jane Eyre,romance,terror,"terror, drama, misterio","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+tfidf,False,Little Women,drama,terror,"terror, drama, filosofico","terror, terror, drama, terror, drama, terror, terror, terror, terror, terror",0.0
+tfidf,False,Siddhartha,filosofico,terror,"terror, filosofico, drama","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+tfidf,False,The Mysterious Affair at Styles,misterio,misterio,"misterio, terror, drama","misterio, terror, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",0.0
+tfidf,False,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama","terror, terror, terror, terror, terror, terror, terror, terror, terror, misterio",0.0
+tfidf,False,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio","ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",0.0
+tfidf,False,Treasure Island,acao,acao,"acao, terror, drama","acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",0.0
+word2vec,False,Jane Eyre,romance,terror,"terror, misterio, ficcao_cientifica","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+word2vec,False,Little Women,drama,drama,"drama, filosofico, terror","drama, drama, drama, drama, drama, drama, drama, drama, drama, drama",0.0
+word2vec,False,Siddhartha,filosofico,terror,"terror, filosofico, ficcao_cientifica","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+word2vec,False,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, terror","misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",0.0
+word2vec,False,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama","terror, terror, terror, terror, misterio, terror, terror, misterio, terror, misterio",0.0
+word2vec,False,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio","ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",0.0
+word2vec,False,Treasure Island,acao,acao,"acao, terror, misterio","acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",0.0
+bert,False,Jane Eyre,romance,terror,"terror, drama, romance","drama, terror, drama, terror, terror, drama, terror, terror, terror, drama",0.0
+bert,False,Little Women,drama,drama,"drama, filosofico, terror","drama, drama, drama, filosofico, drama, drama, filosofico, drama, drama, filosofico",0.0
+bert,False,Siddhartha,filosofico,terror,"terror, acao, ficcao_cientifica","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+bert,False,The Mysterious Affair at Styles,misterio,drama,"drama, misterio, filosofico","misterio, drama, drama, drama, drama, drama, drama, misterio, misterio, misterio",0.0
+bert,False,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, drama, misterio","terror, misterio, terror, terror, misterio, terror, drama, drama, terror, misterio",0.0
+bert,False,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, drama","ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",0.0
+bert,False,Treasure Island,acao,acao,"acao, drama, terror","acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",0.0
+bow,True,Jane Eyre,romance,romance,"romance, terror, drama","romance, romance, romance, romance, romance, romance, terror, romance, romance, romance",0.0
+bow,True,Little Women,drama,romance,"romance, drama, terror","romance, romance, romance, romance, romance, romance, romance, romance, romance, romance",0.0
+bow,True,Siddhartha,filosofico,terror,"terror, filosofico, romance","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0005
+bow,True,The Mysterious Affair at Styles,misterio,romance,"romance, misterio, terror","romance, romance, romance, romance, romance, romance, romance, romance, romance, romance",0.0001
+bow,True,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, romance","terror, misterio, romance, terror, misterio, terror, terror, terror, terror, misterio",0.0002
+bow,True,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, romance","ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",0.0001
+bow,True,Treasure Island,acao,acao,"acao, terror, misterio","acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",0.0
+tfidf,True,Jane Eyre,romance,terror,"terror, drama, misterio","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+tfidf,True,Little Women,drama,drama,"drama, terror, filosofico","drama, drama, drama, drama, drama, drama, drama, terror, drama, drama",0.0
+tfidf,True,Siddhartha,filosofico,terror,"terror, filosofico, drama","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+tfidf,True,The Mysterious Affair at Styles,misterio,misterio,"misterio, terror, drama","misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",0.0
+tfidf,True,The Strange Case of Dr Jekyll and Mr Hyde,terror,terror,"terror, misterio, drama","terror, misterio, terror, terror, misterio, terror, terror, misterio, terror, misterio",0.0
+tfidf,True,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio","ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",0.0
+tfidf,True,Treasure Island,acao,acao,"acao, terror, drama","acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",0.0
+word2vec,True,Jane Eyre,romance,terror,"terror, misterio, drama","misterio, terror, terror, terror, terror, misterio, terror, terror, terror, terror",0.0
+word2vec,True,Little Women,drama,drama,"drama, filosofico, terror","drama, drama, drama, drama, drama, drama, drama, drama, drama, drama",0.0
+word2vec,True,Siddhartha,filosofico,terror,"terror, filosofico, drama","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+word2vec,True,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, terror","misterio, misterio, misterio, misterio, misterio, misterio, misterio, drama, misterio, misterio",0.0
+word2vec,True,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,"misterio, terror, drama","terror, misterio, terror, terror, misterio, terror, misterio, misterio, terror, misterio",0.0001
+word2vec,True,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, terror, misterio","ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",0.0
+word2vec,True,Treasure Island,acao,acao,"acao, drama, misterio","acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",0.0
+bert,True,Jane Eyre,romance,drama,"drama, terror, filosofico","drama, terror, drama, terror, terror, drama, terror, drama, drama, drama",0.0
+bert,True,Little Women,drama,filosofico,"filosofico, drama, romance","filosofico, filosofico, filosofico, filosofico, filosofico, filosofico, filosofico, filosofico, filosofico, filosofico",0.0
+bert,True,Siddhartha,filosofico,terror,"terror, filosofico, acao","terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",0.0
+bert,True,The Mysterious Affair at Styles,misterio,misterio,"misterio, drama, filosofico","misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",0.0
+bert,True,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,"misterio, terror, drama","misterio, misterio, misterio, terror, misterio, misterio, misterio, misterio, misterio, misterio",0.0
+bert,True,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,"ficcao_cientifica, misterio, terror","ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",0.0
+bert,True,Treasure Island,acao,acao,"acao, drama, misterio","acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",0.0

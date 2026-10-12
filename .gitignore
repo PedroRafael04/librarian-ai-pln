@@ -7,3 +7,5 @@ data/raw/*
 data/cache/*
 !data/cache/.gitkeep
 .env
+data/holdout/*
+!data/holdout/.gitkeep

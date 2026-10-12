@@ -1,9 +1,10 @@
-# Librarian AI — Etapa 1: coleta e pré-processamento de dados
+# Librarian AI — coleta, pré-processamento e representações textuais
 
 Classificação de gênero literário a partir de **amostragem parcial de páginas**
-de livros em PDF. Este repositório cobre a primeira etapa prática do projeto:
-**montar a base de dados textuais, extrair e limpar o texto e obter um gabarito
-externo** para a avaliação futura.
+de livros em PDF. Este repositório cobre as etapas práticas do projeto até a
+Unidade 3: **montar a base de dados textuais, extrair e limpar o texto, obter
+um gabarito externo** e **avaliar representações textuais (BoW, TF-IDF,
+Word2Vec, BERT) em tarefas de PLN**.
 
 O que já está aqui:
 
@@ -15,21 +16,31 @@ O que já está aqui:
    segmentação em blocos para modelos de linguagem;
 4. a consulta às APIs públicas do **Google Books** e do **Open Library** para
    recuperar a classificação de gênero atribuída pelos catálogos, que servirá
-   de *ground truth*.
+   de *ground truth*;
+5. **(Unidade 3)** a pasta [`unidade3/`](unidade3/), com o código, os
+   resultados e o [relatório](unidade3/RELATORIO.md) da combinação de quatro
+   representações textuais com clusterização + PCA, busca e recomendação,
+   classificação, análise de sentimento, NER e extração de relações.
 
-As etapas seguintes (amostragem guiada por aprendizado por reforço,
-classificação por PLN e avaliação) serão adicionadas nas próximas entregas.
+A amostragem guiada por aprendizado por reforço será adicionada na próxima
+entrega.
 
 ---
 
 ## Instalação
 
-Requer Python 3.11+.
+Requer Python 3.11+ (testado em 3.12). Os modelos BERT da Unidade 3 rodam em
+CPU, mas uma GPU NVIDIA acelera bastante; nesse caso instale o PyTorch com
+CUDA **antes** do resto:
 
 ```powershell
 python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements-cuda.txt   # opcional: PyTorch + CUDA 12.8
 .venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
+
+Sem o passo opcional, o `pip` instala o PyTorch de CPU junto com o
+`transformers`.
 
 ## 1. Base de dados
 
@@ -153,9 +164,17 @@ pode complementar as APIs.
 .venv\Scripts\python.exe -m pytest -q
 ```
 
-36 testes cobrindo taxonomia e mapeamento de categorias, limpeza de texto,
-reconhecimento de título/autor no nome do arquivo, tokenização, stopwords,
-segmentação em blocos e consolidação do gabarito. Não exigem rede.
+97 testes, todos sem rede e sem GPU (~3 s):
+
+- `test_core.py` (61): taxonomia e mapeamento de categorias, limpeza de texto,
+  título/autor no nome do arquivo, tokenização, stopwords, segmentação em
+  blocos e frases, detecção e mascaramento de nomes próprios, catálogo,
+  consolidação do gabarito, agregação/JSD e o léxico TF-IDF;
+- `test_unidade3.py` (36): blocos de páginas e amostragem parcial, as quatro
+  representações (o BERT com um *encoder* falso, para testar janelas, pooling
+  e cache sem baixar o modelo), métricas de clusterização, busca, fusão de
+  rankings, recomendação, classificação supervisionada e leitura parcial,
+  limpeza do NER e coocorrência de personagens.
 
 ## Resultado da coleta no dataset de exemplo
 
@@ -166,17 +185,50 @@ como "Drama" e *The Picture of Dorian Gray* como "Terror", enquanto *Dracula*,
 *Frankenstein*, *Sherlock Holmes*, *Moby Dick* e *The Time Machine* recebem o
 gênero esperado. Isso é material para a discussão da etapa de avaliação.
 
+## 4. Unidade 3: representações textuais × tarefas de PLN
+
+Tudo o que é desta etapa fica em [`unidade3/`](unidade3/): código, figuras,
+tabelas e o [**relatório com as respostas**](unidade3/RELATORIO.md).
+
+```powershell
+.venv\Scripts\python.exe scripts\fetch_samples.py                # base: 8 obras -> data/raw/
+.venv\Scripts\python.exe scripts\fetch_samples.py --set holdout  # 7 obras novas -> data/holdout/
+.venv\Scripts\python.exe -m unidade3.run                          # todas as etapas (~10 min na 1a vez, com GPU)
+.venv\Scripts\python.exe -m unidade3.run --etapas busca           # só uma etapa
+```
+
+O conjunto **holdout** (7 obras, uma por gênero da base, de outros autores
+sempre que possível) existe para responder como os classificadores se
+comportam com **dados novos**: nunca entra no ajuste das representações nem no
+treino. A lista de obras e o gênero curado de cada uma ficam em
+`src/librarian_ai/catalog.py`.
+
 ## Estrutura
 
 ```
 src/librarian_ai/
   taxonomy.py       14 gêneros + mapeamento das categorias externas
+  catalog.py        obras do dataset (base e holdout) e gênero curado
   corpus.py         PDF -> páginas de texto limpo, com cache
-  preprocess.py     tokenização, stopwords e segmentação em blocos (opt-in)
+  preprocess.py     tokenização, stopwords, blocos, frases e nomes próprios
   ground_truth.py   Google Books + Open Library, com consolidação entre edições
+  aggregation.py    interpolação de distribuições, JSD, entropia, top-k
+  classifiers/      classificadores sem treino: léxico TF-IDF e zero-shot NLI
+unidade3/
+  documents.py        blocos de páginas rotulados (unidade de análise)
+  representations.py  BoW, TF-IDF, Word2Vec, BERT (fit/transform)
+  clustering.py       K-Means, métricas intra/intercluster, PCA
+  search.py           busca, fusão de rankings (RRF) e recomendação
+  classification.py   classificação supervisionada, holdout, leitura parcial
+  extraction.py       sentimento, NER e extração de relações
+  plots.py            figuras
+  run.py              executa as etapas e grava results/
+  results/            figuras, tabelas (CSV) e resumo por etapa
+  RELATORIO.md        respostas do trabalho da Unidade 3
 scripts/
-  fetch_samples.py  monta o dataset de exemplo a partir do Gutenberg
+  fetch_samples.py  monta o dataset (base ou holdout) a partir do Gutenberg
   build_corpus.py   extrai, limpa, cacheia e resume a base
 tests/
-  test_core.py
+  test_core.py      pacote librarian_ai
+  test_unidade3.py  pacote unidade3
 ```

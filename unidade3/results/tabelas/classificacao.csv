@@ -1,0 +1,17 @@
+representation,model,masked,cv_accuracy,cv_macro_f1,holdout_accuracy,holdout_macro_f1,books_top1,books_top3,n_books,partial_books_top1
+bow,logreg,False,0.9974,0.9971,0.4768,0.4448,4,7,7,4
+bow,random_forest,False,0.9788,0.9826,0.3642,0.3581,3,6,7,
+tfidf,logreg,False,1.0,1.0,0.4967,0.4516,4,6,7,4
+tfidf,random_forest,False,0.9735,0.9789,0.4205,0.4043,3,7,7,
+word2vec,logreg,False,0.9418,0.9435,0.5066,0.4378,5,6,7,5
+word2vec,random_forest,False,0.9471,0.9485,0.4106,0.3775,4,6,7,
+bert,logreg,False,0.9656,0.966,0.4139,0.3849,5,6,7,4
+bert,random_forest,False,0.9656,0.9686,0.3642,0.349,4,5,7,
+bow,logreg,True,1.0,1.0,0.3874,0.3509,4,7,7,4
+bow,random_forest,True,0.9603,0.9657,0.3808,0.3792,3,7,7,
+tfidf,logreg,True,0.9947,0.9957,0.5,0.4477,5,6,7,5
+tfidf,random_forest,True,0.9497,0.957,0.4172,0.3864,3,7,7,
+word2vec,logreg,True,0.8519,0.8583,0.4801,0.4314,4,6,7,4
+word2vec,random_forest,True,0.9021,0.9082,0.3974,0.366,3,6,7,
+bert,logreg,True,0.918,0.9207,0.4172,0.395,3,6,7,3
+bert,random_forest,True,0.9021,0.9065,0.3775,0.3693,3,6,7,

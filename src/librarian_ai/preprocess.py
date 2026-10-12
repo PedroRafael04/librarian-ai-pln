@@ -95,3 +95,85 @@ def chunk_pages(pages: list[str], max_chars: int) -> list[str]:
     if buf:
         chunks.append("\n\n".join(buf))
     return chunks
+
+
+# -- frases e nomes proprios (Unidade 3) -------------------------------------
+
+# Fim de frase: pontuacao terminal, eventualmente seguida de aspas/fecha-
+# parenteses, e espaco antes de uma maiuscula ou aspas de abertura.
+_SENTENCE_END = re.compile(r"(?<=[.!?])[\"'”’)\]]*\s+(?=[\"'“‘(\[]*[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ])")
+# Caracteres que podem ficar entre o fim da frase anterior e a palavra.
+_OPENERS = "\"'“‘([_*-—– \t\n"
+
+
+def split_sentences(text: str) -> list[str]:
+    """Segmenta em frases por pontuacao terminal seguida de maiuscula.
+
+    Heuristica simples e sem modelo: erra em abreviacoes como "Mr. Holmes"
+    (que viram duas "frases"), o que e aceitavel para os usos aqui -- janelas
+    de analise de sentimento e coocorrencia de entidades.
+    """
+    text = " ".join((text or "").split())
+    return [s.strip() for s in _SENTENCE_END.split(text) if s.strip()]
+
+
+# Abreviacoes de tratamento: o ponto de "Mr. Collins" nao encerra a frase.
+_HONORIFIC_END = re.compile(r"\b(?:Mr|Mrs|Ms|Dr|St|Mme|Messrs|Jr|Sra?)\.$")
+
+
+def _is_sentence_initial(text: str, start: int) -> bool:
+    i = start - 1
+    while i >= 0 and text[i] in _OPENERS:
+        i -= 1
+    if i < 0:
+        return True
+    if text[i] == "." and _HONORIFIC_END.search(text, max(0, i - 8), i + 1):
+        return False
+    return text[i] in ".!?:;"
+
+
+def proper_noun_vocabulary(
+    texts: list[str], *, min_count: int = 3, threshold: float = 0.9
+) -> frozenset[str]:
+    """Tokens (em minusculas) que quase sempre aparecem capitalizados.
+
+    So contam ocorrencias fora do inicio de frase, onde a maiuscula e
+    obrigatoria e nao informa nada. "Harker" (sempre maiusculo no meio da
+    frase) entra; "night" (minusculo exceto no inicio de frase) nao.
+
+    O objetivo e identificar nomes de personagens e lugares sem um modelo de
+    NER: sao eles que permitem a um classificador "decorar" o livro em vez de
+    aprender o genero -- ver ``mask_proper_nouns``.
+    """
+    seen: dict[str, int] = {}
+    capitalized: dict[str, int] = {}
+    for text in texts:
+        for match in _TOKEN.finditer(text or ""):
+            if _is_sentence_initial(text, match.start()):
+                continue
+            word = match.group(0)
+            key = word.lower()
+            seen[key] = seen.get(key, 0) + 1
+            if word[0].isupper():
+                capitalized[key] = capitalized.get(key, 0) + 1
+    return frozenset(
+        w for w, n in seen.items()
+        if n >= min_count and capitalized.get(w, 0) / n >= threshold
+    )
+
+
+def mask_proper_nouns(text: str, vocabulary: frozenset[str], placeholder: str = "X") -> str:
+    """Substitui as ocorrencias capitalizadas dos nomes de ``vocabulary``.
+
+    O marcador padrao "X" tem uma letra so: ``tokenize`` o descarta (exige 3+),
+    entao BoW/TF-IDF/Word2Vec simplesmente perdem o nome, enquanto um modelo
+    neural ainda ve uma frase gramatical ("X said to X").
+    """
+    if not vocabulary:
+        return text
+
+    def _swap(match: re.Match) -> str:
+        word = match.group(0)
+        return placeholder if word[0].isupper() and word.lower() in vocabulary else word
+
+    return _TOKEN.sub(_swap, text or "")

@@ -1,0 +1,566 @@
+{
+  "summary": {
+    "bow": {
+      "hit@1": 0.5333333333333333,
+      "hit@3": 0.6,
+      "more_like_this_p@5": 0.21205882352941174
+    },
+    "tfidf": {
+      "hit@1": 0.4666666666666667,
+      "hit@3": 0.6666666666666666,
+      "more_like_this_p@5": 0.21441176470588236
+    },
+    "word2vec": {
+      "hit@1": 0.4666666666666667,
+      "hit@3": 0.8,
+      "more_like_this_p@5": 0.3335294117647059
+    },
+    "bert": {
+      "hit@1": 0.4,
+      "hit@3": 0.7333333333333333,
+      "more_like_this_p@5": 0.22000000000000003
+    }
+  },
+  "books": [
+    {
+      "representation": "bow",
+      "title": "Dracula",
+      "genre": "terror",
+      "rec1": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.73)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.72)",
+      "rec3": "Treasure Island (Acao/Aventura, 0.70)",
+      "hit@1": false
+    },
+    {
+      "representation": "bow",
+      "title": "Frankenstein",
+      "genre": "terror",
+      "rec1": "Dracula (Terror/Horror, 0.61)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.60)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.58)",
+      "hit@1": true
+    },
+    {
+      "representation": "bow",
+      "title": "Great Expectations",
+      "genre": "drama",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.68)",
+      "rec2": "Dracula (Terror/Horror, 0.67)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.65)",
+      "hit@1": false
+    },
+    {
+      "representation": "bow",
+      "title": "Moby Dick",
+      "genre": "acao",
+      "rec1": "Treasure Island (Acao/Aventura, 0.73)",
+      "rec2": "Dracula (Terror/Horror, 0.67)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.62)",
+      "hit@1": true
+    },
+    {
+      "representation": "bow",
+      "title": "Pride and Prejudice",
+      "genre": "romance",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.59)",
+      "rec2": "Frankenstein (Terror/Horror, 0.52)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.52)",
+      "hit@1": true
+    },
+    {
+      "representation": "bow",
+      "title": "The Adventures of Sherlock Holmes",
+      "genre": "misterio",
+      "rec1": "Dracula (Terror/Horror, 0.73)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.68)",
+      "rec3": "Treasure Island (Acao/Aventura, 0.67)",
+      "hit@1": false
+    },
+    {
+      "representation": "bow",
+      "title": "The Picture of Dorian Gray",
+      "genre": "filosofico",
+      "rec1": "Dracula (Terror/Horror, 0.67)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.62)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.60)",
+      "hit@1": false
+    },
+    {
+      "representation": "bow",
+      "title": "The Time Machine",
+      "genre": "ficcao_cientifica",
+      "rec1": "The War of the Worlds (Ficcao Cientifica, 0.72)",
+      "rec2": "Dracula (Terror/Horror, 0.68)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.64)",
+      "hit@1": true
+    },
+    {
+      "representation": "bow",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "rec1": "Dracula (Terror/Horror, 0.72)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.68)",
+      "rec3": "Great Expectations (Drama, 0.68)",
+      "hit@1": false
+    },
+    {
+      "representation": "bow",
+      "title": "Little Women",
+      "genre": "drama",
+      "rec1": "Dracula (Terror/Horror, 0.66)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.65)",
+      "rec3": "Great Expectations (Drama, 0.61)",
+      "hit@1": false
+    },
+    {
+      "representation": "bow",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "rec1": "Dracula (Terror/Horror, 0.53)",
+      "rec2": "Frankenstein (Terror/Horror, 0.52)",
+      "rec3": "The Time Machine (Ficcao Cientifica, 0.50)",
+      "hit@1": false
+    },
+    {
+      "representation": "bow",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "rec1": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.60)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.60)",
+      "rec3": "Dracula (Terror/Horror, 0.59)",
+      "hit@1": true
+    },
+    {
+      "representation": "bow",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "rec1": "Dracula (Terror/Horror, 0.65)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.64)",
+      "rec3": "Treasure Island (Acao/Aventura, 0.62)",
+      "hit@1": true
+    },
+    {
+      "representation": "bow",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "rec1": "The Time Machine (Ficcao Cientifica, 0.72)",
+      "rec2": "Dracula (Terror/Horror, 0.64)",
+      "rec3": "Treasure Island (Acao/Aventura, 0.62)",
+      "hit@1": true
+    },
+    {
+      "representation": "bow",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "rec1": "Moby Dick (Acao/Aventura, 0.73)",
+      "rec2": "Dracula (Terror/Horror, 0.70)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.67)",
+      "hit@1": true
+    },
+    {
+      "representation": "tfidf",
+      "title": "Dracula",
+      "genre": "terror",
+      "rec1": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.59)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.56)",
+      "rec3": "Great Expectations (Drama, 0.56)",
+      "hit@1": false
+    },
+    {
+      "representation": "tfidf",
+      "title": "Frankenstein",
+      "genre": "terror",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.50)",
+      "rec2": "Dracula (Terror/Horror, 0.47)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.45)",
+      "hit@1": false
+    },
+    {
+      "representation": "tfidf",
+      "title": "Great Expectations",
+      "genre": "drama",
+      "rec1": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.56)",
+      "rec2": "Dracula (Terror/Horror, 0.56)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.56)",
+      "hit@1": false
+    },
+    {
+      "representation": "tfidf",
+      "title": "Moby Dick",
+      "genre": "acao",
+      "rec1": "Treasure Island (Acao/Aventura, 0.54)",
+      "rec2": "Dracula (Terror/Horror, 0.49)",
+      "rec3": "Great Expectations (Drama, 0.47)",
+      "hit@1": true
+    },
+    {
+      "representation": "tfidf",
+      "title": "Pride and Prejudice",
+      "genre": "romance",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.45)",
+      "rec2": "Great Expectations (Drama, 0.44)",
+      "rec3": "Frankenstein (Terror/Horror, 0.43)",
+      "hit@1": true
+    },
+    {
+      "representation": "tfidf",
+      "title": "The Adventures of Sherlock Holmes",
+      "genre": "misterio",
+      "rec1": "Dracula (Terror/Horror, 0.59)",
+      "rec2": "Great Expectations (Drama, 0.56)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.54)",
+      "hit@1": false
+    },
+    {
+      "representation": "tfidf",
+      "title": "The Picture of Dorian Gray",
+      "genre": "filosofico",
+      "rec1": "Dracula (Terror/Horror, 0.54)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.52)",
+      "rec3": "Great Expectations (Drama, 0.50)",
+      "hit@1": false
+    },
+    {
+      "representation": "tfidf",
+      "title": "The Time Machine",
+      "genre": "ficcao_cientifica",
+      "rec1": "The War of the Worlds (Ficcao Cientifica, 0.56)",
+      "rec2": "Dracula (Terror/Horror, 0.51)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.48)",
+      "hit@1": true
+    },
+    {
+      "representation": "tfidf",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "rec1": "Dracula (Terror/Horror, 0.56)",
+      "rec2": "Great Expectations (Drama, 0.56)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.54)",
+      "hit@1": false
+    },
+    {
+      "representation": "tfidf",
+      "title": "Little Women",
+      "genre": "drama",
+      "rec1": "Great Expectations (Drama, 0.51)",
+      "rec2": "Dracula (Terror/Horror, 0.51)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.50)",
+      "hit@1": true
+    },
+    {
+      "representation": "tfidf",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "rec1": "Dracula (Terror/Horror, 0.42)",
+      "rec2": "Frankenstein (Terror/Horror, 0.40)",
+      "rec3": "The Picture of Dorian Gray (Filosofico/Existencial, 0.39)",
+      "hit@1": false
+    },
+    {
+      "representation": "tfidf",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "rec1": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.48)",
+      "rec2": "Dracula (Terror/Horror, 0.45)",
+      "rec3": "Great Expectations (Drama, 0.44)",
+      "hit@1": true
+    },
+    {
+      "representation": "tfidf",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "rec1": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.49)",
+      "rec2": "Dracula (Terror/Horror, 0.48)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.45)",
+      "hit@1": false
+    },
+    {
+      "representation": "tfidf",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "rec1": "The Time Machine (Ficcao Cientifica, 0.56)",
+      "rec2": "Dracula (Terror/Horror, 0.48)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.48)",
+      "hit@1": true
+    },
+    {
+      "representation": "tfidf",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "rec1": "Moby Dick (Acao/Aventura, 0.54)",
+      "rec2": "Dracula (Terror/Horror, 0.53)",
+      "rec3": "Great Expectations (Drama, 0.50)",
+      "hit@1": true
+    },
+    {
+      "representation": "word2vec",
+      "title": "Dracula",
+      "genre": "terror",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.97)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.97)",
+      "rec3": "The Strange Case of Dr Jekyll and Mr Hyde (Terror/Horror, 0.96)",
+      "hit@1": false
+    },
+    {
+      "representation": "word2vec",
+      "title": "Frankenstein",
+      "genre": "terror",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.95)",
+      "rec2": "The Strange Case of Dr Jekyll and Mr Hyde (Terror/Horror, 0.94)",
+      "rec3": "Dracula (Terror/Horror, 0.92)",
+      "hit@1": false
+    },
+    {
+      "representation": "word2vec",
+      "title": "Great Expectations",
+      "genre": "drama",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.97)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.97)",
+      "rec3": "Little Women (Drama, 0.96)",
+      "hit@1": false
+    },
+    {
+      "representation": "word2vec",
+      "title": "Moby Dick",
+      "genre": "acao",
+      "rec1": "Treasure Island (Acao/Aventura, 0.96)",
+      "rec2": "Dracula (Terror/Horror, 0.94)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.92)",
+      "hit@1": true
+    },
+    {
+      "representation": "word2vec",
+      "title": "Pride and Prejudice",
+      "genre": "romance",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.93)",
+      "rec2": "Frankenstein (Terror/Horror, 0.92)",
+      "rec3": "The Mysterious Affair at Styles (Misterio/Policial, 0.91)",
+      "hit@1": true
+    },
+    {
+      "representation": "word2vec",
+      "title": "The Adventures of Sherlock Holmes",
+      "genre": "misterio",
+      "rec1": "The Strange Case of Dr Jekyll and Mr Hyde (Terror/Horror, 0.97)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.97)",
+      "rec3": "Dracula (Terror/Horror, 0.97)",
+      "hit@1": false
+    },
+    {
+      "representation": "word2vec",
+      "title": "The Picture of Dorian Gray",
+      "genre": "filosofico",
+      "rec1": "Dracula (Terror/Horror, 0.96)",
+      "rec2": "The Strange Case of Dr Jekyll and Mr Hyde (Terror/Horror, 0.95)",
+      "rec3": "Little Women (Drama, 0.95)",
+      "hit@1": false
+    },
+    {
+      "representation": "word2vec",
+      "title": "The Time Machine",
+      "genre": "ficcao_cientifica",
+      "rec1": "The War of the Worlds (Ficcao Cientifica, 0.97)",
+      "rec2": "Dracula (Terror/Horror, 0.95)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.94)",
+      "hit@1": true
+    },
+    {
+      "representation": "word2vec",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "rec1": "Dracula (Terror/Horror, 0.97)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.97)",
+      "rec3": "Great Expectations (Drama, 0.97)",
+      "hit@1": false
+    },
+    {
+      "representation": "word2vec",
+      "title": "Little Women",
+      "genre": "drama",
+      "rec1": "Great Expectations (Drama, 0.96)",
+      "rec2": "Dracula (Terror/Horror, 0.95)",
+      "rec3": "The Picture of Dorian Gray (Filosofico/Existencial, 0.95)",
+      "hit@1": true
+    },
+    {
+      "representation": "word2vec",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "rec1": "Frankenstein (Terror/Horror, 0.90)",
+      "rec2": "The Picture of Dorian Gray (Filosofico/Existencial, 0.89)",
+      "rec3": "Dracula (Terror/Horror, 0.89)",
+      "hit@1": false
+    },
+    {
+      "representation": "word2vec",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "rec1": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.96)",
+      "rec2": "Great Expectations (Drama, 0.95)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.94)",
+      "hit@1": true
+    },
+    {
+      "representation": "word2vec",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "rec1": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.97)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.97)",
+      "rec3": "Dracula (Terror/Horror, 0.96)",
+      "hit@1": false
+    },
+    {
+      "representation": "word2vec",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "rec1": "The Time Machine (Ficcao Cientifica, 0.97)",
+      "rec2": "Dracula (Terror/Horror, 0.92)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.92)",
+      "hit@1": true
+    },
+    {
+      "representation": "word2vec",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "rec1": "Moby Dick (Acao/Aventura, 0.96)",
+      "rec2": "Dracula (Terror/Horror, 0.94)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.94)",
+      "hit@1": true
+    },
+    {
+      "representation": "bert",
+      "title": "Dracula",
+      "genre": "terror",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.88)",
+      "rec2": "Frankenstein (Terror/Horror, 0.88)",
+      "rec3": "Great Expectations (Drama, 0.88)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "Frankenstein",
+      "genre": "terror",
+      "rec1": "Dracula (Terror/Horror, 0.88)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.86)",
+      "rec3": "The Picture of Dorian Gray (Filosofico/Existencial, 0.84)",
+      "hit@1": true
+    },
+    {
+      "representation": "bert",
+      "title": "Great Expectations",
+      "genre": "drama",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.90)",
+      "rec2": "Dracula (Terror/Horror, 0.88)",
+      "rec3": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.87)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "Moby Dick",
+      "genre": "acao",
+      "rec1": "Treasure Island (Acao/Aventura, 0.88)",
+      "rec2": "Dracula (Terror/Horror, 0.78)",
+      "rec3": "Great Expectations (Drama, 0.77)",
+      "hit@1": true
+    },
+    {
+      "representation": "bert",
+      "title": "Pride and Prejudice",
+      "genre": "romance",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.79)",
+      "rec2": "The Picture of Dorian Gray (Filosofico/Existencial, 0.75)",
+      "rec3": "Great Expectations (Drama, 0.74)",
+      "hit@1": true
+    },
+    {
+      "representation": "bert",
+      "title": "The Adventures of Sherlock Holmes",
+      "genre": "misterio",
+      "rec1": "Great Expectations (Drama, 0.87)",
+      "rec2": "The Mysterious Affair at Styles (Misterio/Policial, 0.85)",
+      "rec3": "Dracula (Terror/Horror, 0.85)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "The Picture of Dorian Gray",
+      "genre": "filosofico",
+      "rec1": "Dracula (Terror/Horror, 0.85)",
+      "rec2": "Jane Eyre (Romance (amoroso), 0.85)",
+      "rec3": "Great Expectations (Drama, 0.84)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "The Time Machine",
+      "genre": "ficcao_cientifica",
+      "rec1": "The War of the Worlds (Ficcao Cientifica, 0.85)",
+      "rec2": "Dracula (Terror/Horror, 0.84)",
+      "rec3": "Frankenstein (Terror/Horror, 0.83)",
+      "hit@1": true
+    },
+    {
+      "representation": "bert",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "rec1": "Great Expectations (Drama, 0.90)",
+      "rec2": "Dracula (Terror/Horror, 0.88)",
+      "rec3": "Frankenstein (Terror/Horror, 0.86)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "Little Women",
+      "genre": "drama",
+      "rec1": "Jane Eyre (Romance (amoroso), 0.84)",
+      "rec2": "Great Expectations (Drama, 0.79)",
+      "rec3": "The Picture of Dorian Gray (Filosofico/Existencial, 0.78)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "rec1": "Frankenstein (Terror/Horror, 0.63)",
+      "rec2": "Dracula (Terror/Horror, 0.57)",
+      "rec3": "The Time Machine (Ficcao Cientifica, 0.57)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "rec1": "Great Expectations (Drama, 0.86)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.85)",
+      "rec3": "Jane Eyre (Romance (amoroso), 0.82)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "rec1": "Great Expectations (Drama, 0.84)",
+      "rec2": "The Adventures of Sherlock Holmes (Misterio/Policial, 0.83)",
+      "rec3": "Dracula (Terror/Horror, 0.82)",
+      "hit@1": false
+    },
+    {
+      "representation": "bert",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "rec1": "The Time Machine (Ficcao Cientifica, 0.85)",
+      "rec2": "Dracula (Terror/Horror, 0.79)",
+      "rec3": "Treasure Island (Acao/Aventura, 0.76)",
+      "hit@1": true
+    },
+    {
+      "representation": "bert",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "rec1": "Moby Dick (Acao/Aventura, 0.88)",
+      "rec2": "Great Expectations (Drama, 0.84)",
+      "rec3": "Dracula (Terror/Horror, 0.83)",
+      "hit@1": true
+    }
+  ]
+}

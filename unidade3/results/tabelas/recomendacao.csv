@@ -1,0 +1,61 @@
+representation,title,genre,rec1,rec2,rec3,hit@1
+bow,Dracula,terror,"The Adventures of Sherlock Holmes (Misterio/Policial, 0.73)","Jane Eyre (Romance (amoroso), 0.72)","Treasure Island (Acao/Aventura, 0.70)",False
+bow,Frankenstein,terror,"Dracula (Terror/Horror, 0.61)","Jane Eyre (Romance (amoroso), 0.60)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.58)",True
+bow,Great Expectations,drama,"Jane Eyre (Romance (amoroso), 0.68)","Dracula (Terror/Horror, 0.67)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.65)",False
+bow,Moby Dick,acao,"Treasure Island (Acao/Aventura, 0.73)","Dracula (Terror/Horror, 0.67)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.62)",True
+bow,Pride and Prejudice,romance,"Jane Eyre (Romance (amoroso), 0.59)","Frankenstein (Terror/Horror, 0.52)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.52)",True
+bow,The Adventures of Sherlock Holmes,misterio,"Dracula (Terror/Horror, 0.73)","Jane Eyre (Romance (amoroso), 0.68)","Treasure Island (Acao/Aventura, 0.67)",False
+bow,The Picture of Dorian Gray,filosofico,"Dracula (Terror/Horror, 0.67)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.62)","Jane Eyre (Romance (amoroso), 0.60)",False
+bow,The Time Machine,ficcao_cientifica,"The War of the Worlds (Ficcao Cientifica, 0.72)","Dracula (Terror/Horror, 0.68)","Jane Eyre (Romance (amoroso), 0.64)",True
+bow,Jane Eyre,romance,"Dracula (Terror/Horror, 0.72)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.68)","Great Expectations (Drama, 0.68)",False
+bow,Little Women,drama,"Dracula (Terror/Horror, 0.66)","Jane Eyre (Romance (amoroso), 0.65)","Great Expectations (Drama, 0.61)",False
+bow,Siddhartha,filosofico,"Dracula (Terror/Horror, 0.53)","Frankenstein (Terror/Horror, 0.52)","The Time Machine (Ficcao Cientifica, 0.50)",False
+bow,The Mysterious Affair at Styles,misterio,"The Adventures of Sherlock Holmes (Misterio/Policial, 0.60)","Jane Eyre (Romance (amoroso), 0.60)","Dracula (Terror/Horror, 0.59)",True
+bow,The Strange Case of Dr Jekyll and Mr Hyde,terror,"Dracula (Terror/Horror, 0.65)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.64)","Treasure Island (Acao/Aventura, 0.62)",True
+bow,The War of the Worlds,ficcao_cientifica,"The Time Machine (Ficcao Cientifica, 0.72)","Dracula (Terror/Horror, 0.64)","Treasure Island (Acao/Aventura, 0.62)",True
+bow,Treasure Island,acao,"Moby Dick (Acao/Aventura, 0.73)","Dracula (Terror/Horror, 0.70)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.67)",True
+tfidf,Dracula,terror,"The Adventures of Sherlock Holmes (Misterio/Policial, 0.59)","Jane Eyre (Romance (amoroso), 0.56)","Great Expectations (Drama, 0.56)",False
+tfidf,Frankenstein,terror,"Jane Eyre (Romance (amoroso), 0.50)","Dracula (Terror/Horror, 0.47)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.45)",False
+tfidf,Great Expectations,drama,"The Adventures of Sherlock Holmes (Misterio/Policial, 0.56)","Dracula (Terror/Horror, 0.56)","Jane Eyre (Romance (amoroso), 0.56)",False
+tfidf,Moby Dick,acao,"Treasure Island (Acao/Aventura, 0.54)","Dracula (Terror/Horror, 0.49)","Great Expectations (Drama, 0.47)",True
+tfidf,Pride and Prejudice,romance,"Jane Eyre (Romance (amoroso), 0.45)","Great Expectations (Drama, 0.44)","Frankenstein (Terror/Horror, 0.43)",True
+tfidf,The Adventures of Sherlock Holmes,misterio,"Dracula (Terror/Horror, 0.59)","Great Expectations (Drama, 0.56)","Jane Eyre (Romance (amoroso), 0.54)",False
+tfidf,The Picture of Dorian Gray,filosofico,"Dracula (Terror/Horror, 0.54)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.52)","Great Expectations (Drama, 0.50)",False
+tfidf,The Time Machine,ficcao_cientifica,"The War of the Worlds (Ficcao Cientifica, 0.56)","Dracula (Terror/Horror, 0.51)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.48)",True
+tfidf,Jane Eyre,romance,"Dracula (Terror/Horror, 0.56)","Great Expectations (Drama, 0.56)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.54)",False
+tfidf,Little Women,drama,"Great Expectations (Drama, 0.51)","Dracula (Terror/Horror, 0.51)","Jane Eyre (Romance (amoroso), 0.50)",True
+tfidf,Siddhartha,filosofico,"Dracula (Terror/Horror, 0.42)","Frankenstein (Terror/Horror, 0.40)","The Picture of Dorian Gray (Filosofico/Existencial, 0.39)",False
+tfidf,The Mysterious Affair at Styles,misterio,"The Adventures of Sherlock Holmes (Misterio/Policial, 0.48)","Dracula (Terror/Horror, 0.45)","Great Expectations (Drama, 0.44)",True
+tfidf,The Strange Case of Dr Jekyll and Mr Hyde,terror,"The Adventures of Sherlock Holmes (Misterio/Policial, 0.49)","Dracula (Terror/Horror, 0.48)","Jane Eyre (Romance (amoroso), 0.45)",False
+tfidf,The War of the Worlds,ficcao_cientifica,"The Time Machine (Ficcao Cientifica, 0.56)","Dracula (Terror/Horror, 0.48)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.48)",True
+tfidf,Treasure Island,acao,"Moby Dick (Acao/Aventura, 0.54)","Dracula (Terror/Horror, 0.53)","Great Expectations (Drama, 0.50)",True
+word2vec,Dracula,terror,"Jane Eyre (Romance (amoroso), 0.97)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.97)","The Strange Case of Dr Jekyll and Mr Hyde (Terror/Horror, 0.96)",False
+word2vec,Frankenstein,terror,"Jane Eyre (Romance (amoroso), 0.95)","The Strange Case of Dr Jekyll and Mr Hyde (Terror/Horror, 0.94)","Dracula (Terror/Horror, 0.92)",False
+word2vec,Great Expectations,drama,"Jane Eyre (Romance (amoroso), 0.97)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.97)","Little Women (Drama, 0.96)",False
+word2vec,Moby Dick,acao,"Treasure Island (Acao/Aventura, 0.96)","Dracula (Terror/Horror, 0.94)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.92)",True
+word2vec,Pride and Prejudice,romance,"Jane Eyre (Romance (amoroso), 0.93)","Frankenstein (Terror/Horror, 0.92)","The Mysterious Affair at Styles (Misterio/Policial, 0.91)",True
+word2vec,The Adventures of Sherlock Holmes,misterio,"The Strange Case of Dr Jekyll and Mr Hyde (Terror/Horror, 0.97)","Jane Eyre (Romance (amoroso), 0.97)","Dracula (Terror/Horror, 0.97)",False
+word2vec,The Picture of Dorian Gray,filosofico,"Dracula (Terror/Horror, 0.96)","The Strange Case of Dr Jekyll and Mr Hyde (Terror/Horror, 0.95)","Little Women (Drama, 0.95)",False
+word2vec,The Time Machine,ficcao_cientifica,"The War of the Worlds (Ficcao Cientifica, 0.97)","Dracula (Terror/Horror, 0.95)","Jane Eyre (Romance (amoroso), 0.94)",True
+word2vec,Jane Eyre,romance,"Dracula (Terror/Horror, 0.97)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.97)","Great Expectations (Drama, 0.97)",False
+word2vec,Little Women,drama,"Great Expectations (Drama, 0.96)","Dracula (Terror/Horror, 0.95)","The Picture of Dorian Gray (Filosofico/Existencial, 0.95)",True
+word2vec,Siddhartha,filosofico,"Frankenstein (Terror/Horror, 0.90)","The Picture of Dorian Gray (Filosofico/Existencial, 0.89)","Dracula (Terror/Horror, 0.89)",False
+word2vec,The Mysterious Affair at Styles,misterio,"The Adventures of Sherlock Holmes (Misterio/Policial, 0.96)","Great Expectations (Drama, 0.95)","Jane Eyre (Romance (amoroso), 0.94)",True
+word2vec,The Strange Case of Dr Jekyll and Mr Hyde,terror,"The Adventures of Sherlock Holmes (Misterio/Policial, 0.97)","Jane Eyre (Romance (amoroso), 0.97)","Dracula (Terror/Horror, 0.96)",False
+word2vec,The War of the Worlds,ficcao_cientifica,"The Time Machine (Ficcao Cientifica, 0.97)","Dracula (Terror/Horror, 0.92)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.92)",True
+word2vec,Treasure Island,acao,"Moby Dick (Acao/Aventura, 0.96)","Dracula (Terror/Horror, 0.94)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.94)",True
+bert,Dracula,terror,"Jane Eyre (Romance (amoroso), 0.88)","Frankenstein (Terror/Horror, 0.88)","Great Expectations (Drama, 0.88)",False
+bert,Frankenstein,terror,"Dracula (Terror/Horror, 0.88)","Jane Eyre (Romance (amoroso), 0.86)","The Picture of Dorian Gray (Filosofico/Existencial, 0.84)",True
+bert,Great Expectations,drama,"Jane Eyre (Romance (amoroso), 0.90)","Dracula (Terror/Horror, 0.88)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.87)",False
+bert,Moby Dick,acao,"Treasure Island (Acao/Aventura, 0.88)","Dracula (Terror/Horror, 0.78)","Great Expectations (Drama, 0.77)",True
+bert,Pride and Prejudice,romance,"Jane Eyre (Romance (amoroso), 0.79)","The Picture of Dorian Gray (Filosofico/Existencial, 0.75)","Great Expectations (Drama, 0.74)",True
+bert,The Adventures of Sherlock Holmes,misterio,"Great Expectations (Drama, 0.87)","The Mysterious Affair at Styles (Misterio/Policial, 0.85)","Dracula (Terror/Horror, 0.85)",False
+bert,The Picture of Dorian Gray,filosofico,"Dracula (Terror/Horror, 0.85)","Jane Eyre (Romance (amoroso), 0.85)","Great Expectations (Drama, 0.84)",False
+bert,The Time Machine,ficcao_cientifica,"The War of the Worlds (Ficcao Cientifica, 0.85)","Dracula (Terror/Horror, 0.84)","Frankenstein (Terror/Horror, 0.83)",True
+bert,Jane Eyre,romance,"Great Expectations (Drama, 0.90)","Dracula (Terror/Horror, 0.88)","Frankenstein (Terror/Horror, 0.86)",False
+bert,Little Women,drama,"Jane Eyre (Romance (amoroso), 0.84)","Great Expectations (Drama, 0.79)","The Picture of Dorian Gray (Filosofico/Existencial, 0.78)",False
+bert,Siddhartha,filosofico,"Frankenstein (Terror/Horror, 0.63)","Dracula (Terror/Horror, 0.57)","The Time Machine (Ficcao Cientifica, 0.57)",False
+bert,The Mysterious Affair at Styles,misterio,"Great Expectations (Drama, 0.86)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.85)","Jane Eyre (Romance (amoroso), 0.82)",False
+bert,The Strange Case of Dr Jekyll and Mr Hyde,terror,"Great Expectations (Drama, 0.84)","The Adventures of Sherlock Holmes (Misterio/Policial, 0.83)","Dracula (Terror/Horror, 0.82)",False
+bert,The War of the Worlds,ficcao_cientifica,"The Time Machine (Ficcao Cientifica, 0.85)","Dracula (Terror/Horror, 0.79)","Treasure Island (Acao/Aventura, 0.76)",True
+bert,Treasure Island,acao,"Moby Dick (Acao/Aventura, 0.88)","Great Expectations (Drama, 0.84)","Dracula (Terror/Horror, 0.83)",True

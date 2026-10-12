@@ -1,0 +1,3 @@
+method,holdout_accuracy,holdout_macro_f1,accuracy_14,books_top1,books_top3,pred_distribution
+lexico_tfidf,0.3808,0.3681,0.2152,4,7,"{np.str_('filosofico'): 35, np.str_('ficcao_cientifica'): 20, np.str_('romance'): 66, np.str_('drama'): 54, np.str_('terror'): 42, np.str_('acao'): 53, np.str_('misterio'): 32}"
+zeroshot_bart_mnli,0.2086,0.1884,0.0861,2,4,"{np.str_('filosofico'): 44, np.str_('terror'): 224, np.str_('misterio'): 22, np.str_('acao'): 10, np.str_('romance'): 1, np.str_('ficcao_cientifica'): 1}"

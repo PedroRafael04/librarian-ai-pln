@@ -1,0 +1,2733 @@
+{
+  "summary": {
+    "bow": {
+      "p@3": 0.48148148148148145,
+      "p@5": 0.48888888888888893,
+      "mrr": 0.6573232323232323
+    },
+    "tfidf": {
+      "p@3": 0.7037037037037037,
+      "p@5": 0.6888888888888889,
+      "mrr": 0.7361111111111112
+    },
+    "word2vec": {
+      "p@3": 0.7407407407407407,
+      "p@5": 0.7111111111111111,
+      "mrr": 0.8425925925925926
+    },
+    "bert": {
+      "p@3": 0.7777777777777778,
+      "p@5": 0.711111111111111,
+      "mrr": 0.9444444444444444
+    },
+    "hibrido": {
+      "p@3": 0.8888888888888888,
+      "p@5": 0.8,
+      "mrr": 0.9444444444444444
+    }
+  },
+  "per_query": [
+    {
+      "query": 1,
+      "text": "a vampire who drinks human blood and sleeps in a coffin",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.6,
+      "mrr": 1.0
+    },
+    {
+      "query": 1,
+      "text": "a vampire who drinks human blood and sleeps in a coffin",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 0.0,
+      "p@5": 0.0,
+      "mrr": 0.16666666666666666
+    },
+    {
+      "query": 1,
+      "text": "a vampire who drinks human blood and sleeps in a coffin",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 0.3333333333333333,
+      "p@5": 0.4,
+      "mrr": 0.3333333333333333
+    },
+    {
+      "query": 1,
+      "text": "a vampire who drinks human blood and sleeps in a coffin",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.6,
+      "mrr": 1.0
+    },
+    {
+      "query": 1,
+      "text": "a vampire who drinks human blood and sleeps in a coffin",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.6,
+      "mrr": 0.5
+    },
+    {
+      "query": 2,
+      "text": "a scientist who creates a living creature from dead body parts",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 0.0,
+      "p@5": 0.2,
+      "mrr": 0.2
+    },
+    {
+      "query": 2,
+      "text": "a scientist who creates a living creature from dead body parts",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 0.0,
+      "p@5": 0.0,
+      "mrr": 0.125
+    },
+    {
+      "query": 2,
+      "text": "a scientist who creates a living creature from dead body parts",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.4,
+      "mrr": 1.0
+    },
+    {
+      "query": 2,
+      "text": "a scientist who creates a living creature from dead body parts",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.6,
+      "mrr": 1.0
+    },
+    {
+      "query": 2,
+      "text": "a scientist who creates a living creature from dead body parts",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.6,
+      "mrr": 1.0
+    },
+    {
+      "query": 3,
+      "text": "a detective who solves a crime by observing small clues",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 1.0,
+      "p@5": 0.8,
+      "mrr": 1.0
+    },
+    {
+      "query": 3,
+      "text": "a detective who solves a crime by observing small clues",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 3,
+      "text": "a detective who solves a crime by observing small clues",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 1.0,
+      "p@5": 0.8,
+      "mrr": 1.0
+    },
+    {
+      "query": 3,
+      "text": "a detective who solves a crime by observing small clues",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 3,
+      "text": "a detective who solves a crime by observing small clues",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 4,
+      "text": "hunting a great white whale with harpoons on a ship",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 4,
+      "text": "hunting a great white whale with harpoons on a ship",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 4,
+      "text": "hunting a great white whale with harpoons on a ship",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 4,
+      "text": "hunting a great white whale with harpoons on a ship",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 4,
+      "text": "hunting a great white whale with harpoons on a ship",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 5,
+      "text": "a proud rich gentleman proposes marriage and is refused",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 0.0,
+      "p@5": 0.0,
+      "mrr": 0.125
+    },
+    {
+      "query": 5,
+      "text": "a proud rich gentleman proposes marriage and is refused",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 0.3333333333333333,
+      "p@5": 0.4,
+      "mrr": 0.3333333333333333
+    },
+    {
+      "query": 5,
+      "text": "a proud rich gentleman proposes marriage and is refused",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.6,
+      "mrr": 1.0
+    },
+    {
+      "query": 5,
+      "text": "a proud rich gentleman proposes marriage and is refused",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.4,
+      "mrr": 1.0
+    },
+    {
+      "query": 5,
+      "text": "a proud rich gentleman proposes marriage and is refused",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.4,
+      "mrr": 1.0
+    },
+    {
+      "query": 6,
+      "text": "a machine that carries a man into the distant future",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.4,
+      "mrr": 1.0
+    },
+    {
+      "query": 6,
+      "text": "a machine that carries a man into the distant future",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 6,
+      "text": "a machine that carries a man into the distant future",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 6,
+      "text": "a machine that carries a man into the distant future",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 6,
+      "text": "a machine that carries a man into the distant future",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 7,
+      "text": "a painted portrait that grows old while the young man stays beautiful",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 0.0,
+      "p@5": 0.0,
+      "mrr": 0.09090909090909091
+    },
+    {
+      "query": 7,
+      "text": "a painted portrait that grows old while the young man stays beautiful",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 1.0,
+      "p@5": 0.8,
+      "mrr": 1.0
+    },
+    {
+      "query": 7,
+      "text": "a painted portrait that grows old while the young man stays beautiful",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 7,
+      "text": "a painted portrait that grows old while the young man stays beautiful",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 7,
+      "text": "a painted portrait that grows old while the young man stays beautiful",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 8,
+      "text": "a poor orphan boy helps an escaped convict in the marshes",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.8,
+      "mrr": 1.0
+    },
+    {
+      "query": 8,
+      "text": "a poor orphan boy helps an escaped convict in the marshes",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 8,
+      "text": "a poor orphan boy helps an escaped convict in the marshes",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 8,
+      "text": "a poor orphan boy helps an escaped convict in the marshes",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 0.3333333333333333,
+      "p@5": 0.2,
+      "mrr": 0.5
+    },
+    {
+      "query": 8,
+      "text": "a poor orphan boy helps an escaped convict in the marshes",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 1.0,
+      "p@5": 0.8,
+      "mrr": 1.0
+    },
+    {
+      "query": 9,
+      "text": "fear and dread in the dark night as something terrible approaches",
+      "lang": "en",
+      "method": "bow",
+      "p@3": 0.3333333333333333,
+      "p@5": 0.6,
+      "mrr": 0.5
+    },
+    {
+      "query": 9,
+      "text": "fear and dread in the dark night as something terrible approaches",
+      "lang": "en",
+      "method": "tfidf",
+      "p@3": 1.0,
+      "p@5": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "query": 9,
+      "text": "fear and dread in the dark night as something terrible approaches",
+      "lang": "en",
+      "method": "word2vec",
+      "p@3": 0.0,
+      "p@5": 0.2,
+      "mrr": 0.25
+    },
+    {
+      "query": 9,
+      "text": "fear and dread in the dark night as something terrible approaches",
+      "lang": "en",
+      "method": "bert",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.6,
+      "mrr": 1.0
+    },
+    {
+      "query": 9,
+      "text": "fear and dread in the dark night as something terrible approaches",
+      "lang": "en",
+      "method": "hibrido",
+      "p@3": 1.0,
+      "p@5": 0.8,
+      "mrr": 1.0
+    },
+    {
+      "query": 10,
+      "text": "caça à baleia branca com arpões em alto-mar",
+      "lang": "pt",
+      "method": "bow",
+      "p@3": 0.0,
+      "p@5": 0.0,
+      "mrr": 0.00641025641025641
+    },
+    {
+      "query": 10,
+      "text": "caça à baleia branca com arpões em alto-mar",
+      "lang": "pt",
+      "method": "tfidf",
+      "p@3": 0.0,
+      "p@5": 0.0,
+      "mrr": 0.00641025641025641
+    },
+    {
+      "query": 10,
+      "text": "caça à baleia branca com arpões em alto-mar",
+      "lang": "pt",
+      "method": "word2vec",
+      "p@3": 0.0,
+      "p@5": 0.0,
+      "mrr": 0.01694915254237288
+    },
+    {
+      "query": 10,
+      "text": "caça à baleia branca com arpões em alto-mar",
+      "lang": "pt",
+      "method": "bert",
+      "p@3": 0.6666666666666666,
+      "p@5": 0.4,
+      "mrr": 1.0
+    },
+    {
+      "query": 10,
+      "text": "caça à baleia branca com arpões em alto-mar",
+      "lang": "pt",
+      "method": "hibrido",
+      "p@3": 0.0,
+      "p@5": 0.0,
+      "mrr": 0.09090909090909091
+    }
+  ],
+  "top5": [
+    {
+      "query": 1,
+      "method": "bow",
+      "rank": 1,
+      "title": "Dracula",
+      "pages": "103-105",
+      "relevant": true,
+      "evidence": "She will die for sheer want of blood to keep the heart’s action as it should be."
+    },
+    {
+      "query": 1,
+      "method": "bow",
+      "rank": 2,
+      "title": "Dracula",
+      "pages": "25-27",
+      "relevant": true,
+      "evidence": "One thing he said which I shall put down as nearly as I can; for it tells in its way the story of his race:-- “We Szekelys have a right to be proud, for in our veins flows the blood of many brave races who fought as t..."
+    },
+    {
+      "query": 1,
+      "method": "bow",
+      "rank": 3,
+      "title": "The Time Machine",
+      "pages": "58-60",
+      "relevant": false,
+      "evidence": "His prejudice against human flesh is no deep-seated instinct."
+    },
+    {
+      "query": 1,
+      "method": "bow",
+      "rank": 4,
+      "title": "Dracula",
+      "pages": "127-129",
+      "relevant": true,
+      "evidence": "have another transfusion of blood, and that soon, or that poor girl’s life won’t be worth an hour’s purchase."
+    },
+    {
+      "query": 1,
+      "method": "bow",
+      "rank": 5,
+      "title": "Frankenstein",
+      "pages": "37-39",
+      "relevant": false,
+      "evidence": "It was with these feelings that I began the creation of a human being."
+    },
+    {
+      "query": 1,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "The Picture of Dorian Gray",
+      "pages": "16-18",
+      "relevant": false,
+      "evidence": "“Parker has brought out the drinks, and if you stay any longer in this glare, you will be quite spoiled, and Basil will never paint you again."
+    },
+    {
+      "query": 1,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "Frankenstein",
+      "pages": "58-60",
+      "relevant": false,
+      "evidence": "Nothing in human shape could have destroyed the fair child. _He_ was the murderer!"
+    },
+    {
+      "query": 1,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "Moby Dick",
+      "pages": "22-24",
+      "relevant": false,
+      "evidence": "It was the whale.” —_Miriam Coffin or the Whale Fisherman_."
+    },
+    {
+      "query": 1,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "46-48",
+      "relevant": false,
+      "evidence": "“Landlord, for God’s sake, Peter Coffin!” shouted I."
+    },
+    {
+      "query": 1,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "31-33",
+      "relevant": false,
+      "evidence": "Yet Dives himself, he too lives like a Czar in an ice palace made of frozen sighs, and being a president of a temperance society, he only drinks the tepid tears of orphans."
+    },
+    {
+      "query": 1,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "67-69",
+      "relevant": false,
+      "evidence": "just."
+    },
+    {
+      "query": 1,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "64-66",
+      "relevant": false,
+      "evidence": "But now when the boatswain calls all hands to lighten her; when boxes, bales, and jars are clattering overboard; when the wind is shrieking, and the men are yelling, and every plank thunders with trampling feet right ..."
+    },
+    {
+      "query": 1,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "Dracula",
+      "pages": "73-75",
+      "relevant": true,
+      "evidence": "Just as I was beginning to hope that the mate would come out calmer--for I heard him knocking away at something in the hold, and work is good for him-- there came up the hatchway a sudden, startled scream, which made ..."
+    },
+    {
+      "query": 1,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "Dracula",
+      "pages": "148-150",
+      "relevant": true,
+      "evidence": "And yet I can laugh at her very grave--laugh when the clay from the spade of the sexton drop upon her coffin and say ‘Thud! thud!’ to my heart, till it send back the blood from my cheek."
+    },
+    {
+      "query": 1,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "127-129",
+      "relevant": false,
+      "evidence": "But, at last, he turned to his comrade, with a final sort of look about him,—“Captain Bildad—come, old shipmate, we must go."
+    },
+    {
+      "query": 1,
+      "method": "bert",
+      "rank": 1,
+      "title": "Dracula",
+      "pages": "106-108",
+      "relevant": true,
+      "evidence": "It at once occurred to me that this wound, or whatever it was, might be the means of that manifest loss of blood; but I abandoned the idea as soon as formed, for such a thing could not be."
+    },
+    {
+      "query": 1,
+      "method": "bert",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "46-48",
+      "relevant": false,
+      "evidence": "“Landlord, for God’s sake, Peter Coffin!” shouted I."
+    },
+    {
+      "query": 1,
+      "method": "bert",
+      "rank": 3,
+      "title": "Dracula",
+      "pages": "109-111",
+      "relevant": true,
+      "evidence": "After a time--it did not seem a short time either, for the draining away of one’s blood, no matter how willingly it be given, is a terrible feeling--Van Helsing held up a warning finger."
+    },
+    {
+      "query": 1,
+      "method": "bert",
+      "rank": 4,
+      "title": "Dracula",
+      "pages": "121-123",
+      "relevant": true,
+      "evidence": "He was lying on his belly on the floor licking up, like a dog, the blood which had fallen from my wounded wrist."
+    },
+    {
+      "query": 1,
+      "method": "bert",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "73-75",
+      "relevant": false,
+      "evidence": "There was excellent blood in his veins—royal stuff; though sadly vitiated, I fear, by the cannibal propensity he nourished in his untutored youth."
+    },
+    {
+      "query": 1,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "46-48",
+      "relevant": false,
+      "evidence": "“Landlord, for God’s sake, Peter Coffin!” shouted I."
+    },
+    {
+      "query": 1,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "Dracula",
+      "pages": "127-129",
+      "relevant": true,
+      "evidence": "have another transfusion of blood, and that soon, or that poor girl’s life won’t be worth an hour’s purchase."
+    },
+    {
+      "query": 1,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "Dracula",
+      "pages": "139-141",
+      "relevant": true,
+      "evidence": "We shall unscrew the coffin-lid, and shall do our operation: and then replace all, so that none know, save we alone."
+    },
+    {
+      "query": 1,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "Dracula",
+      "pages": "103-105",
+      "relevant": true,
+      "evidence": "She will die for sheer want of blood to keep the heart’s action as it should be."
+    },
+    {
+      "query": 1,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "Frankenstein",
+      "pages": "58-60",
+      "relevant": false,
+      "evidence": "Nothing in human shape could have destroyed the fair child. _He_ was the murderer!"
+    },
+    {
+      "query": 2,
+      "method": "bow",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "55-57",
+      "relevant": false,
+      "evidence": "In what census of living creatures, the dead of mankind are included; why it is that a universal proverb says of them, that they tell no tales, though containing more secrets than the Goodwin Sands; how it is that to ..."
+    },
+    {
+      "query": 2,
+      "method": "bow",
+      "rank": 2,
+      "title": "The Picture of Dorian Gray",
+      "pages": "106-108",
+      "relevant": false,
+      "evidence": "T o him, man was a being with myriad lives and myriad sensations, a complex multiform creature that bore within itself strange legacies of thought and passion, and whose very flesh was tainted with the monstrous malad..."
+    },
+    {
+      "query": 2,
+      "method": "bow",
+      "rank": 3,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "55-57",
+      "relevant": false,
+      "evidence": "On following him they found the dead body stretched out upon the grass beside the pool."
+    },
+    {
+      "query": 2,
+      "method": "bow",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "79-81",
+      "relevant": false,
+      "evidence": "If thought could exercise its influence upon a living organism, might not thought exercise an influence upon dead and inorganic things?"
+    },
+    {
+      "query": 2,
+      "method": "bow",
+      "rank": 5,
+      "title": "Frankenstein",
+      "pages": "79-81",
+      "relevant": true,
+      "evidence": "“All men hate the wretched; how, then, must I be hated, who am miserable beyond all living things!"
+    },
+    {
+      "query": 2,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "The Time Machine",
+      "pages": "10-12",
+      "relevant": false,
+      "evidence": "If it is travelling through time fifty times or a hundred times faster than we are, if it gets through a minute while we get through a second, the impression it creates will of course be only one-fiftieth or one-hundr..."
+    },
+    {
+      "query": 2,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "The Picture of Dorian Gray",
+      "pages": "106-108",
+      "relevant": false,
+      "evidence": "T o him, man was a being with myriad lives and myriad sensations, a complex multiform creature that bore within itself strange legacies of thought and passion, and whose very flesh was tainted with the monstrous malad..."
+    },
+    {
+      "query": 2,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "The Picture of Dorian Gray",
+      "pages": "79-81",
+      "relevant": false,
+      "evidence": "If thought could exercise its influence upon a living organism, might not thought exercise an influence upon dead and inorganic things?"
+    },
+    {
+      "query": 2,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "85-87",
+      "relevant": false,
+      "evidence": "One day, a fatal day I sometimes think, I determined to paint a wonderful portrait of you as you actually are, not in the costume of dead ages, but in your own dress and in your own time."
+    },
+    {
+      "query": 2,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "Pride and Prejudice",
+      "pages": "115-117",
+      "relevant": false,
+      "evidence": "But what does he say of the living?"
+    },
+    {
+      "query": 2,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "Frankenstein",
+      "pages": "79-81",
+      "relevant": true,
+      "evidence": "“All men hate the wretched; how, then, must I be hated, who am miserable beyond all living things!"
+    },
+    {
+      "query": 2,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "Frankenstein",
+      "pages": "121-123",
+      "relevant": true,
+      "evidence": "Suddenly, as I gazed on him, an idea seized me that this little creature was unprejudiced and had lived too short a time to have imbibed a horror of deformity."
+    },
+    {
+      "query": 2,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "The Time Machine",
+      "pages": "28-30",
+      "relevant": false,
+      "evidence": "The shop, the advertisement, traffic, all that commerce which constitutes the body of our world, was gone."
+    },
+    {
+      "query": 2,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "97-99",
+      "relevant": false,
+      "evidence": "Mysticism, with its marvellous power of making common things strange to us, and the subtle antinomianism that always seems to accompany it, moved him for a season; and for a season he inclined to the materialistic doc..."
+    },
+    {
+      "query": 2,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "The Time Machine",
+      "pages": "46-48",
+      "relevant": false,
+      "evidence": "underground workrooms and restaurants, and they increase and multiply."
+    },
+    {
+      "query": 2,
+      "method": "bert",
+      "rank": 1,
+      "title": "Frankenstein",
+      "pages": "34-36",
+      "relevant": true,
+      "evidence": "I became acquainted with the science of anatomy, but this was not sufficient; I must also observe the natural decay and corruption of the human body."
+    },
+    {
+      "query": 2,
+      "method": "bert",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "43-45",
+      "relevant": false,
+      "evidence": "Ignorance is the parent of fear, and being completely nonplussed and confounded about the stranger, I confess I was now as much afraid of him as if it was the devil himself who had thus broken into my room at the dead..."
+    },
+    {
+      "query": 2,
+      "method": "bert",
+      "rank": 3,
+      "title": "Frankenstein",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "therefore, did not prepossess me in favour of his pursuits."
+    },
+    {
+      "query": 2,
+      "method": "bert",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "31-33",
+      "relevant": false,
+      "evidence": "Yes, these eyes are windows, and this body of mine is the house."
+    },
+    {
+      "query": 2,
+      "method": "bert",
+      "rank": 5,
+      "title": "Frankenstein",
+      "pages": "40-42",
+      "relevant": true,
+      "evidence": "It was already one in the morning; the rain pattered dismally against the panes, and my candle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the creature open;..."
+    },
+    {
+      "query": 2,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "Frankenstein",
+      "pages": "37-39",
+      "relevant": true,
+      "evidence": "As the minuteness of the parts formed a great hindrance to my speed, I resolved, contrary to my first intention, to make the being of a gigantic stature, that is to say, about eight feet in height, and proportionably ..."
+    },
+    {
+      "query": 2,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "Frankenstein",
+      "pages": "10-12",
+      "relevant": true,
+      "evidence": "His limbs were nearly frozen, and his body dreadfully emaciated by fatigue and suffering."
+    },
+    {
+      "query": 2,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "Moby Dick",
+      "pages": "43-45",
+      "relevant": false,
+      "evidence": "Ignorance is the parent of fear, and being completely nonplussed and confounded about the stranger, I confess I was now as much afraid of him as if it was the devil himself who had thus broken into my room at the dead..."
+    },
+    {
+      "query": 2,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "55-57",
+      "relevant": false,
+      "evidence": "In what census of living creatures, the dead of mankind are included; why it is that a universal proverb says of them, that they tell no tales, though containing more secrets than the Goodwin Sands; how it is that to ..."
+    },
+    {
+      "query": 2,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "Frankenstein",
+      "pages": "40-42",
+      "relevant": true,
+      "evidence": "It was already one in the morning; the rain pattered dismally against the panes, and my candle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the creature open;..."
+    },
+    {
+      "query": 3,
+      "method": "bow",
+      "rank": 1,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "136-138",
+      "relevant": true,
+      "evidence": "A campbed, a small wooden shelf full of books, mostly of a technical character, an armchair beside the bed, a plain wooden chair against the wall, a round table, and a large iron safe were the principal things which m..."
+    },
+    {
+      "query": 3,
+      "method": "bow",
+      "rank": 2,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "94-96",
+      "relevant": true,
+      "evidence": "Clair had been deluded when, with a cry, she sprang at a small deal box which lay upon the table and tore the lid from it."
+    },
+    {
+      "query": 3,
+      "method": "bow",
+      "rank": 3,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "106-108",
+      "relevant": true,
+      "evidence": "“I suppose,” I remarked, “that, homely as it looks, this thing has some deadly story linked on to it—that it is the clue which will guide you in the solution of some mystery and the punishment of some crime."
+    },
+    {
+      "query": 3,
+      "method": "bow",
+      "rank": 4,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "He bowed, and, turning away without observing the hand which the King had stretched out to him, he set off in my company for his chambers."
+    },
+    {
+      "query": 3,
+      "method": "bow",
+      "rank": 5,
+      "title": "Great Expectations",
+      "pages": "49-51",
+      "relevant": false,
+      "evidence": "It may be only small injustice that the child can be exposed to; but the child is small, and its world is small, and its rocking-horse stands as many hands high, according to scale, as a big-boned Irish hunter."
+    },
+    {
+      "query": 3,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "1-3",
+      "relevant": true,
+      "evidence": "He was still, as ever, deeply attracted by the study of crime, and occupied his immense faculties and extraordinary powers of observation in following out those clues, and clearing up those mysteries which had been ab..."
+    },
+    {
+      "query": 3,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "46-48",
+      "relevant": true,
+      "evidence": "She had small round, hanging gold earrings, and a general air of being fairly well-to-do in a vulgar, comfortable, easy-going way."
+    },
+    {
+      "query": 3,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "94-96",
+      "relevant": true,
+      "evidence": "Clair had been deluded when, with a cry, she sprang at a small deal box which lay upon the table and tore the lid from it."
+    },
+    {
+      "query": 3,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "118-120",
+      "relevant": true,
+      "evidence": "You made some small job in my lady’s room—you and your confederate Cusack—and you managed that he should be the man sent for."
+    },
+    {
+      "query": 3,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "“A considerable crime is in contemplation."
+    },
+    {
+      "query": 3,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "55-57",
+      "relevant": true,
+      "evidence": "language to his son, and she saw the latter raise up his hand as if to strike his father."
+    },
+    {
+      "query": 3,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "37-39",
+      "relevant": true,
+      "evidence": "The man’s business was a small one, and there was nothing in his house which could account for such elaborate preparations, and such an expenditure as they were at."
+    },
+    {
+      "query": 3,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "49-51",
+      "relevant": true,
+      "evidence": "“I think of writing another little monograph some of these days on the typewriter and its relation to crime."
+    },
+    {
+      "query": 3,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "Frankenstein",
+      "pages": "64-66",
+      "relevant": false,
+      "evidence": "A thousand times rather would I have confessed myself guilty of the crime ascribed to Justine, but I was absent when it was committed, and such a declaration would have been considered as the ravings of a madman and w..."
+    },
+    {
+      "query": 3,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "142-144",
+      "relevant": true,
+      "evidence": "the rope was there as a bridge for something passing through the hole and coming to the bed."
+    },
+    {
+      "query": 3,
+      "method": "bert",
+      "rank": 1,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "37-39",
+      "relevant": true,
+      "evidence": "The man’s business was a small one, and there was nothing in his house which could account for such elaborate preparations, and such an expenditure as they were at."
+    },
+    {
+      "query": 3,
+      "method": "bert",
+      "rank": 2,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "1-3",
+      "relevant": true,
+      "evidence": "He was still, as ever, deeply attracted by the study of crime, and occupied his immense faculties and extraordinary powers of observation in following out those clues, and clearing up those mysteries which had been ab..."
+    },
+    {
+      "query": 3,
+      "method": "bert",
+      "rank": 3,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "55-57",
+      "relevant": true,
+      "evidence": "language to his son, and she saw the latter raise up his hand as if to strike his father."
+    },
+    {
+      "query": 3,
+      "method": "bert",
+      "rank": 4,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "106-108",
+      "relevant": true,
+      "evidence": "“I suppose,” I remarked, “that, homely as it looks, this thing has some deadly story linked on to it—that it is the clue which will guide you in the solution of some mystery and the punishment of some crime."
+    },
+    {
+      "query": 3,
+      "method": "bert",
+      "rank": 5,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "121-123",
+      "relevant": true,
+      "evidence": "detective that ever lived."
+    },
+    {
+      "query": 3,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "1-3",
+      "relevant": true,
+      "evidence": "He was still, as ever, deeply attracted by the study of crime, and occupied his immense faculties and extraordinary powers of observation in following out those clues, and clearing up those mysteries which had been ab..."
+    },
+    {
+      "query": 3,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "46-48",
+      "relevant": true,
+      "evidence": "She had small round, hanging gold earrings, and a general air of being fairly well-to-do in a vulgar, comfortable, easy-going way."
+    },
+    {
+      "query": 3,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "94-96",
+      "relevant": true,
+      "evidence": "Clair had been deluded when, with a cry, she sprang at a small deal box which lay upon the table and tore the lid from it."
+    },
+    {
+      "query": 3,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "106-108",
+      "relevant": true,
+      "evidence": "“I suppose,” I remarked, “that, homely as it looks, this thing has some deadly story linked on to it—that it is the clue which will guide you in the solution of some mystery and the punishment of some crime."
+    },
+    {
+      "query": 3,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "“A considerable crime is in contemplation."
+    },
+    {
+      "query": 4,
+      "method": "bow",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "It is a matter of great astonishment that the consideration of the habits of so interesting, and, in a commercial point of view, so important an animal (as the Sperm Whale) should have been so entirely neglected, or s..."
+    },
+    {
+      "query": 4,
+      "method": "bow",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "16-18",
+      "relevant": true,
+      "evidence": "“Spain—a great whale stranded on the shores of Europe.” —_Edmund Burke_. (_somewhere_."
+    },
+    {
+      "query": 4,
+      "method": "bow",
+      "rank": 3,
+      "title": "Moby Dick",
+      "pages": "13-15",
+      "relevant": true,
+      "evidence": "“While the whale is floating at the stern of the ship, they cut off his head, and tow it with a boat as near the shore as it will come; but it will be aground in twelve or thirteen feet water.” —_Thomas Edge’s T en Vo..."
+    },
+    {
+      "query": 4,
+      "method": "bow",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "130-132",
+      "relevant": true,
+      "evidence": "For many years past the whale-ship has been the pioneer in ferreting out the remotest and least known parts of the earth."
+    },
+    {
+      "query": 4,
+      "method": "bow",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "10-12",
+      "relevant": true,
+      "evidence": "“And whereas all the other things, whether beast or vessel, that enter into the dreadful gulf of this monster’s (whale’s) mouth, are immediately lost and swallowed up, the sea-gudgeon retires into it in great security..."
+    },
+    {
+      "query": 4,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "13-15",
+      "relevant": true,
+      "evidence": "“While the whale is floating at the stern of the ship, they cut off his head, and tow it with a boat as near the shore as it will come; but it will be aground in twelve or thirteen feet water.” —_Thomas Edge’s T en Vo..."
+    },
+    {
+      "query": 4,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "It is a matter of great astonishment that the consideration of the habits of so interesting, and, in a commercial point of view, so important an animal (as the Sperm Whale) should have been so entirely neglected, or s..."
+    },
+    {
+      "query": 4,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "Moby Dick",
+      "pages": "28-30",
+      "relevant": true,
+      "evidence": "By reason of these things, then, the whaling voyage was welcome; the great flood-gates of the wonder-world swung open, and in the wild conceits that swayed me to my purpose, two and two there floated into my inmost so..."
+    },
+    {
+      "query": 4,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "130-132",
+      "relevant": true,
+      "evidence": "For many years past the whale-ship has been the pioneer in ferreting out the remotest and least known parts of the earth."
+    },
+    {
+      "query": 4,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "16-18",
+      "relevant": true,
+      "evidence": "“Spain—a great whale stranded on the shores of Europe.” —_Edmund Burke_. (_somewhere_."
+    },
+    {
+      "query": 4,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "16-18",
+      "relevant": true,
+      "evidence": "“Spain—a great whale stranded on the shores of Europe.” —_Edmund Burke_. (_somewhere_."
+    },
+    {
+      "query": 4,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "It is a matter of great astonishment that the consideration of the habits of so interesting, and, in a commercial point of view, so important an animal (as the Sperm Whale) should have been so entirely neglected, or s..."
+    },
+    {
+      "query": 4,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "Moby Dick",
+      "pages": "13-15",
+      "relevant": true,
+      "evidence": "“While the whale is floating at the stern of the ship, they cut off his head, and tow it with a boat as near the shore as it will come; but it will be aground in twelve or thirteen feet water.” —_Thomas Edge’s T en Vo..."
+    },
+    {
+      "query": 4,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "88-90",
+      "relevant": true,
+      "evidence": "I peered and pryed about the Devil-dam; from her, hopped over to the Tit-bit; and finally, going on board the Pequod, looked around her for a moment, and then decided that this was the very ship for us."
+    },
+    {
+      "query": 4,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "139-141",
+      "relevant": true,
+      "evidence": "So utterly lost was he to all sense of reverence for the many marvels of their majestic bulk and mystic ways; and so dead to anything like an apprehension of any possible danger from encountering them; that in his poo..."
+    },
+    {
+      "query": 4,
+      "method": "bert",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "It is a matter of great astonishment that the consideration of the habits of so interesting, and, in a commercial point of view, so important an animal (as the Sperm Whale) should have been so entirely neglected, or s..."
+    },
+    {
+      "query": 4,
+      "method": "bert",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "91-93",
+      "relevant": true,
+      "evidence": "Captain Ahab is the Captain of this ship."
+    },
+    {
+      "query": 4,
+      "method": "bert",
+      "rank": 3,
+      "title": "Moby Dick",
+      "pages": "130-132",
+      "relevant": true,
+      "evidence": "For many years past the whale-ship has been the pioneer in ferreting out the remotest and least known parts of the earth."
+    },
+    {
+      "query": 4,
+      "method": "bert",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "16-18",
+      "relevant": true,
+      "evidence": "“Spain—a great whale stranded on the shores of Europe.” —_Edmund Burke_. (_somewhere_."
+    },
+    {
+      "query": 4,
+      "method": "bert",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "139-141",
+      "relevant": true,
+      "evidence": "So utterly lost was he to all sense of reverence for the many marvels of their majestic bulk and mystic ways; and so dead to anything like an apprehension of any possible danger from encountering them; that in his poo..."
+    },
+    {
+      "query": 4,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "It is a matter of great astonishment that the consideration of the habits of so interesting, and, in a commercial point of view, so important an animal (as the Sperm Whale) should have been so entirely neglected, or s..."
+    },
+    {
+      "query": 4,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "13-15",
+      "relevant": true,
+      "evidence": "“While the whale is floating at the stern of the ship, they cut off his head, and tow it with a boat as near the shore as it will come; but it will be aground in twelve or thirteen feet water.” —_Thomas Edge’s T en Vo..."
+    },
+    {
+      "query": 4,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "Moby Dick",
+      "pages": "130-132",
+      "relevant": true,
+      "evidence": "For many years past the whale-ship has been the pioneer in ferreting out the remotest and least known parts of the earth."
+    },
+    {
+      "query": 4,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "91-93",
+      "relevant": true,
+      "evidence": "Captain Ahab is the Captain of this ship."
+    },
+    {
+      "query": 4,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "16-18",
+      "relevant": true,
+      "evidence": "“Spain—a great whale stranded on the shores of Europe.” —_Edmund Burke_. (_somewhere_."
+    },
+    {
+      "query": 5,
+      "method": "bow",
+      "rank": 1,
+      "title": "Great Expectations",
+      "pages": "139-141",
+      "relevant": false,
+      "evidence": "Havisham was very rich and very proud."
+    },
+    {
+      "query": 5,
+      "method": "bow",
+      "rank": 2,
+      "title": "Great Expectations",
+      "pages": "106-108",
+      "relevant": false,
+      "evidence": "“Not the exact words!” repeated the gentleman bitterly."
+    },
+    {
+      "query": 5,
+      "method": "bow",
+      "rank": 3,
+      "title": "Great Expectations",
+      "pages": "70-72",
+      "relevant": false,
+      "evidence": "Never questioning for a moment that the house was now empty, I looked in at another window, and found myself, to my great surprise, exchanging a broad stare with a pale young gentleman with red eyelids and light hair."
+    },
+    {
+      "query": 5,
+      "method": "bow",
+      "rank": 4,
+      "title": "Great Expectations",
+      "pages": "73-75",
+      "relevant": false,
+      "evidence": "The pale young gentleman’s nose had stained my trousers, and I tried to wash out that evidence of my guilt in the dead of night."
+    },
+    {
+      "query": 5,
+      "method": "bow",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "55-57",
+      "relevant": false,
+      "evidence": "to marriage is that it makes one unselfish."
+    },
+    {
+      "query": 5,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "Great Expectations",
+      "pages": "139-141",
+      "relevant": false,
+      "evidence": "Havisham was very rich and very proud."
+    },
+    {
+      "query": 5,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "The Picture of Dorian Gray",
+      "pages": "43-45",
+      "relevant": false,
+      "evidence": "It was clear to him that the experimental method was the only method by which one could arrive at any scientific analysis of the passions; and certainly Dorian Gray was a subject made to his hand, and seemed to promis..."
+    },
+    {
+      "query": 5,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "Pride and Prejudice",
+      "pages": "37-39",
+      "relevant": true,
+      "evidence": "“If I were as rich as Mr."
+    },
+    {
+      "query": 5,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "Pride and Prejudice",
+      "pages": "127-129",
+      "relevant": true,
+      "evidence": "“Very well--and this offer of marriage you have refused?"
+    },
+    {
+      "query": 5,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "Great Expectations",
+      "pages": "115-117",
+      "relevant": false,
+      "evidence": "With all the novelty of my emancipation on me, I went to church with Joe, and thought perhaps the clergyman wouldn’t have read that about the rich man and the kingdom of Heaven, if he had known all."
+    },
+    {
+      "query": 5,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "Pride and Prejudice",
+      "pages": "100-102",
+      "relevant": true,
+      "evidence": "If from no better motive, that he should not have been too proud to be dishonest,--for dishonesty I must call it."
+    },
+    {
+      "query": 5,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "Pride and Prejudice",
+      "pages": "124-126",
+      "relevant": true,
+      "evidence": "I wish you very happy and very rich, and by refusing your hand, do all in my power to prevent your being otherwise."
+    },
+    {
+      "query": 5,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "Great Expectations",
+      "pages": "139-141",
+      "relevant": false,
+      "evidence": "Havisham was very rich and very proud."
+    },
+    {
+      "query": 5,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "Pride and Prejudice",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "They were, in fact, very fine ladies; not deficient in good-humour when they were pleased, nor in the power of being agreeable where they chose it; but proud and conceited."
+    },
+    {
+      "query": 5,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "Great Expectations",
+      "pages": "148-150",
+      "relevant": false,
+      "evidence": "hours, and may mention at once, that Mrs."
+    },
+    {
+      "query": 5,
+      "method": "bert",
+      "rank": 1,
+      "title": "Pride and Prejudice",
+      "pages": "124-126",
+      "relevant": true,
+      "evidence": "I wish you very happy and very rich, and by refusing your hand, do all in my power to prevent your being otherwise."
+    },
+    {
+      "query": 5,
+      "method": "bert",
+      "rank": 2,
+      "title": "Pride and Prejudice",
+      "pages": "127-129",
+      "relevant": true,
+      "evidence": "“Very well--and this offer of marriage you have refused?"
+    },
+    {
+      "query": 5,
+      "method": "bert",
+      "rank": 3,
+      "title": "Dracula",
+      "pages": "49-51",
+      "relevant": false,
+      "evidence": "to crack."
+    },
+    {
+      "query": 5,
+      "method": "bert",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "55-57",
+      "relevant": false,
+      "evidence": "to marriage is that it makes one unselfish."
+    },
+    {
+      "query": 5,
+      "method": "bert",
+      "rank": 5,
+      "title": "Frankenstein",
+      "pages": "4-6",
+      "relevant": false,
+      "evidence": "He had already bought a farm with his money, on which he had designed to pass the remainder of his life; but he bestowed the whole on his rival, together with the remains of his prize-money to purchase stock, and then..."
+    },
+    {
+      "query": 5,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "Pride and Prejudice",
+      "pages": "127-129",
+      "relevant": true,
+      "evidence": "“Very well--and this offer of marriage you have refused?"
+    },
+    {
+      "query": 5,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "Great Expectations",
+      "pages": "139-141",
+      "relevant": false,
+      "evidence": "Havisham was very rich and very proud."
+    },
+    {
+      "query": 5,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "Pride and Prejudice",
+      "pages": "37-39",
+      "relevant": true,
+      "evidence": "“If I were as rich as Mr."
+    },
+    {
+      "query": 5,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "55-57",
+      "relevant": false,
+      "evidence": "to marriage is that it makes one unselfish."
+    },
+    {
+      "query": 5,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "Frankenstein",
+      "pages": "4-6",
+      "relevant": false,
+      "evidence": "He had already bought a farm with his money, on which he had designed to pass the remainder of his life; but he bestowed the whole on his rival, together with the remains of his prize-money to purchase stock, and then..."
+    },
+    {
+      "query": 6,
+      "method": "bow",
+      "rank": 1,
+      "title": "The Time Machine",
+      "pages": "7-9",
+      "relevant": true,
+      "evidence": "Then, when we had all imitated the action of the Medical Man, he said: “Now I want you clearly to understand that this lever, being pressed over, sends the machine gliding into the future, and this other reverses the ..."
+    },
+    {
+      "query": 6,
+      "method": "bow",
+      "rank": 2,
+      "title": "Great Expectations",
+      "pages": "13-15",
+      "relevant": false,
+      "evidence": "knew to be very near the Battery, and had just scrambled up the mound beyond the ditch, when I saw the man sitting before me."
+    },
+    {
+      "query": 6,
+      "method": "bow",
+      "rank": 3,
+      "title": "The Time Machine",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "This possibility had occurred to me again and again while I was making the machine; but then I had cheerfully accepted it as an unavoidable risk—one of the risks a man has got to take!"
+    },
+    {
+      "query": 6,
+      "method": "bow",
+      "rank": 4,
+      "title": "Moby Dick",
+      "pages": "133-135",
+      "relevant": false,
+      "evidence": "I know a man that, in his lifetime, has taken three hundred and fifty whales."
+    },
+    {
+      "query": 6,
+      "method": "bow",
+      "rank": 5,
+      "title": "Frankenstein",
+      "pages": "88-90",
+      "relevant": false,
+      "evidence": "As she walked along, seemingly incommoded by the burden, a young man met her, whose countenance expressed a deeper despondence."
+    },
+    {
+      "query": 6,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "The Time Machine",
+      "pages": "7-9",
+      "relevant": true,
+      "evidence": "Then, when we had all imitated the action of the Medical Man, he said: “Now I want you clearly to understand that this lever, being pressed over, sends the machine gliding into the future, and this other reverses the ..."
+    },
+    {
+      "query": 6,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "The Time Machine",
+      "pages": "25-27",
+      "relevant": true,
+      "evidence": "“However, I am telling you of my fruit dinner in the distant future now."
+    },
+    {
+      "query": 6,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "The Time Machine",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "This possibility had occurred to me again and again while I was making the machine; but then I had cheerfully accepted it as an unavoidable risk—one of the risks a man has got to take!"
+    },
+    {
+      "query": 6,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "The Time Machine",
+      "pages": "34-36",
+      "relevant": true,
+      "evidence": "‘Where is my Time Machine?"
+    },
+    {
+      "query": 6,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "The Time Machine",
+      "pages": "79-81",
+      "relevant": true,
+      "evidence": "“Then I stopped the machine, and saw about me again the old familiar laboratory, my tools, my appliances just as I had left them."
+    },
+    {
+      "query": 6,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "The Time Machine",
+      "pages": "7-9",
+      "relevant": true,
+      "evidence": "Then, when we had all imitated the action of the Medical Man, he said: “Now I want you clearly to understand that this lever, being pressed over, sends the machine gliding into the future, and this other reverses the ..."
+    },
+    {
+      "query": 6,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "The Time Machine",
+      "pages": "4-6",
+      "relevant": true,
+      "evidence": "Long ago I had a vague inkling of a machine—” “T o travel through Time!” exclaimed the Very Young Man."
+    },
+    {
+      "query": 6,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "The Time Machine",
+      "pages": "64-66",
+      "relevant": true,
+      "evidence": "I really believe that had they not been so, I should have rushed off incontinently and blown Sphinx, bronze doors, and (as it proved) my chances of finding the Time Machine, all together into non-existence."
+    },
+    {
+      "query": 6,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "The Time Machine",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "This possibility had occurred to me again and again while I was making the machine; but then I had cheerfully accepted it as an unavoidable risk—one of the risks a man has got to take!"
+    },
+    {
+      "query": 6,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "The Time Machine",
+      "pages": "61-63",
+      "relevant": true,
+      "evidence": "Then, struck with a sudden idea, I left her and turned to a machine from which projected a lever not unlike those in a signal-box."
+    },
+    {
+      "query": 6,
+      "method": "bert",
+      "rank": 1,
+      "title": "The Time Machine",
+      "pages": "7-9",
+      "relevant": true,
+      "evidence": "Then, when we had all imitated the action of the Medical Man, he said: “Now I want you clearly to understand that this lever, being pressed over, sends the machine gliding into the future, and this other reverses the ..."
+    },
+    {
+      "query": 6,
+      "method": "bert",
+      "rank": 2,
+      "title": "The Time Machine",
+      "pages": "82-84",
+      "relevant": true,
+      "evidence": "The Medical Man looked into his face and, with a certain hesitation, told him he was suffering from overwork, at which he laughed hugely."
+    },
+    {
+      "query": 6,
+      "method": "bert",
+      "rank": 3,
+      "title": "The Time Machine",
+      "pages": "10-12",
+      "relevant": true,
+      "evidence": "We cannot see it, nor can we appreciate this machine, any more than we can the spoke of a wheel spinning, or a bullet flying through the air."
+    },
+    {
+      "query": 6,
+      "method": "bert",
+      "rank": 4,
+      "title": "The Time Machine",
+      "pages": "4-6",
+      "relevant": true,
+      "evidence": "Long ago I had a vague inkling of a machine—” “T o travel through Time!” exclaimed the Very Young Man."
+    },
+    {
+      "query": 6,
+      "method": "bert",
+      "rank": 5,
+      "title": "The Time Machine",
+      "pages": "79-81",
+      "relevant": true,
+      "evidence": "“Then I stopped the machine, and saw about me again the old familiar laboratory, my tools, my appliances just as I had left them."
+    },
+    {
+      "query": 6,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "The Time Machine",
+      "pages": "7-9",
+      "relevant": true,
+      "evidence": "Then, when we had all imitated the action of the Medical Man, he said: “Now I want you clearly to understand that this lever, being pressed over, sends the machine gliding into the future, and this other reverses the ..."
+    },
+    {
+      "query": 6,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "The Time Machine",
+      "pages": "82-84",
+      "relevant": true,
+      "evidence": "The Medical Man looked into his face and, with a certain hesitation, told him he was suffering from overwork, at which he laughed hugely."
+    },
+    {
+      "query": 6,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "The Time Machine",
+      "pages": "79-81",
+      "relevant": true,
+      "evidence": "“Then I stopped the machine, and saw about me again the old familiar laboratory, my tools, my appliances just as I had left them."
+    },
+    {
+      "query": 6,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "The Time Machine",
+      "pages": "10-12",
+      "relevant": true,
+      "evidence": "We cannot see it, nor can we appreciate this machine, any more than we can the spoke of a wheel spinning, or a bullet flying through the air."
+    },
+    {
+      "query": 6,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "The Time Machine",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "This possibility had occurred to me again and again while I was making the machine; but then I had cheerfully accepted it as an unavoidable risk—one of the risks a man has got to take!"
+    },
+    {
+      "query": 7,
+      "method": "bow",
+      "rank": 1,
+      "title": "Frankenstein",
+      "pages": "88-90",
+      "relevant": false,
+      "evidence": "The young girl was occupied in arranging the cottage; but presently she took something out of a drawer, which employed her hands, and she sat down beside the old man, who, taking up an instrument, began to play and to..."
+    },
+    {
+      "query": 7,
+      "method": "bow",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "145-147",
+      "relevant": false,
+      "evidence": "Old age is always wakeful; as if, the longer linked with life, the less man has to do with aught that looks like death."
+    },
+    {
+      "query": 7,
+      "method": "bow",
+      "rank": 3,
+      "title": "Great Expectations",
+      "pages": "73-75",
+      "relevant": false,
+      "evidence": "The pale young gentleman’s nose had stained my trousers, and I tried to wash out that evidence of my guilt in the dead of night."
+    },
+    {
+      "query": 7,
+      "method": "bow",
+      "rank": 4,
+      "title": "Great Expectations",
+      "pages": "13-15",
+      "relevant": false,
+      "evidence": "“It’s the young man!"
+    },
+    {
+      "query": 7,
+      "method": "bow",
+      "rank": 5,
+      "title": "Moby Dick",
+      "pages": "148-150",
+      "relevant": false,
+      "evidence": "Coming afoul of that old man has a sort of turned me wrong side out."
+    },
+    {
+      "query": 7,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "The Picture of Dorian Gray",
+      "pages": "67-69",
+      "relevant": true,
+      "evidence": "He had uttered a mad wish that he himself might remain young, and the portrait grow old; that his own beauty might be untarnished, and the face on the canvas bear the burden of his passions and his sins; that the pain..."
+    },
+    {
+      "query": 7,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "The Picture of Dorian Gray",
+      "pages": "70-72",
+      "relevant": true,
+      "evidence": "His unreal and selfish love would yield to some higher influence, would be transformed into some nobler passion, and the portrait that Basil Hallward had painted of him would be a guide to him through life, would be t..."
+    },
+    {
+      "query": 7,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "The Picture of Dorian Gray",
+      "pages": "13-15",
+      "relevant": true,
+      "evidence": "I have promised to meet a man at the Orleans."
+    },
+    {
+      "query": 7,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "Frankenstein",
+      "pages": "121-123",
+      "relevant": false,
+      "evidence": "A woman was sleeping on some straw; she was young, not indeed so beautiful as her whose portrait I held, but of an agreeable aspect and blooming in the loveliness of youth and health."
+    },
+    {
+      "query": 7,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "1-3",
+      "relevant": true,
+      "evidence": "In the centre of the room, clamped to an upright easel, stood the fulllength portrait of a young man of extraordinary personal beauty, and in front of it, some little distance away, was sitting the artist himself, Bas..."
+    },
+    {
+      "query": 7,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "The Picture of Dorian Gray",
+      "pages": "85-87",
+      "relevant": true,
+      "evidence": "One day, a fatal day I sometimes think, I determined to paint a wonderful portrait of you as you actually are, not in the costume of dead ages, but in your own dress and in your own time."
+    },
+    {
+      "query": 7,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "The Picture of Dorian Gray",
+      "pages": "82-84",
+      "relevant": true,
+      "evidence": "Well, I am not like that young man you told me of when we were down at Marlow together, the young man who used to say that yellow satin could console one for all the miseries of life."
+    },
+    {
+      "query": 7,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "The Picture of Dorian Gray",
+      "pages": "79-81",
+      "relevant": true,
+      "evidence": "And yet, who, that knew anything about life, would surrender the chance of remaining always young, however fantastic that chance might be, or with what fateful consequences it might be fraught?"
+    },
+    {
+      "query": 7,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "4-6",
+      "relevant": true,
+      "evidence": "“Harry,” said Basil Hallward, looking him straight in the face, “every portrait that is painted with feeling is a portrait of the artist, not of the sitter."
+    },
+    {
+      "query": 7,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "1-3",
+      "relevant": true,
+      "evidence": "In the centre of the room, clamped to an upright easel, stood the fulllength portrait of a young man of extraordinary personal beauty, and in front of it, some little distance away, was sitting the artist himself, Bas..."
+    },
+    {
+      "query": 7,
+      "method": "bert",
+      "rank": 1,
+      "title": "The Picture of Dorian Gray",
+      "pages": "1-3",
+      "relevant": true,
+      "evidence": "In the centre of the room, clamped to an upright easel, stood the fulllength portrait of a young man of extraordinary personal beauty, and in front of it, some little distance away, was sitting the artist himself, Bas..."
+    },
+    {
+      "query": 7,
+      "method": "bert",
+      "rank": 2,
+      "title": "The Picture of Dorian Gray",
+      "pages": "16-18",
+      "relevant": true,
+      "evidence": "He could not help liking the tall, graceful young man who was standing by him."
+    },
+    {
+      "query": 7,
+      "method": "bert",
+      "rank": 3,
+      "title": "The Picture of Dorian Gray",
+      "pages": "106-108",
+      "relevant": true,
+      "evidence": "It was true that the portrait still preserved, under all the foulness and ugliness of the face, its marked likeness to himself; but what could they learn from that?"
+    },
+    {
+      "query": 7,
+      "method": "bert",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "85-87",
+      "relevant": true,
+      "evidence": "One day, a fatal day I sometimes think, I determined to paint a wonderful portrait of you as you actually are, not in the costume of dead ages, but in your own dress and in your own time."
+    },
+    {
+      "query": 7,
+      "method": "bert",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "7-9",
+      "relevant": true,
+      "evidence": "to a truculent and red-faced old gentleman covered all over with orders and ribbons, and hissing into my ear, in a tragic whisper which must have been perfectly audible to everybody in the room, the most astounding de..."
+    },
+    {
+      "query": 7,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "The Picture of Dorian Gray",
+      "pages": "1-3",
+      "relevant": true,
+      "evidence": "In the centre of the room, clamped to an upright easel, stood the fulllength portrait of a young man of extraordinary personal beauty, and in front of it, some little distance away, was sitting the artist himself, Bas..."
+    },
+    {
+      "query": 7,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "The Picture of Dorian Gray",
+      "pages": "67-69",
+      "relevant": true,
+      "evidence": "He had uttered a mad wish that he himself might remain young, and the portrait grow old; that his own beauty might be untarnished, and the face on the canvas bear the burden of his passions and his sins; that the pain..."
+    },
+    {
+      "query": 7,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "The Picture of Dorian Gray",
+      "pages": "19-21",
+      "relevant": true,
+      "evidence": "If it were I who was to be always young, and the picture that was to grow old!"
+    },
+    {
+      "query": 7,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "106-108",
+      "relevant": true,
+      "evidence": "It was true that the portrait still preserved, under all the foulness and ugliness of the face, its marked likeness to himself; but what could they learn from that?"
+    },
+    {
+      "query": 7,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "115-117",
+      "relevant": true,
+      "evidence": "He felt a terrible joy at the thought that some one else was to share his secret, and that the man who had painted the portrait that was the origin of all his shame was to be burdened for the rest of his life with the..."
+    },
+    {
+      "query": 8,
+      "method": "bow",
+      "rank": 1,
+      "title": "Great Expectations",
+      "pages": "28-30",
+      "relevant": true,
+      "evidence": "Water was splashing, and mud was flying, and oaths were being sworn, and blows were being struck, when some more men went down into the ditch to help the sergeant, and dragged out, separately, my convict and the other..."
+    },
+    {
+      "query": 8,
+      "method": "bow",
+      "rank": 2,
+      "title": "Frankenstein",
+      "pages": "61-63",
+      "relevant": false,
+      "evidence": "Our misfortune is doubly hard to us; we have not only lost that lovely darling boy, but this poor girl, whom I sincerely love, is to be torn away by even a worse fate."
+    },
+    {
+      "query": 8,
+      "method": "bow",
+      "rank": 3,
+      "title": "Great Expectations",
+      "pages": "43-45",
+      "relevant": true,
+      "evidence": "But he eyed me severely,—as if _I_ had done anything to him!—and departed with the words reproachfully delivered: “Boy!"
+    },
+    {
+      "query": 8,
+      "method": "bow",
+      "rank": 4,
+      "title": "Great Expectations",
+      "pages": "118-120",
+      "relevant": true,
+      "evidence": "you scold me or approve of me,” returned poor Biddy, “you may equally depend upon my trying to do all that lies in my power, here, at all times."
+    },
+    {
+      "query": 8,
+      "method": "bow",
+      "rank": 5,
+      "title": "Great Expectations",
+      "pages": "40-42",
+      "relevant": true,
+      "evidence": "“She wants this boy to go and play there."
+    },
+    {
+      "query": 8,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "Great Expectations",
+      "pages": "28-30",
+      "relevant": true,
+      "evidence": "Water was splashing, and mud was flying, and oaths were being sworn, and blows were being struck, when some more men went down into the ditch to help the sergeant, and dragged out, separately, my convict and the other..."
+    },
+    {
+      "query": 8,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "Great Expectations",
+      "pages": "94-96",
+      "relevant": true,
+      "evidence": "I believed the iron to be my convict’s iron,—the iron I had seen and heard him filing at, on the marshes,—but my mind did not accuse him of having put it to its latest use."
+    },
+    {
+      "query": 8,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "Great Expectations",
+      "pages": "58-60",
+      "relevant": true,
+      "evidence": "“The lonely church, right out on the marshes, with graves round it!"
+    },
+    {
+      "query": 8,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "Great Expectations",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "Was there ever such a boy as this!” from my sister,) I found Joe telling them about the convict’s confession, and all the visitors suggesting different ways by which he had got into the pantry."
+    },
+    {
+      "query": 8,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "Great Expectations",
+      "pages": "25-27",
+      "relevant": true,
+      "evidence": "As I watched them while they all stood clustering about the forge, enjoying themselves so much, I thought what terrible good sauce for a dinner my fugitive friend on the marshes was."
+    },
+    {
+      "query": 8,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "Great Expectations",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "Was there ever such a boy as this!” from my sister,) I found Joe telling them about the convict’s confession, and all the visitors suggesting different ways by which he had got into the pantry."
+    },
+    {
+      "query": 8,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "Great Expectations",
+      "pages": "94-96",
+      "relevant": true,
+      "evidence": "I believed the iron to be my convict’s iron,—the iron I had seen and heard him filing at, on the marshes,—but my mind did not accuse him of having put it to its latest use."
+    },
+    {
+      "query": 8,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "Great Expectations",
+      "pages": "55-57",
+      "relevant": true,
+      "evidence": "Wopsle’s great-aunt, who staggered at a boy fortuitously, and pulled his ears."
+    },
+    {
+      "query": 8,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "Great Expectations",
+      "pages": "91-93",
+      "relevant": true,
+      "evidence": "Even after I was happily hanged and Wopsle had closed the book, Pumblechook sat staring at me, and shaking his head, and saying, “T ake warning, boy, take warning!” as if it were a well-known fact that I contemplated ..."
+    },
+    {
+      "query": 8,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "Great Expectations",
+      "pages": "88-90",
+      "relevant": true,
+      "evidence": "He lodged at a sluicekeeper’s out on the marshes, and on working-days would come slouching from his hermitage, with his hands in his pockets and his dinner loosely tied in a bundle round his neck and dangling on his b..."
+    },
+    {
+      "query": 8,
+      "method": "bert",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "82-84",
+      "relevant": false,
+      "evidence": "Setting out in their canoes, after a perilous passage they discovered the island, and there they found an empty ivory casket,—the poor little Indian’s skeleton."
+    },
+    {
+      "query": 8,
+      "method": "bert",
+      "rank": 2,
+      "title": "Great Expectations",
+      "pages": "28-30",
+      "relevant": true,
+      "evidence": "Water was splashing, and mud was flying, and oaths were being sworn, and blows were being struck, when some more men went down into the ditch to help the sergeant, and dragged out, separately, my convict and the other..."
+    },
+    {
+      "query": 8,
+      "method": "bert",
+      "rank": 3,
+      "title": "Frankenstein",
+      "pages": "88-90",
+      "relevant": false,
+      "evidence": "It was a lovely sight, even to me, poor wretch who had never beheld aught beautiful before."
+    },
+    {
+      "query": 8,
+      "method": "bert",
+      "rank": 4,
+      "title": "Frankenstein",
+      "pages": "100-102",
+      "relevant": false,
+      "evidence": "without either he was considered, except in very rare instances, as a vagabond and a slave, doomed to waste his powers for the profits of the chosen few!"
+    },
+    {
+      "query": 8,
+      "method": "bert",
+      "rank": 5,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "61-63",
+      "relevant": false,
+      "evidence": "Poor father has never been strong for years back, but this has broken him down completely."
+    },
+    {
+      "query": 8,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "Great Expectations",
+      "pages": "28-30",
+      "relevant": true,
+      "evidence": "Water was splashing, and mud was flying, and oaths were being sworn, and blows were being struck, when some more men went down into the ditch to help the sergeant, and dragged out, separately, my convict and the other..."
+    },
+    {
+      "query": 8,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "Great Expectations",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "Was there ever such a boy as this!” from my sister,) I found Joe telling them about the convict’s confession, and all the visitors suggesting different ways by which he had got into the pantry."
+    },
+    {
+      "query": 8,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "Great Expectations",
+      "pages": "91-93",
+      "relevant": true,
+      "evidence": "Even after I was happily hanged and Wopsle had closed the book, Pumblechook sat staring at me, and shaking his head, and saying, “T ake warning, boy, take warning!” as if it were a well-known fact that I contemplated ..."
+    },
+    {
+      "query": 8,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "Frankenstein",
+      "pages": "61-63",
+      "relevant": false,
+      "evidence": "Our misfortune is doubly hard to us; we have not only lost that lovely darling boy, but this poor girl, whom I sincerely love, is to be torn away by even a worse fate."
+    },
+    {
+      "query": 8,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "Great Expectations",
+      "pages": "94-96",
+      "relevant": true,
+      "evidence": "I believed the iron to be my convict’s iron,—the iron I had seen and heard him filing at, on the marshes,—but my mind did not accuse him of having put it to its latest use."
+    },
+    {
+      "query": 9,
+      "method": "bow",
+      "rank": 1,
+      "title": "The Time Machine",
+      "pages": "52-54",
+      "relevant": false,
+      "evidence": "And I now understood to some slight degree at least the reason of the fear of the little Upperworld people for the dark."
+    },
+    {
+      "query": 9,
+      "method": "bow",
+      "rank": 2,
+      "title": "Dracula",
+      "pages": "76-78",
+      "relevant": true,
+      "evidence": "Early in the morning we both got up and went down to the harbour to see if anything had happened in the night."
+    },
+    {
+      "query": 9,
+      "method": "bow",
+      "rank": 3,
+      "title": "The Adventures of Sherlock Holmes",
+      "pages": "127-129",
+      "relevant": false,
+      "evidence": "Imagine, then, my thrill of terror when last night, as I lay awake, thinking over her terrible fate, I suddenly heard in the silence of the night the low whistle which had been the herald of her own death."
+    },
+    {
+      "query": 9,
+      "method": "bow",
+      "rank": 4,
+      "title": "Dracula",
+      "pages": "106-108",
+      "relevant": true,
+      "evidence": "“I must go back to Amsterdam to-night,” he said."
+    },
+    {
+      "query": 9,
+      "method": "bow",
+      "rank": 5,
+      "title": "Dracula",
+      "pages": "73-75",
+      "relevant": true,
+      "evidence": "Just as I was beginning to hope that the mate would come out calmer--for I heard him knocking away at something in the hold, and work is good for him-- there came up the hatchway a sudden, startled scream, which made ..."
+    },
+    {
+      "query": 9,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "Dracula",
+      "pages": "34-36",
+      "relevant": true,
+      "evidence": "There was something about them that made me uneasy, some longing and at the same time some deadly fear."
+    },
+    {
+      "query": 9,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "Dracula",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "I feel the dread of this horrible place overpowering me; I am in fear--in awful fear --and there is no escape for me; I am encompassed about with terrors that I dare not think of.... * * * * * _15 May._--Once more hav..."
+    },
+    {
+      "query": 9,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "Dracula",
+      "pages": "76-78",
+      "relevant": true,
+      "evidence": "Early in the morning we both got up and went down to the harbour to see if anything had happened in the night."
+    },
+    {
+      "query": 9,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "Dracula",
+      "pages": "40-42",
+      "relevant": true,
+      "evidence": "How can I escape from this dreadful thing of night and gloom and fear? * * * * * _25 June, morning._--No man knows till he has suffered from the night how sweet and how dear to his heart and eye the morning can be."
+    },
+    {
+      "query": 9,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "Dracula",
+      "pages": "73-75",
+      "relevant": true,
+      "evidence": "Just as I was beginning to hope that the mate would come out calmer--for I heard him knocking away at something in the hold, and work is good for him-- there came up the hatchway a sudden, startled scream, which made ..."
+    },
+    {
+      "query": 9,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "The Time Machine",
+      "pages": "52-54",
+      "relevant": false,
+      "evidence": "And I now understood to some slight degree at least the reason of the fear of the little Upperworld people for the dark."
+    },
+    {
+      "query": 9,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "The Time Machine",
+      "pages": "40-42",
+      "relevant": false,
+      "evidence": "“It was from her, too, that I learnt that fear had not yet left the world."
+    },
+    {
+      "query": 9,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "The Time Machine",
+      "pages": "34-36",
+      "relevant": false,
+      "evidence": "When I saw them standing round me, it came into my head that I was doing as foolish a thing as it was possible for me to do under the circumstances, in trying to revive the sensation of fear."
+    },
+    {
+      "query": 9,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "Dracula",
+      "pages": "73-75",
+      "relevant": true,
+      "evidence": "Just as I was beginning to hope that the mate would come out calmer--for I heard him knocking away at something in the hold, and work is good for him-- there came up the hatchway a sudden, startled scream, which made ..."
+    },
+    {
+      "query": 9,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "The Time Machine",
+      "pages": "31-33",
+      "relevant": false,
+      "evidence": "“As I stood there in the gathering dark I thought that in this simple explanation I had mastered the problem of the world—mastered the whole secret of these delicious people."
+    },
+    {
+      "query": 9,
+      "method": "bert",
+      "rank": 1,
+      "title": "Dracula",
+      "pages": "40-42",
+      "relevant": true,
+      "evidence": "How can I escape from this dreadful thing of night and gloom and fear? * * * * * _25 June, morning._--No man knows till he has suffered from the night how sweet and how dear to his heart and eye the morning can be."
+    },
+    {
+      "query": 9,
+      "method": "bert",
+      "rank": 2,
+      "title": "Dracula",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "I feel the dread of this horrible place overpowering me; I am in fear--in awful fear --and there is no escape for me; I am encompassed about with terrors that I dare not think of.... * * * * * _15 May._--Once more hav..."
+    },
+    {
+      "query": 9,
+      "method": "bert",
+      "rank": 3,
+      "title": "The Picture of Dorian Gray",
+      "pages": "97-99",
+      "relevant": false,
+      "evidence": "There had been mad wilful rejections, monstrous forms of self-torture and self-denial, whose origin was fear and whose result was a degradation infinitely more terrible than that fancied degradation from which, in the..."
+    },
+    {
+      "query": 9,
+      "method": "bert",
+      "rank": 4,
+      "title": "The Time Machine",
+      "pages": "49-51",
+      "relevant": false,
+      "evidence": "Everything save that little disc above was profoundly dark, and when I looked up again Weena had disappeared."
+    },
+    {
+      "query": 9,
+      "method": "bert",
+      "rank": 5,
+      "title": "Dracula",
+      "pages": "10-12",
+      "relevant": true,
+      "evidence": "night, my friend."
+    },
+    {
+      "query": 9,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "Dracula",
+      "pages": "31-33",
+      "relevant": true,
+      "evidence": "I feel the dread of this horrible place overpowering me; I am in fear--in awful fear --and there is no escape for me; I am encompassed about with terrors that I dare not think of.... * * * * * _15 May._--Once more hav..."
+    },
+    {
+      "query": 9,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "Dracula",
+      "pages": "40-42",
+      "relevant": true,
+      "evidence": "How can I escape from this dreadful thing of night and gloom and fear? * * * * * _25 June, morning._--No man knows till he has suffered from the night how sweet and how dear to his heart and eye the morning can be."
+    },
+    {
+      "query": 9,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "Dracula",
+      "pages": "76-78",
+      "relevant": true,
+      "evidence": "Early in the morning we both got up and went down to the harbour to see if anything had happened in the night."
+    },
+    {
+      "query": 9,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "The Time Machine",
+      "pages": "52-54",
+      "relevant": false,
+      "evidence": "And I now understood to some slight degree at least the reason of the fear of the little Upperworld people for the dark."
+    },
+    {
+      "query": 9,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "Dracula",
+      "pages": "34-36",
+      "relevant": true,
+      "evidence": "There was something about them that made me uneasy, some longing and at the same time some deadly fear."
+    },
+    {
+      "query": 10,
+      "method": "bow",
+      "rank": 1,
+      "title": "The Picture of Dorian Gray",
+      "pages": "19-21",
+      "relevant": false,
+      "evidence": "The life that was to make his soul would mar his body."
+    },
+    {
+      "query": 10,
+      "method": "bow",
+      "rank": 2,
+      "title": "Pride and Prejudice",
+      "pages": "4-6",
+      "relevant": false,
+      "evidence": "It sets off his other gifts and graces most advantageously to the critical eye; and the want of it will sometimes mar those graces--appreciably, though not quite consciously--to eyes by no means ultra-critical."
+    },
+    {
+      "query": 10,
+      "method": "bow",
+      "rank": 3,
+      "title": "The Picture of Dorian Gray",
+      "pages": "88-90",
+      "relevant": false,
+      "evidence": "They would mar its beauty and eat away its grace."
+    },
+    {
+      "query": 10,
+      "method": "bow",
+      "rank": 4,
+      "title": "The Picture of Dorian Gray",
+      "pages": "148-150",
+      "relevant": false,
+      "evidence": "His own nature had revolted against the excess of anguish that had sought to maim and mar the perfection of its calm."
+    },
+    {
+      "query": 10,
+      "method": "bow",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "55-57",
+      "relevant": false,
+      "evidence": "If you want to mar a nature, you have merely to reform it."
+    },
+    {
+      "query": 10,
+      "method": "tfidf",
+      "rank": 1,
+      "title": "The Picture of Dorian Gray",
+      "pages": "19-21",
+      "relevant": false,
+      "evidence": "The life that was to make his soul would mar his body."
+    },
+    {
+      "query": 10,
+      "method": "tfidf",
+      "rank": 2,
+      "title": "The Picture of Dorian Gray",
+      "pages": "55-57",
+      "relevant": false,
+      "evidence": "If you want to mar a nature, you have merely to reform it."
+    },
+    {
+      "query": 10,
+      "method": "tfidf",
+      "rank": 3,
+      "title": "The Picture of Dorian Gray",
+      "pages": "88-90",
+      "relevant": false,
+      "evidence": "They would mar its beauty and eat away its grace."
+    },
+    {
+      "query": 10,
+      "method": "tfidf",
+      "rank": 4,
+      "title": "Pride and Prejudice",
+      "pages": "4-6",
+      "relevant": false,
+      "evidence": "It sets off his other gifts and graces most advantageously to the critical eye; and the want of it will sometimes mar those graces--appreciably, though not quite consciously--to eyes by no means ultra-critical."
+    },
+    {
+      "query": 10,
+      "method": "tfidf",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "148-150",
+      "relevant": false,
+      "evidence": "His own nature had revolted against the excess of anguish that had sought to maim and mar the perfection of its calm."
+    },
+    {
+      "query": 10,
+      "method": "word2vec",
+      "rank": 1,
+      "title": "The Picture of Dorian Gray",
+      "pages": "97-99",
+      "relevant": false,
+      "evidence": "jewel, or the knotting of a necktie, or the conduct of a cane."
+    },
+    {
+      "query": 10,
+      "method": "word2vec",
+      "rank": 2,
+      "title": "Frankenstein",
+      "pages": "121-123",
+      "relevant": false,
+      "evidence": "was disturbed by the approach of a beautiful child, who came running into the recess I had chosen, with all the sportiveness of infancy."
+    },
+    {
+      "query": 10,
+      "method": "word2vec",
+      "rank": 3,
+      "title": "Frankenstein",
+      "pages": "124-126",
+      "relevant": false,
+      "evidence": "me?"
+    },
+    {
+      "query": 10,
+      "method": "word2vec",
+      "rank": 4,
+      "title": "Frankenstein",
+      "pages": "79-81",
+      "relevant": false,
+      "evidence": "Alas!"
+    },
+    {
+      "query": 10,
+      "method": "word2vec",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "43-45",
+      "relevant": false,
+      "evidence": "observe where they met, and where they separated, at what point they were in unison, and at what point they were at discord—there was a delight in that!"
+    },
+    {
+      "query": 10,
+      "method": "bert",
+      "rank": 1,
+      "title": "Moby Dick",
+      "pages": "7-9",
+      "relevant": true,
+      "evidence": "CHAPTER 96."
+    },
+    {
+      "query": 10,
+      "method": "bert",
+      "rank": 2,
+      "title": "Moby Dick",
+      "pages": "4-6",
+      "relevant": true,
+      "evidence": "CHAPTER 46."
+    },
+    {
+      "query": 10,
+      "method": "bert",
+      "rank": 3,
+      "title": "Dracula",
+      "pages": "1-3",
+      "relevant": false,
+      "evidence": "DRACULA _by_ Bram Stoker [Illustration: colophon] NEW YORK GROSSET & DUNLAP _Publishers_ Copyright, 1897, in the United States of America, according to Act of Congress, by Bram Stoker [_All rights reserved._] PRINTED ..."
+    },
+    {
+      "query": 10,
+      "method": "bert",
+      "rank": 4,
+      "title": "Frankenstein",
+      "pages": "19-21",
+      "relevant": false,
+      "evidence": "even the tranquillity of her hitherto constant spirit, had been shaken by what she had gone through."
+    },
+    {
+      "query": 10,
+      "method": "bert",
+      "rank": 5,
+      "title": "The Picture of Dorian Gray",
+      "pages": "109-111",
+      "relevant": false,
+      "evidence": "stage of the world and made sin so marvellous and evil so full of subtlety."
+    },
+    {
+      "query": 10,
+      "method": "hibrido",
+      "rank": 1,
+      "title": "Dracula",
+      "pages": "1-3",
+      "relevant": false,
+      "evidence": "DRACULA _by_ Bram Stoker [Illustration: colophon] NEW YORK GROSSET & DUNLAP _Publishers_ Copyright, 1897, in the United States of America, according to Act of Congress, by Bram Stoker [_All rights reserved._] PRINTED ..."
+    },
+    {
+      "query": 10,
+      "method": "hibrido",
+      "rank": 2,
+      "title": "Frankenstein",
+      "pages": "19-21",
+      "relevant": false,
+      "evidence": "even the tranquillity of her hitherto constant spirit, had been shaken by what she had gone through."
+    },
+    {
+      "query": 10,
+      "method": "hibrido",
+      "rank": 3,
+      "title": "Dracula",
+      "pages": "7-9",
+      "relevant": false,
+      "evidence": "or was shut out by the straggling ends of pine woods, which here and there ran down the hillsides like tongues of flame."
+    },
+    {
+      "query": 10,
+      "method": "hibrido",
+      "rank": 4,
+      "title": "Frankenstein",
+      "pages": "22-24",
+      "relevant": false,
+      "evidence": "unfolded to me, are among the earliest sensations I can remember."
+    },
+    {
+      "query": 10,
+      "method": "hibrido",
+      "rank": 5,
+      "title": "Dracula",
+      "pages": "13-15",
+      "relevant": false,
+      "evidence": "our only chance was to try to break out through the ring and to aid his approach."
+    }
+  ]
+}

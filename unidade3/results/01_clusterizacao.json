@@ -1,0 +1,542 @@
+{
+  "summary": {
+    "bow": {
+      "best_k": 12,
+      "at_best_k": {
+        "k": 12,
+        "inertia": 252.14445478419043,
+        "silhouette": 0.109488573545877,
+        "davies_bouldin": 3.726913932005394,
+        "calinski_harabasz": 7.231264541483006,
+        "intra": 0.813376871514655,
+        "inter": 0.6175460543802418,
+        "inter_min": 0.35978471277758434,
+        "inter_intra_ratio": 0.7592372933229086,
+        "book_purity": 0.917989417989418,
+        "book_ari": 0.7763675884600285,
+        "book_nmi": 0.8277537152480192,
+        "genre_purity": 0.917989417989418,
+        "genre_ari": 0.650399208471742,
+        "genre_nmi": 0.7825250765968365
+      },
+      "at_n_books": {
+        "k": 8,
+        "inertia": 262.5019117381609,
+        "silhouette": 0.10036617697850414,
+        "davies_bouldin": 3.78432412492197,
+        "calinski_harabasz": 8.948775135560004,
+        "intra": 0.8301669296088485,
+        "inter": 0.6081711950571868,
+        "inter_min": 0.34626305930052287,
+        "inter_intra_ratio": 0.7325890412711815,
+        "book_purity": 0.8253968253968254,
+        "book_ari": 0.7193834773406035,
+        "book_nmi": 0.8090241432596007,
+        "genre_purity": 0.8253968253968254,
+        "genre_ari": 0.611921194646503,
+        "genre_nmi": 0.7582060509632318
+      }
+    },
+    "tfidf": {
+      "best_k": 7,
+      "at_best_k": {
+        "k": 7,
+        "inertia": 322.3401129547786,
+        "silhouette": 0.04943269158011433,
+        "davies_bouldin": 5.439024743764913,
+        "calinski_harabasz": 4.628797205804305,
+        "intra": 0.9231427247143186,
+        "inter": 0.3904273698945358,
+        "inter_min": 0.31383627603493147,
+        "inter_intra_ratio": 0.4229328352399244,
+        "book_purity": 0.91005291005291,
+        "book_ari": 0.8809008375343046,
+        "book_nmi": 0.9291405332961007,
+        "genre_purity": 0.91005291005291,
+        "genre_ari": 0.7572753669645788,
+        "genre_nmi": 0.8802943411485128
+      },
+      "at_n_books": {
+        "k": 8,
+        "inertia": 319.93270407633685,
+        "silhouette": 0.048455505770153874,
+        "davies_bouldin": 5.264466126110387,
+        "calinski_harabasz": 4.384356506634156,
+        "intra": 0.9196446885026738,
+        "inter": 0.4069185966777649,
+        "inter_min": 0.32691587937091,
+        "inter_intra_ratio": 0.4424737094282493,
+        "book_purity": 0.9285714285714286,
+        "book_ari": 0.8446236824645669,
+        "book_nmi": 0.8951994978830091,
+        "genre_purity": 0.9285714285714286,
+        "genre_ari": 0.7203056440893564,
+        "genre_nmi": 0.8462264988802447
+      }
+    },
+    "word2vec": {
+      "best_k": 9,
+      "at_best_k": {
+        "k": 9,
+        "inertia": 20.23124656027393,
+        "silhouette": 0.40948865535193013,
+        "davies_bouldin": 1.393175223707346,
+        "calinski_harabasz": 68.43990068306915,
+        "intra": 0.2230192669297656,
+        "inter": 0.4871607571631521,
+        "inter_min": 0.23995368454062932,
+        "inter_intra_ratio": 2.1843886578488814,
+        "book_purity": 0.8624338624338624,
+        "book_ari": 0.7296907140243124,
+        "book_nmi": 0.7754117582449758,
+        "genre_purity": 0.8624338624338624,
+        "genre_ari": 0.6200495698271269,
+        "genre_nmi": 0.7296096245485428
+      },
+      "at_n_books": {
+        "k": 8,
+        "inertia": 21.556835325859932,
+        "silhouette": 0.39114963314635065,
+        "davies_bouldin": 1.5049859007773656,
+        "calinski_harabasz": 70.35585563168793,
+        "intra": 0.2277371199515528,
+        "inter": 0.4088968888250229,
+        "inter_min": 0.23923487703795943,
+        "inter_intra_ratio": 1.7954775616377723,
+        "book_purity": 0.873015873015873,
+        "book_ari": 0.7615308818397266,
+        "book_nmi": 0.7989375179132208,
+        "genre_purity": 0.873015873015873,
+        "genre_ari": 0.6484028346161644,
+        "genre_nmi": 0.7544967953280463
+      }
+    },
+    "bert": {
+      "best_k": 10,
+      "at_best_k": {
+        "k": 10,
+        "inertia": 103.50837601730947,
+        "silhouette": 0.24235547674734523,
+        "davies_bouldin": 2.3631481710023428,
+        "calinski_harabasz": 24.240341994742355,
+        "intra": 0.5170933005597088,
+        "inter": 0.6002843171918706,
+        "inter_min": 0.38692753591886414,
+        "inter_intra_ratio": 1.1608820236930448,
+        "book_purity": 0.9021164021164021,
+        "book_ari": 0.791201310568697,
+        "book_nmi": 0.8283901182880538,
+        "genre_purity": 0.91005291005291,
+        "genre_ari": 0.6740818758962166,
+        "genre_nmi": 0.7952470869041113
+      },
+      "at_n_books": {
+        "k": 8,
+        "inertia": 107.88316332687455,
+        "silhouette": 0.2344570606101561,
+        "davies_bouldin": 2.280236261184713,
+        "calinski_harabasz": 27.921424587720278,
+        "intra": 0.5271023544412241,
+        "inter": 0.5790861955700988,
+        "inter_min": 0.4232402502175629,
+        "inter_intra_ratio": 1.0986219103194526,
+        "book_purity": 0.8809523809523809,
+        "book_ari": 0.7750323278760897,
+        "book_nmi": 0.82945291351685,
+        "genre_purity": 0.8809523809523809,
+        "genre_ari": 0.6692979766225213,
+        "genre_nmi": 0.7944080842736337
+      }
+    }
+  },
+  "clusters": {
+    "bow": [
+      {
+        "cluster": 0,
+        "size": 49,
+        "intra": 0.8836111325974866,
+        "nearest_centroid": 0.41940166676787094,
+        "books": "Frankenstein (48), The Picture of Dorian Gray (1)",
+        "terms": "clerval, felix, feelings, justine, misery, father, human, miserable",
+        "medoid": "Frankenstein, p. 127-129",
+        "medoid_text": "exist you shall never behold me again. Depart to your home and commence your labours; I shall watch their progress with unutterable anxiety; and fear not but that when you are ready I shall appear...."
+      },
+      {
+        "cluster": 1,
+        "size": 46,
+        "intra": 0.7797168968310537,
+        "nearest_centroid": 0.4667204015176051,
+        "books": "The Picture of Dorian Gray (46)",
+        "terms": "dorian, gray, harry, henry, basil, lord, hallward, sibyl",
+        "medoid": "The Picture of Dorian Gray, p. 10-12",
+        "medoid_text": "but should put nothing of his own life into them. We live in an age when men treat art as if it were meant to be a form of autobiography. We have lost the abstract sense of beauty. Some day I will ..."
+      },
+      {
+        "cluster": 2,
+        "size": 46,
+        "intra": 0.8175968771248641,
+        "nearest_centroid": 0.3763595078187403,
+        "books": "The Adventures of Sherlock Holmes (46)",
+        "terms": "holmes, sherlock, watson, case, street, remarked, baker, doctor",
+        "medoid": "The Adventures of Sherlock Holmes, p. 130-132",
+        "medoid_text": "slipped down, got a dog-cart at the Crown Inn, which is opposite, and drove to Leatherhead, from whence I have come on this morning with the one object of seeing you and asking your advice.” “You h..."
+      },
+      {
+        "cluster": 3,
+        "size": 23,
+        "intra": 0.7200860503076917,
+        "nearest_centroid": 0.5260243226444837,
+        "books": "Great Expectations (23)",
+        "terms": "joe, pip, wopsle, pumblechook, sister, havisham, gargery, forge",
+        "medoid": "Great Expectations, p. 37-39",
+        "medoid_text": "peace come round at last.” Joe’s blue eyes turned a little watery; he rubbed first one of them, and then the other, in a most uncongenial and uncomfortable manner, with the round knob on the top of..."
+      },
+      {
+        "cluster": 4,
+        "size": 47,
+        "intra": 0.8225146990473501,
+        "nearest_centroid": 0.514965034799592,
+        "books": "Pride and Prejudice (47)",
+        "terms": "bingley, bennet, darcy, elizabeth, jane, collins, illustration, miss",
+        "medoid": "Pride and Prejudice, p. 121-123",
+        "medoid_text": "She was at least free from the offence of Mr. Darcy’s further notice: though often standing within a very short distance of her, quite disengaged, he never came near enough to speak. She felt it to..."
+      },
+      {
+        "cluster": 5,
+        "size": 39,
+        "intra": 0.7959243697693135,
+        "nearest_centroid": 0.36958323160175405,
+        "books": "Dracula (39)",
+        "terms": "lucy, helsing, van, arthur, count, jonathan, sleep, westenra",
+        "medoid": "Dracula, p. 109-111",
+        "medoid_text": "miserably weak, that to be able to think and move about is like feeling sunshine after a long spell of east wind out of a steel sky. Somehow Arthur feels very, very close to me. I seem to feel his ..."
+      },
+      {
+        "cluster": 6,
+        "size": 23,
+        "intra": 0.8110824909245696,
+        "nearest_centroid": 0.42356234316017966,
+        "books": "The Time Machine (20), Dracula (3)",
+        "terms": "weena, machine, morlocks, sphinx, darkness, bronze, hill, white",
+        "medoid": "The Time Machine, p. 55-57",
+        "medoid_text": "she desired me to let her down, and ran along by the side of me, occasionally darting off on either hand to pick flowers to stick in my pockets. My pockets had always puzzled Weena, but at the last..."
+      },
+      {
+        "cluster": 7,
+        "size": 21,
+        "intra": 0.8162109158501059,
+        "nearest_centroid": 0.4234907778336862,
+        "books": "Great Expectations (20), Pride and Prejudice (1)",
+        "terms": "havisham, estella, biddy, miss, pumblechook, pocket, joe, herbert",
+        "medoid": "Great Expectations, p. 64-66",
+        "medoid_text": "with our candle along the dark passage, Estella stopped all of a sudden, and, facing round, said in her taunting manner, with her face quite close to mine,— “Well?” “Well, miss?” I answered, almost..."
+      },
+      {
+        "cluster": 8,
+        "size": 8,
+        "intra": 0.6945510852334351,
+        "nearest_centroid": 0.5947369704007998,
+        "books": "The Time Machine (8)",
+        "terms": "traveller, psychologist, machine, filby, medical, editor, laboratory, travelling",
+        "medoid": "The Time Machine, p. 10-12",
+        "medoid_text": "“But,” said I, “If it travelled into the past it would have been visible when we came first into this room; and last Thursday when we were here; and the Thursday before that; and so forth!” “Seriou..."
+      },
+      {
+        "cluster": 9,
+        "size": 9,
+        "intra": 0.5862234098143068,
+        "nearest_centroid": 0.8428319142624703,
+        "books": "Moby Dick (3), Pride and Prejudice (2), Dracula (1), Frankenstein (1), Great Expectations (1), The Picture of Dorian Gray (1)",
+        "terms": "chapter, heading, whale, ahab, meets, stubb, pictures, contents",
+        "medoid": "Moby Dick, p. 1-3",
+        "medoid_text": "MOBY-DICK; or, THE WHALE. By Herman Melville CONTENTS ETYMOLOGY . EXTRACTS (Supplied by a Sub-Sub-Librarian). CHAPTER 1. Loomings. CHAPTER 2. The Carpet-Bag. CHAPTER 3. The Spouter-Inn. CHAPTER 4. ..."
+      },
+      {
+        "cluster": 10,
+        "size": 35,
+        "intra": 0.8628185443070231,
+        "nearest_centroid": 0.3597847127775843,
+        "books": "Moby Dick (34), Dracula (1)",
+        "terms": "queequeg, ship, captain, whale, peleg, bildad, sea, whaling",
+        "medoid": "Moby Dick, p. 109-111",
+        "medoid_text": "Peleg’s, out of the wigwam. “He must show that he’s converted. Son of darkness,” he added, turning to Queequeg, “art thou at present in communion with any Christian church?” “Why,” said I, “he’s a ..."
+      },
+      {
+        "cluster": 11,
+        "size": 32,
+        "intra": 0.8623582173414235,
+        "nearest_centroid": 0.3597847127775843,
+        "books": "Moby Dick (13), Dracula (6), Great Expectations (6), The Adventures of Sherlock Holmes (4), The Picture of Dorian Gray (2), Frankenstein (1)",
+        "terms": "harpooneer, landlord, stubb, heads, sort, wemmick, jaggers, wall",
+        "medoid": "Great Expectations, p. 13-15",
+        "medoid_text": "knew to be very near the Battery, and had just scrambled up the mound beyond the ditch, when I saw the man sitting before me. His back was towards me, and he had his arms folded, and was nodding fo..."
+      }
+    ],
+    "tfidf": [
+      {
+        "cluster": 0,
+        "size": 49,
+        "intra": 0.9211648867812796,
+        "nearest_centroid": 0.3138362760349313,
+        "books": "The Adventures of Sherlock Holmes (49)",
+        "terms": "holmes, sherlock, watson, street, case, remarked, police, baker",
+        "medoid": "The Adventures of Sherlock Holmes, p. 130-132",
+        "medoid_text": "slipped down, got a dog-cart at the Crown Inn, which is opposite, and drove to Leatherhead, from whence I have come on this morning with the one object of seeing you and asking your advice.” “You h..."
+      },
+      {
+        "cluster": 1,
+        "size": 78,
+        "intra": 0.9333556999301444,
+        "nearest_centroid": 0.3138362760349313,
+        "books": "Dracula (48), The Time Machine (28), Great Expectations (1), The Adventures of Sherlock Holmes (1)",
+        "terms": "lucy, helsing, van, machine, arthur, jonathan, count, sleep",
+        "medoid": "Dracula, p. 109-111",
+        "medoid_text": "miserably weak, that to be able to think and move about is like feeling sunshine after a long spell of east wind out of a steel sky. Somehow Arthur feels very, very close to me. I seem to feel his ..."
+      },
+      {
+        "cluster": 2,
+        "size": 50,
+        "intra": 0.8998386285157188,
+        "nearest_centroid": 0.3630860406616462,
+        "books": "The Picture of Dorian Gray (50)",
+        "terms": "dorian, gray, harry, henry, basil, lord, hallward, sibyl",
+        "medoid": "The Picture of Dorian Gray, p. 70-72",
+        "medoid_text": "that had made him see a look of evil where there had been a look of joy? Surely a painted canvas could not alter? The thing was absurd. It would serve as a tale to tell Basil some day. It would mak..."
+      },
+      {
+        "cluster": 3,
+        "size": 49,
+        "intra": 0.9179397523355615,
+        "nearest_centroid": 0.32862890753389107,
+        "books": "Great Expectations (49)",
+        "terms": "joe, havisham, pip, pumblechook, estella, biddy, wopsle, sister",
+        "medoid": "Great Expectations, p. 112-114",
+        "medoid_text": "on! Which I meantersay that what I say, I meantersay and stand or fall by!” I drew Joe away, and he immediately became placable; merely stating to me, in an obliging manner and as a polite expostul..."
+      },
+      {
+        "cluster": 4,
+        "size": 50,
+        "intra": 0.9342287120566682,
+        "nearest_centroid": 0.3488287680353421,
+        "books": "Frankenstein (49), Pride and Prejudice (1)",
+        "terms": "clerval, feelings, felix, justine, cottage, misery, father, miserable",
+        "medoid": "Frankenstein, p. 73-75",
+        "medoid_text": "mingled its bitterness, and terror its alarm, with my other sensations. Now I could only answer my father with a look of despair and endeavour to hide myself from his view. About this time we retir..."
+      },
+      {
+        "cluster": 5,
+        "size": 53,
+        "intra": 0.9418881280402769,
+        "nearest_centroid": 0.32439531442794617,
+        "books": "Moby Dick (50), Dracula (2), Frankenstein (1)",
+        "terms": "whale, queequeg, ship, captain, sea, whaling, ahab, peleg",
+        "medoid": "Moby Dick, p. 121-123",
+        "medoid_text": "wonderment at his frantic impudence. At last, stepping on board the Pequod, we found everything in profound quiet, not a soul moving. The cabin entrance was locked within; the hatches were all on, ..."
+      },
+      {
+        "cluster": 6,
+        "size": 49,
+        "intra": 0.9062579635914686,
+        "nearest_centroid": 0.4147246153343704,
+        "books": "Pride and Prejudice (49)",
+        "terms": "bingley, bennet, darcy, elizabeth, jane, illustration, collins, mrs",
+        "medoid": "Pride and Prejudice, p. 103-105",
+        "medoid_text": "Elizabeth allowed that he had given a very rational account of it, and they continued talking together with mutual satisfaction till supper put an end to cards, and gave the rest of the ladies thei..."
+      }
+    ],
+    "word2vec": [
+      {
+        "cluster": 0,
+        "size": 48,
+        "intra": 0.23204213603365498,
+        "nearest_centroid": 0.23995368454062932,
+        "books": "Great Expectations (47), Dracula (1)",
+        "terms": "joe, havisham, pip, pumblechook, biddy, wopsle, estella, sister",
+        "medoid": "Great Expectations, p. 31-33",
+        "medoid_text": "the marshes.” “You mean stole,” said the sergeant. “And I’ll tell you where from. From the blacksmith’s.” “Halloa!” said the sergeant, staring at Joe. “Halloa, Pip!” said Joe, staring at me. “It wa..."
+      },
+      {
+        "cluster": 1,
+        "size": 50,
+        "intra": 0.2341919813568952,
+        "nearest_centroid": 0.40962557814996736,
+        "books": "Frankenstein (46), The Time Machine (2), Pride and Prejudice (1), The Picture of Dorian Gray (1)",
+        "terms": "clerval, felix, human, feelings, justine, father, geneva, cottage",
+        "medoid": "Frankenstein, p. 109-111",
+        "medoid_text": "arrival in the hovel I discovered some papers in the pocket of the dress which I had taken from your laboratory. At first I had neglected them, but now that I was able to decipher the characters in..."
+      },
+      {
+        "cluster": 2,
+        "size": 48,
+        "intra": 0.18088589836736024,
+        "nearest_centroid": 0.40962557814996736,
+        "books": "Pride and Prejudice (48)",
+        "terms": "bingley, bennet, darcy, elizabeth, jane, illustration, collins, mrs",
+        "medoid": "Pride and Prejudice, p. 43-45",
+        "medoid_text": "He paused in hopes of an answer: but his companion was not disposed to make any; and Elizabeth at that instant moving towards them, he was struck with the notion of doing a very gallant thing, and ..."
+      },
+      {
+        "cluster": 3,
+        "size": 67,
+        "intra": 0.2231955680874408,
+        "nearest_centroid": 0.23995368454062932,
+        "books": "The Adventures of Sherlock Holmes (49), Dracula (8), Moby Dick (4), The Time Machine (4), Great Expectations (2)",
+        "terms": "holmes, sherlock, watson, case, street, matter, remarked, doctor",
+        "medoid": "The Adventures of Sherlock Holmes, p. 121-123",
+        "medoid_text": "detective that ever lived. “My sister had told me some weeks before that I might have the pick of her geese for a Christmas present, and I knew that she was always as good as her word. I would take..."
+      },
+      {
+        "cluster": 4,
+        "size": 44,
+        "intra": 0.24352777211848434,
+        "nearest_centroid": 0.3001492457383769,
+        "books": "The Time Machine (22), Dracula (9), Frankenstein (4), The Picture of Dorian Gray (4), Moby Dick (3), Great Expectations (1), The Adventures of Sherlock Holmes (1)",
+        "terms": "machine, weena, white, morlocks, darkness, sphinx, light, sky",
+        "medoid": "The Time Machine, p. 49-51",
+        "medoid_text": "Palace of Green Porcelain was a piece of self-deception, to enable me to shirk, by another day, an experience I dreaded. I resolved I would make the descent without further waste of time, and start..."
+      },
+      {
+        "cluster": 5,
+        "size": 44,
+        "intra": 0.26671229890804155,
+        "nearest_centroid": 0.35565577090045664,
+        "books": "Moby Dick (39), Dracula (5)",
+        "terms": "ship, captain, whale, sea, queequeg, peleg, whaling, bildad",
+        "medoid": "Moby Dick, p. 127-129",
+        "medoid_text": "But, at last, he turned to his comrade, with a final sort of look about him,—“Captain Bildad—come, old shipmate, we must go. Back the main-yard there! Boat ahoy! Stand by to come close alongside, n..."
+      },
+      {
+        "cluster": 6,
+        "size": 4,
+        "intra": 0.26262708926929446,
+        "nearest_centroid": 0.6384485143693268,
+        "books": "Moby Dick (3), Pride and Prejudice (1)",
+        "terms": "chapter, whale, heading, ahab, meets, stubb, pequod, etymology",
+        "medoid": "Moby Dick, p. 1-3",
+        "medoid_text": "MOBY-DICK; or, THE WHALE. By Herman Melville CONTENTS ETYMOLOGY . EXTRACTS (Supplied by a Sub-Sub-Librarian). CHAPTER 1. Loomings. CHAPTER 2. The Carpet-Bag. CHAPTER 3. The Spouter-Inn. CHAPTER 4. ..."
+      },
+      {
+        "cluster": 7,
+        "size": 45,
+        "intra": 0.19710325492796793,
+        "nearest_centroid": 0.32903814273377624,
+        "books": "The Picture of Dorian Gray (45)",
+        "terms": "dorian, gray, harry, henry, basil, lord, hallward, sibyl",
+        "medoid": "The Picture of Dorian Gray, p. 58-60",
+        "medoid_text": "the heavy clusters of purple-lipped irises that stood in the centre of the table, “what do you mean by good, Harry?” “T o be good is to be in harmony with one’s self,” he replied, touching the thin..."
+      },
+      {
+        "cluster": 8,
+        "size": 28,
+        "intra": 0.194511327303446,
+        "nearest_centroid": 0.26984209909971685,
+        "books": "Dracula (27), Moby Dick (1)",
+        "terms": "lucy, helsing, van, arthur, westenra, professor, seward, september",
+        "medoid": "Dracula, p. 133-135",
+        "medoid_text": "bloomin’ madhouse. I pity ye and the guv’nor for havin’ to live in the house with a wild beast like that.’ Then he asked his way civilly enough, and I told him where the gate of the empty house was..."
+      }
+    ],
+    "bert": [
+      {
+        "cluster": 0,
+        "size": 10,
+        "intra": 0.5433619120684201,
+        "nearest_centroid": 0.5704411529975706,
+        "books": "The Time Machine (8), Frankenstein (2)",
+        "terms": "traveller, psychologist, filby, machine, medical, laboratory, editor, travelling",
+        "medoid": "The Time Machine, p. 82-84",
+        "medoid_text": "hand and felt the rail of it—and with brown spots and smears upon the ivory, and bits of grass and moss upon the lower parts, and one rail bent awry. The Time Traveller put the lamp down on the ben..."
+      },
+      {
+        "cluster": 1,
+        "size": 36,
+        "intra": 0.5736573148249389,
+        "nearest_centroid": 0.3869275359188642,
+        "books": "Dracula (16), Moby Dick (12), Great Expectations (4), Frankenstein (2), The Picture of Dorian Gray (2)",
+        "terms": "count, bed, castle, landlord, queequeg, harpooneer, sleep, wolves",
+        "medoid": "Dracula, p. 16-18",
+        "medoid_text": "am a constant sufferer, forbids absolutely any travelling on my part for some time to come; but I am happy to say I can send a sufficient substitute, one in whom I have every possible confidence. H..."
+      },
+      {
+        "cluster": 2,
+        "size": 49,
+        "intra": 0.493816913976223,
+        "nearest_centroid": 0.45541609757555596,
+        "books": "The Adventures of Sherlock Holmes (48), Great Expectations (1)",
+        "terms": "holmes, sherlock, watson, street, case, remarked, police, baker",
+        "medoid": "The Adventures of Sherlock Holmes, p. 130-132",
+        "medoid_text": "slipped down, got a dog-cart at the Crown Inn, which is opposite, and drove to Leatherhead, from whence I have come on this morning with the one object of seeing you and asking your advice.” “You h..."
+      },
+      {
+        "cluster": 3,
+        "size": 47,
+        "intra": 0.48472295459065046,
+        "nearest_centroid": 0.4853657751783315,
+        "books": "The Picture of Dorian Gray (47)",
+        "terms": "dorian, gray, harry, basil, henry, lord, hallward, sibyl",
+        "medoid": "The Picture of Dorian Gray, p. 70-72",
+        "medoid_text": "that had made him see a look of evil where there had been a look of joy? Surely a painted canvas could not alter? The thing was absurd. It would serve as a tale to tell Basil some day. It would mak..."
+      },
+      {
+        "cluster": 4,
+        "size": 40,
+        "intra": 0.5668614799254849,
+        "nearest_centroid": 0.517459654076972,
+        "books": "Moby Dick (38), Dracula (2)",
+        "terms": "whale, ship, captain, whaling, queequeg, peleg, ahab, pequod",
+        "medoid": "Moby Dick, p. 127-129",
+        "medoid_text": "But, at last, he turned to his comrade, with a final sort of look about him,—“Captain Bildad—come, old shipmate, we must go. Back the main-yard there! Boat ahoy! Stand by to come close alongside, n..."
+      },
+      {
+        "cluster": 5,
+        "size": 26,
+        "intra": 0.5189331244980812,
+        "nearest_centroid": 0.402059772069242,
+        "books": "The Time Machine (19), Dracula (5), Frankenstein (2)",
+        "terms": "weena, machine, morlocks, sphinx, bronze, white, darkness, palace",
+        "medoid": "The Time Machine, p. 70-72",
+        "medoid_text": "noises to each other, as the glare of the fire beat on them. The coiling uprush of smoke streamed across the sky, and through the rare tatters of that red canopy, remote as though they belonged to ..."
+      },
+      {
+        "cluster": 6,
+        "size": 29,
+        "intra": 0.4899255456778554,
+        "nearest_centroid": 0.4121023153858047,
+        "books": "Dracula (27), Frankenstein (1), The Adventures of Sherlock Holmes (1)",
+        "terms": "lucy, helsing, van, arthur, westenra, professor, seward, september",
+        "medoid": "Dracula, p. 130-132",
+        "medoid_text": "“Count me in,” he said. “You and the Dutchman will tell me what to do, and I’ll do it.” When she woke late in the afternoon, Lucy’s first movement was to feel in her breast, and, to my surprise, pr..."
+      },
+      {
+        "cluster": 7,
+        "size": 50,
+        "intra": 0.4936179712000576,
+        "nearest_centroid": 0.6082397549305975,
+        "books": "Pride and Prejudice (50)",
+        "terms": "bingley, bennet, darcy, elizabeth, jane, illustration, collins, mrs",
+        "medoid": "Pride and Prejudice, p. 115-117",
+        "medoid_text": "“No; he never saw him till the other morning at Meryton.” “This account then is what he has received from Mr. Darcy. I am perfectly satisfied. But what does he say of the living?” “He does not exac..."
+      },
+      {
+        "cluster": 8,
+        "size": 45,
+        "intra": 0.5380450209059199,
+        "nearest_centroid": 0.43242670755651735,
+        "books": "Frankenstein (43), The Picture of Dorian Gray (1), The Time Machine (1)",
+        "terms": "clerval, felix, feelings, father, justine, human, miserable, misery",
+        "medoid": "Frankenstein, p. 109-111",
+        "medoid_text": "arrival in the hovel I discovered some papers in the pocket of the dress which I had taken from your laboratory. At first I had neglected them, but now that I was able to decipher the characters in..."
+      },
+      {
+        "cluster": 9,
+        "size": 46,
+        "intra": 0.5028150379825183,
+        "nearest_centroid": 0.3869275359188642,
+        "books": "Great Expectations (45), The Adventures of Sherlock Holmes (1)",
+        "terms": "joe, havisham, pip, pumblechook, biddy, wopsle, estella, sister",
+        "medoid": "Great Expectations, p. 76-78",
+        "medoid_text": "remembrance, as already hinted, I have in my soul denied the right of any fellow-creature to do,—and would hold me before him by the sleeve,—a spectacle of imbecility only to be equalled by himself..."
+      }
+    ]
+  }
+}

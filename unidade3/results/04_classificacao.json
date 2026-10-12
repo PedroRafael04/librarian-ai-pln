@@ -1,0 +1,2896 @@
+{
+  "supervised": [
+    {
+      "representation": "bow",
+      "model": "logreg",
+      "masked": false,
+      "cv_accuracy": 0.9973544973544973,
+      "cv_macro_f1": 0.9971425713999972,
+      "holdout_accuracy": 0.4768211920529801,
+      "holdout_macro_f1": 0.4448167540734161,
+      "books_top1": 4,
+      "books_top3": 7,
+      "n_books": 7,
+      "partial_books_top1": 4
+    },
+    {
+      "representation": "bow",
+      "model": "random_forest",
+      "masked": false,
+      "cv_accuracy": 0.9788359788359788,
+      "cv_macro_f1": 0.9826471222697639,
+      "holdout_accuracy": 0.36423841059602646,
+      "holdout_macro_f1": 0.35810626490182534,
+      "books_top1": 3,
+      "books_top3": 6,
+      "n_books": 7
+    },
+    {
+      "representation": "tfidf",
+      "model": "logreg",
+      "masked": false,
+      "cv_accuracy": 1.0,
+      "cv_macro_f1": 1.0,
+      "holdout_accuracy": 0.4966887417218543,
+      "holdout_macro_f1": 0.45157157916423973,
+      "books_top1": 4,
+      "books_top3": 6,
+      "n_books": 7,
+      "partial_books_top1": 4
+    },
+    {
+      "representation": "tfidf",
+      "model": "random_forest",
+      "masked": false,
+      "cv_accuracy": 0.9735449735449735,
+      "cv_macro_f1": 0.9789027299231382,
+      "holdout_accuracy": 0.4205298013245033,
+      "holdout_macro_f1": 0.40433665063670715,
+      "books_top1": 3,
+      "books_top3": 7,
+      "n_books": 7
+    },
+    {
+      "representation": "word2vec",
+      "model": "logreg",
+      "masked": false,
+      "cv_accuracy": 0.9417989417989417,
+      "cv_macro_f1": 0.9435081290568392,
+      "holdout_accuracy": 0.5066225165562914,
+      "holdout_macro_f1": 0.43783312899854254,
+      "books_top1": 5,
+      "books_top3": 6,
+      "n_books": 7,
+      "partial_books_top1": 5
+    },
+    {
+      "representation": "word2vec",
+      "model": "random_forest",
+      "masked": false,
+      "cv_accuracy": 0.9470899470899471,
+      "cv_macro_f1": 0.9485274758608135,
+      "holdout_accuracy": 0.4105960264900662,
+      "holdout_macro_f1": 0.3774665566992178,
+      "books_top1": 4,
+      "books_top3": 6,
+      "n_books": 7
+    },
+    {
+      "representation": "bert",
+      "model": "logreg",
+      "masked": false,
+      "cv_accuracy": 0.9656084656084656,
+      "cv_macro_f1": 0.9660031691858659,
+      "holdout_accuracy": 0.4139072847682119,
+      "holdout_macro_f1": 0.3848960563246277,
+      "books_top1": 5,
+      "books_top3": 6,
+      "n_books": 7,
+      "partial_books_top1": 4
+    },
+    {
+      "representation": "bert",
+      "model": "random_forest",
+      "masked": false,
+      "cv_accuracy": 0.9656084656084656,
+      "cv_macro_f1": 0.968647126910379,
+      "holdout_accuracy": 0.36423841059602646,
+      "holdout_macro_f1": 0.34899505256648117,
+      "books_top1": 4,
+      "books_top3": 5,
+      "n_books": 7
+    },
+    {
+      "representation": "bow",
+      "model": "logreg",
+      "masked": true,
+      "cv_accuracy": 1.0,
+      "cv_macro_f1": 1.0,
+      "holdout_accuracy": 0.38741721854304634,
+      "holdout_macro_f1": 0.35085111640666183,
+      "books_top1": 4,
+      "books_top3": 7,
+      "n_books": 7,
+      "partial_books_top1": 4
+    },
+    {
+      "representation": "bow",
+      "model": "random_forest",
+      "masked": true,
+      "cv_accuracy": 0.9603174603174603,
+      "cv_macro_f1": 0.9657229205093009,
+      "holdout_accuracy": 0.38079470198675497,
+      "holdout_macro_f1": 0.3792331216181762,
+      "books_top1": 3,
+      "books_top3": 7,
+      "n_books": 7
+    },
+    {
+      "representation": "tfidf",
+      "model": "logreg",
+      "masked": true,
+      "cv_accuracy": 0.9947089947089947,
+      "cv_macro_f1": 0.9957281442429957,
+      "holdout_accuracy": 0.5,
+      "holdout_macro_f1": 0.44766516335602985,
+      "books_top1": 5,
+      "books_top3": 6,
+      "n_books": 7,
+      "partial_books_top1": 5
+    },
+    {
+      "representation": "tfidf",
+      "model": "random_forest",
+      "masked": true,
+      "cv_accuracy": 0.9497354497354498,
+      "cv_macro_f1": 0.9569577400735925,
+      "holdout_accuracy": 0.41721854304635764,
+      "holdout_macro_f1": 0.3864131494211092,
+      "books_top1": 3,
+      "books_top3": 7,
+      "n_books": 7
+    },
+    {
+      "representation": "word2vec",
+      "model": "logreg",
+      "masked": true,
+      "cv_accuracy": 0.8518518518518519,
+      "cv_macro_f1": 0.8583104703925929,
+      "holdout_accuracy": 0.48013245033112584,
+      "holdout_macro_f1": 0.4314058266624413,
+      "books_top1": 4,
+      "books_top3": 6,
+      "n_books": 7,
+      "partial_books_top1": 4
+    },
+    {
+      "representation": "word2vec",
+      "model": "random_forest",
+      "masked": true,
+      "cv_accuracy": 0.9021164021164021,
+      "cv_macro_f1": 0.9082165578567635,
+      "holdout_accuracy": 0.3973509933774834,
+      "holdout_macro_f1": 0.3660125984792769,
+      "books_top1": 3,
+      "books_top3": 6,
+      "n_books": 7
+    },
+    {
+      "representation": "bert",
+      "model": "logreg",
+      "masked": true,
+      "cv_accuracy": 0.917989417989418,
+      "cv_macro_f1": 0.9207468192520938,
+      "holdout_accuracy": 0.41721854304635764,
+      "holdout_macro_f1": 0.39495647400983025,
+      "books_top1": 3,
+      "books_top3": 6,
+      "n_books": 7,
+      "partial_books_top1": 3
+    },
+    {
+      "representation": "bert",
+      "model": "random_forest",
+      "masked": true,
+      "cv_accuracy": 0.9021164021164021,
+      "cv_macro_f1": 0.9065379522386596,
+      "holdout_accuracy": 0.37748344370860926,
+      "holdout_macro_f1": 0.3693152635252201,
+      "books_top1": 3,
+      "books_top3": 6,
+      "n_books": 7
+    }
+  ],
+  "baselines": [
+    {
+      "method": "lexico_tfidf",
+      "holdout_accuracy": 0.38079470198675497,
+      "holdout_macro_f1": 0.36814289771821185,
+      "accuracy_14": 0.2152317880794702,
+      "books_top1": 4,
+      "books_top3": 7,
+      "pred_distribution": {
+        "filosofico": 35,
+        "ficcao_cientifica": 20,
+        "romance": 66,
+        "drama": 54,
+        "terror": 42,
+        "acao": 53,
+        "misterio": 32
+      }
+    },
+    {
+      "method": "zeroshot_bart_mnli",
+      "holdout_accuracy": 0.20860927152317882,
+      "holdout_macro_f1": 0.18840245775729647,
+      "accuracy_14": 0.08609271523178808,
+      "books_top1": 2,
+      "books_top3": 4,
+      "pred_distribution": {
+        "filosofico": 44,
+        "terror": 224,
+        "misterio": 22,
+        "acao": 10,
+        "romance": 1,
+        "ficcao_cientifica": 1
+      }
+    }
+  ],
+  "books": [
+    {
+      "method": "bow/logreg",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "romance"
+      ],
+      "p_predicted": 0.35513115814450846,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "acao"
+      ],
+      "p_predicted": 0.36821280282964164,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "ficcao_cientifica",
+        "filosofico"
+      ],
+      "p_predicted": 0.8415841011656052,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "bow/logreg",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "drama",
+        "romance"
+      ],
+      "p_predicted": 0.30587768077649263,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "drama"
+      ],
+      "p_predicted": 0.4864123321193386,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "bow/logreg",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.5558753606108264,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.49695147079855534,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "romance",
+        "drama"
+      ],
+      "p_predicted": 0.24728804428062418,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "romance"
+      ],
+      "p_predicted": 0.2298973896818937,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "acao"
+      ],
+      "p_predicted": 0.3202926417540598,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "bow/random_forest",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "romance",
+        "acao"
+      ],
+      "p_predicted": 0.2324143417842692,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "acao"
+      ],
+      "p_predicted": 0.28937890528583693,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "bow/random_forest",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "acao"
+      ],
+      "p_predicted": 0.24760832345395814,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.32739085303584703,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "misterio"
+      ],
+      "p_predicted": 0.20722313364285572,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.18442616450719904,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.2472435987321095,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "tfidf/logreg",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.1904681692288459,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "drama"
+      ],
+      "p_predicted": 0.20823822764764258,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "tfidf/logreg",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.22015922418681286,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.2247966386505435,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "romance",
+        "drama"
+      ],
+      "p_predicted": 0.22103008409641642,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "romance"
+      ],
+      "p_predicted": 0.20658553794314516,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.31714705010578054,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "tfidf/random_forest",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "romance"
+      ],
+      "p_predicted": 0.21225815615817342,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "filosofico"
+      ],
+      "p_predicted": 0.25145450027620947,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "tfidf/random_forest",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "acao"
+      ],
+      "p_predicted": 0.24820646000952507,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.2775595258116214,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "drama"
+      ],
+      "p_predicted": 0.24931039439030894,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "filosofico",
+        "terror"
+      ],
+      "p_predicted": 0.24787478689390563,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "ficcao_cientifica"
+      ],
+      "p_predicted": 0.3551315842054923,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "word2vec/logreg",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "drama",
+        "terror"
+      ],
+      "p_predicted": 0.29069788489004206,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "drama"
+      ],
+      "p_predicted": 0.2549008902863491,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "word2vec/logreg",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.3611665512492476,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "misterio",
+        "terror"
+      ],
+      "p_predicted": 0.33967062490797495,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "drama"
+      ],
+      "p_predicted": 0.3977476390680768,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.31099366111825094,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.5724059114378004,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "word2vec/random_forest",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "drama",
+        "terror"
+      ],
+      "p_predicted": 0.33391307184314156,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "drama"
+      ],
+      "p_predicted": 0.4007002013467265,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "word2vec/random_forest",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.3470253579017457,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.44564674552706596,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "terror",
+        "romance"
+      ],
+      "p_predicted": 0.25692304185030357,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "filosofico",
+        "terror"
+      ],
+      "p_predicted": 0.25836294125006626,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "acao",
+        "ficcao_cientifica"
+      ],
+      "p_predicted": 0.36516492373012666,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 28
+    },
+    {
+      "method": "bert/logreg",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.26353167854101983,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "misterio"
+      ],
+      "p_predicted": 0.21514920094317538,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "bert/logreg",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.45283466942168893,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "drama",
+        "terror"
+      ],
+      "p_predicted": 0.3741284336752392,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.2854727978301993,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "filosofico",
+        "terror"
+      ],
+      "p_predicted": 0.23947884604101438,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "acao",
+        "ficcao_cientifica"
+      ],
+      "p_predicted": 0.3404129841393124,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 28
+    },
+    {
+      "method": "bert/random_forest",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "drama",
+        "terror"
+      ],
+      "p_predicted": 0.2393039502248589,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.21772261396889997,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "bert/random_forest",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.3002164290020592,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.30060559978536383,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg/masc",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.43231147572265194,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg/masc",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "drama",
+        "terror"
+      ],
+      "p_predicted": 0.3264913208642195,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg/masc",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.7693855766134614,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "bow/logreg/masc",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "misterio",
+        "terror"
+      ],
+      "p_predicted": 0.7385022207242438,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg/masc",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "romance"
+      ],
+      "p_predicted": 0.34387569568595366,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "bow/logreg/masc",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "romance"
+      ],
+      "p_predicted": 0.5231310143431427,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/logreg/masc",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.660877423820621,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest/masc",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "romance",
+        "drama"
+      ],
+      "p_predicted": 0.21606839110732629,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest/masc",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "drama",
+        "terror"
+      ],
+      "p_predicted": 0.22622382828821852,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest/masc",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.2695955107984544,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "bow/random_forest/masc",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.24619730350461652,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest/masc",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "romance"
+      ],
+      "p_predicted": 0.2289965074060491,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "bow/random_forest/masc",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "acao"
+      ],
+      "p_predicted": 0.23236039642264664,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bow/random_forest/masc",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.28855266319773143,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg/masc",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "misterio"
+      ],
+      "p_predicted": 0.19847775553496722,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg/masc",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "terror",
+        "filosofico"
+      ],
+      "p_predicted": 0.18919552909743817,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg/masc",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.23394134058545163,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "tfidf/logreg/masc",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.1878665420798279,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg/masc",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "drama"
+      ],
+      "p_predicted": 0.1930725921693979,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "tfidf/logreg/masc",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.22170592773917797,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/logreg/masc",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "drama",
+        "terror"
+      ],
+      "p_predicted": 0.22828915476189018,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest/masc",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "romance",
+        "drama"
+      ],
+      "p_predicted": 0.21183178659522836,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest/masc",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "drama",
+        "terror"
+      ],
+      "p_predicted": 0.2256827543500183,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest/masc",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.278545926450995,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "tfidf/random_forest/masc",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "misterio",
+        "terror"
+      ],
+      "p_predicted": 0.19348318874805284,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest/masc",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "drama"
+      ],
+      "p_predicted": 0.21599159873699092,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "tfidf/random_forest/masc",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "acao"
+      ],
+      "p_predicted": 0.239712362551522,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "tfidf/random_forest/masc",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.2948249331310066,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg/masc",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "misterio"
+      ],
+      "p_predicted": 0.2145809148875908,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg/masc",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "filosofico",
+        "misterio"
+      ],
+      "p_predicted": 0.27288939147914104,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg/masc",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.29794785208998054,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "word2vec/logreg/masc",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.25886970103702506,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg/masc",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.2217724452285628,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "word2vec/logreg/masc",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.37072360219755285,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/logreg/masc",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "drama",
+        "misterio"
+      ],
+      "p_predicted": 0.3173073465293114,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest/masc",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "drama",
+        "misterio"
+      ],
+      "p_predicted": 0.3005559300858266,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest/masc",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "filosofico",
+        "terror"
+      ],
+      "p_predicted": 0.3915906397823237,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest/masc",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.4151337011670145,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "word2vec/random_forest/masc",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "misterio",
+        "terror"
+      ],
+      "p_predicted": 0.3413898326651882,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest/masc",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.32249559481030654,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "word2vec/random_forest/masc",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.38219855441185907,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "word2vec/random_forest/masc",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.4354866983826922,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg/masc",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "terror",
+        "filosofico"
+      ],
+      "p_predicted": 0.24748712012189608,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg/masc",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "filosofico",
+      "top3": [
+        "filosofico",
+        "drama",
+        "romance"
+      ],
+      "p_predicted": 0.2978116988899264,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg/masc",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "acao"
+      ],
+      "p_predicted": 0.36114616890287055,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "bert/logreg/masc",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.33831863817387237,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg/masc",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.29288746510633645,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "bert/logreg/masc",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.4078281356300315,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/logreg/masc",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "drama",
+        "misterio"
+      ],
+      "p_predicted": 0.387833350702024,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest/masc",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "drama",
+      "top3": [
+        "drama",
+        "terror",
+        "filosofico"
+      ],
+      "p_predicted": 0.2588555914026668,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest/masc",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "filosofico",
+      "top3": [
+        "filosofico",
+        "romance",
+        "drama"
+      ],
+      "p_predicted": 0.30447743345055256,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest/masc",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "acao"
+      ],
+      "p_predicted": 0.31146669710923025,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "bert/random_forest/masc",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.28195365690896557,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest/masc",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.2782889012355525,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "bert/random_forest/masc",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "acao"
+      ],
+      "p_predicted": 0.33597944055188295,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "bert/random_forest/masc",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "drama"
+      ],
+      "p_predicted": 0.3527882053285066,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "lexico_tfidf",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "acao",
+        "filosofico"
+      ],
+      "p_predicted": 0.26182342374867296,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "lexico_tfidf",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.37934356046650536,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "lexico_tfidf",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "romance",
+      "top3": [
+        "romance",
+        "drama",
+        "filosofico"
+      ],
+      "p_predicted": 0.5500629010961966,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "lexico_tfidf",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": [
+        "misterio",
+        "filosofico",
+        "drama"
+      ],
+      "p_predicted": 0.38529896697189325,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "lexico_tfidf",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "filosofico",
+      "top3": [
+        "filosofico",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.2930443796875714,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "lexico_tfidf",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": [
+        "ficcao_cientifica",
+        "terror",
+        "acao"
+      ],
+      "p_predicted": 0.23975448329999288,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "lexico_tfidf",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": [
+        "acao",
+        "terror",
+        "filosofico"
+      ],
+      "p_predicted": 0.4425706727894468,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "zeroshot_bart_mnli",
+      "book_id": "Jane Eyre - Charlotte Bronte",
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "misterio"
+      ],
+      "p_predicted": 0.47629080322839346,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "zeroshot_bart_mnli",
+      "book_id": "Little Women - Louisa May Alcott",
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "filosofico",
+        "misterio"
+      ],
+      "p_predicted": 0.3753775885763933,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "zeroshot_bart_mnli",
+      "book_id": "Siddhartha - Hermann Hesse",
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "filosofico",
+      "top3": [
+        "filosofico",
+        "terror",
+        "misterio"
+      ],
+      "p_predicted": 0.3406187125096851,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 28
+    },
+    {
+      "method": "zeroshot_bart_mnli",
+      "book_id": "The Mysterious Affair at Styles - Agatha Christie",
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "filosofico"
+      ],
+      "p_predicted": 0.4029614716102635,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    },
+    {
+      "method": "zeroshot_bart_mnli",
+      "book_id": "The Strange Case of Dr Jekyll and Mr Hyde - Robert Louis Stevenson",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "misterio",
+        "filosofico"
+      ],
+      "p_predicted": 0.647818137141245,
+      "top1_correct": true,
+      "top3_correct": true,
+      "n_docs": 24
+    },
+    {
+      "method": "zeroshot_bart_mnli",
+      "book_id": "The War of the Worlds - H G Wells",
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "acao",
+        "misterio"
+      ],
+      "p_predicted": 0.6433789207373165,
+      "top1_correct": false,
+      "top3_correct": false,
+      "n_docs": 50
+    },
+    {
+      "method": "zeroshot_bart_mnli",
+      "book_id": "Treasure Island - Robert Louis Stevenson",
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "terror",
+      "top3": [
+        "terror",
+        "acao",
+        "misterio"
+      ],
+      "p_predicted": 0.5332536934019864,
+      "top1_correct": false,
+      "top3_correct": true,
+      "n_docs": 50
+    }
+  ],
+  "features": [
+    {
+      "masked": false,
+      "genre": "acao",
+      "terms": "whale, queequeg, ship, captain, whaling, sea, ahab, peleg, whales, thou"
+    },
+    {
+      "masked": false,
+      "genre": "drama",
+      "terms": "joe, havisham, pip, pumblechook, estella, biddy, wopsle, sister, boy, pocket"
+    },
+    {
+      "masked": false,
+      "genre": "ficcao_cientifica",
+      "terms": "machine, traveller, weena, morlocks, sphinx, psychologist, filby, bronze, editor, medical"
+    },
+    {
+      "masked": false,
+      "genre": "filosofico",
+      "terms": "dorian, gray, henry, harry, basil, lord, hallward, sibyl, don, vane"
+    },
+    {
+      "masked": false,
+      "genre": "misterio",
+      "terms": "holmes, sherlock, watson, street, case, police, remarked, matter, doctor, baker"
+    },
+    {
+      "masked": false,
+      "genre": "romance",
+      "terms": "bennet, bingley, darcy, elizabeth, jane, collins, illustration, miss, mrs, lucas"
+    },
+    {
+      "masked": false,
+      "genre": "terror",
+      "terms": "lucy, helsing, van, arthur, count, whilst, jonathan, mina, sleep, heart"
+    },
+    {
+      "masked": true,
+      "genre": "acao",
+      "terms": "whale, ship, captain, chapter, whaling, sea, thou, whales, voyage, harpooneer"
+    },
+    {
+      "masked": true,
+      "genre": "drama",
+      "terms": "sister, boy, kitchen, pocket, marshes, forge, gate, returned, gentleman, don"
+    },
+    {
+      "masked": true,
+      "genre": "ficcao_cientifica",
+      "terms": "machine, sphinx, space, palace, bronze, lever, white, travelling, matches, dimensions"
+    },
+    {
+      "masked": true,
+      "genre": "filosofico",
+      "terms": "don, lad, art, life, portrait, picture, wonderful, murmured, painter, charming"
+    },
+    {
+      "masked": true,
+      "genre": "misterio",
+      "terms": "street, case, police, remarked, doctor, matter, visitor, singular, stepfather, miss"
+    },
+    {
+      "masked": true,
+      "genre": "romance",
+      "terms": "herself, ladies, sisters, daughters, agreeable, girls, party, replied, lady, ball"
+    },
+    {
+      "masked": true,
+      "genre": "terror",
+      "terms": "whilst, sleep, diary, heart, poor, cause, around, castle, death, sweet"
+    }
+  ],
+  "partial_reading": [
+    {
+      "representation": "bow",
+      "masked": false,
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": "terror, drama, romance",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 4.459103812563749e-05
+    },
+    {
+      "representation": "bow",
+      "masked": false,
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "terror",
+      "top3": "terror, drama, filosofico",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 5.8114292966262855e-06
+    },
+    {
+      "representation": "bow",
+      "masked": false,
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": "terror, ficcao_cientifica, filosofico",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 0.0002070572855152786
+    },
+    {
+      "representation": "bow",
+      "masked": false,
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": "misterio, drama, romance",
+      "generation_top1": "misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",
+      "final_jsd": 1.2786444040285047e-05
+    },
+    {
+      "representation": "bow",
+      "masked": false,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": "terror, misterio, drama",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 0.00018311094783050354
+    },
+    {
+      "representation": "bow",
+      "masked": false,
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": "ficcao_cientifica, terror, misterio",
+      "generation_top1": "ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",
+      "final_jsd": 3.325677859618919e-05
+    },
+    {
+      "representation": "bow",
+      "masked": false,
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": "acao, terror, ficcao_cientifica",
+      "generation_top1": "acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",
+      "final_jsd": 1.9183646385737804e-05
+    },
+    {
+      "representation": "tfidf",
+      "masked": false,
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": "terror, drama, misterio",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 2.5862366436450062e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": false,
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "terror",
+      "top3": "terror, drama, filosofico",
+      "generation_top1": "terror, terror, drama, terror, drama, terror, terror, terror, terror, terror",
+      "final_jsd": 5.001425196632652e-07
+    },
+    {
+      "representation": "tfidf",
+      "masked": false,
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": "terror, filosofico, drama",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 2.8611409560276644e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": false,
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": "misterio, terror, drama",
+      "generation_top1": "misterio, terror, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",
+      "final_jsd": 1.033061755920014e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": false,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": "terror, misterio, drama",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, misterio",
+      "final_jsd": 6.161945643559942e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": false,
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": "ficcao_cientifica, terror, misterio",
+      "generation_top1": "ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",
+      "final_jsd": 4.7562941367462703e-07
+    },
+    {
+      "representation": "tfidf",
+      "masked": false,
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": "acao, terror, drama",
+      "generation_top1": "acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",
+      "final_jsd": 1.2403330203493695e-06
+    },
+    {
+      "representation": "word2vec",
+      "masked": false,
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": "terror, misterio, ficcao_cientifica",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 2.34067281781995e-05
+    },
+    {
+      "representation": "word2vec",
+      "masked": false,
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": "drama, filosofico, terror",
+      "generation_top1": "drama, drama, drama, drama, drama, drama, drama, drama, drama, drama",
+      "final_jsd": 4.670033275753485e-06
+    },
+    {
+      "representation": "word2vec",
+      "masked": false,
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": "terror, filosofico, ficcao_cientifica",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 9.368630837245501e-06
+    },
+    {
+      "representation": "word2vec",
+      "masked": false,
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": "misterio, drama, terror",
+      "generation_top1": "misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",
+      "final_jsd": 7.498946458179829e-06
+    },
+    {
+      "representation": "word2vec",
+      "masked": false,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": "terror, misterio, drama",
+      "generation_top1": "terror, terror, terror, terror, misterio, terror, terror, misterio, terror, misterio",
+      "final_jsd": 3.644473569238988e-05
+    },
+    {
+      "representation": "word2vec",
+      "masked": false,
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": "ficcao_cientifica, terror, misterio",
+      "generation_top1": "ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",
+      "final_jsd": 5.639264985110072e-06
+    },
+    {
+      "representation": "word2vec",
+      "masked": false,
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": "acao, terror, misterio",
+      "generation_top1": "acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",
+      "final_jsd": 8.843090274297257e-06
+    },
+    {
+      "representation": "bert",
+      "masked": false,
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": "terror, drama, romance",
+      "generation_top1": "drama, terror, drama, terror, terror, drama, terror, terror, terror, drama",
+      "final_jsd": 3.0374319357051225e-05
+    },
+    {
+      "representation": "bert",
+      "masked": false,
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": "drama, filosofico, terror",
+      "generation_top1": "drama, drama, drama, filosofico, drama, drama, filosofico, drama, drama, filosofico",
+      "final_jsd": 2.5195245067210874e-05
+    },
+    {
+      "representation": "bert",
+      "masked": false,
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": "terror, acao, ficcao_cientifica",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 8.60333908781364e-06
+    },
+    {
+      "representation": "bert",
+      "masked": false,
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "drama",
+      "top3": "drama, misterio, filosofico",
+      "generation_top1": "misterio, drama, drama, drama, drama, drama, drama, misterio, misterio, misterio",
+      "final_jsd": 8.384042064861583e-06
+    },
+    {
+      "representation": "bert",
+      "masked": false,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": "terror, drama, misterio",
+      "generation_top1": "terror, misterio, terror, terror, misterio, terror, drama, drama, terror, misterio",
+      "final_jsd": 2.4781358254948194e-05
+    },
+    {
+      "representation": "bert",
+      "masked": false,
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": "ficcao_cientifica, terror, drama",
+      "generation_top1": "ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",
+      "final_jsd": 5.898910573126832e-06
+    },
+    {
+      "representation": "bert",
+      "masked": false,
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": "acao, drama, terror",
+      "generation_top1": "acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",
+      "final_jsd": 1.6222939029885027e-05
+    },
+    {
+      "representation": "bow",
+      "masked": true,
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "romance",
+      "top3": "romance, terror, drama",
+      "generation_top1": "romance, romance, romance, romance, romance, romance, terror, romance, romance, romance",
+      "final_jsd": 3.0417665286870655e-05
+    },
+    {
+      "representation": "bow",
+      "masked": true,
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "romance",
+      "top3": "romance, drama, terror",
+      "generation_top1": "romance, romance, romance, romance, romance, romance, romance, romance, romance, romance",
+      "final_jsd": 2.5957590558156043e-05
+    },
+    {
+      "representation": "bow",
+      "masked": true,
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": "terror, filosofico, romance",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 0.0005200211888438577
+    },
+    {
+      "representation": "bow",
+      "masked": true,
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "romance",
+      "top3": "romance, misterio, terror",
+      "generation_top1": "romance, romance, romance, romance, romance, romance, romance, romance, romance, romance",
+      "final_jsd": 5.795459498542717e-05
+    },
+    {
+      "representation": "bow",
+      "masked": true,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": "terror, misterio, romance",
+      "generation_top1": "terror, misterio, romance, terror, misterio, terror, terror, terror, terror, misterio",
+      "final_jsd": 0.00016979135878665086
+    },
+    {
+      "representation": "bow",
+      "masked": true,
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": "ficcao_cientifica, terror, romance",
+      "generation_top1": "ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",
+      "final_jsd": 7.878935401426886e-05
+    },
+    {
+      "representation": "bow",
+      "masked": true,
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": "acao, terror, misterio",
+      "generation_top1": "acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",
+      "final_jsd": 5.130285417394851e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": true,
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": "terror, drama, misterio",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 2.8509806259785736e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": true,
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": "drama, terror, filosofico",
+      "generation_top1": "drama, drama, drama, drama, drama, drama, drama, terror, drama, drama",
+      "final_jsd": 1.149522664128759e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": true,
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": "terror, filosofico, drama",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 3.651755208647974e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": true,
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": "misterio, terror, drama",
+      "generation_top1": "misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",
+      "final_jsd": 1.4327692544774417e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": true,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "terror",
+      "top3": "terror, misterio, drama",
+      "generation_top1": "terror, misterio, terror, terror, misterio, terror, terror, misterio, terror, misterio",
+      "final_jsd": 9.033412566253702e-06
+    },
+    {
+      "representation": "tfidf",
+      "masked": true,
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": "ficcao_cientifica, terror, misterio",
+      "generation_top1": "ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",
+      "final_jsd": 6.513993482844667e-07
+    },
+    {
+      "representation": "tfidf",
+      "masked": true,
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": "acao, terror, drama",
+      "generation_top1": "acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",
+      "final_jsd": 1.2202303301099977e-06
+    },
+    {
+      "representation": "word2vec",
+      "masked": true,
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "terror",
+      "top3": "terror, misterio, drama",
+      "generation_top1": "misterio, terror, terror, terror, terror, misterio, terror, terror, terror, terror",
+      "final_jsd": 2.7465742466494707e-05
+    },
+    {
+      "representation": "word2vec",
+      "masked": true,
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "drama",
+      "top3": "drama, filosofico, terror",
+      "generation_top1": "drama, drama, drama, drama, drama, drama, drama, drama, drama, drama",
+      "final_jsd": 4.496465841279931e-06
+    },
+    {
+      "representation": "word2vec",
+      "masked": true,
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": "terror, filosofico, drama",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 1.758155459034543e-05
+    },
+    {
+      "representation": "word2vec",
+      "masked": true,
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": "misterio, drama, terror",
+      "generation_top1": "misterio, misterio, misterio, misterio, misterio, misterio, misterio, drama, misterio, misterio",
+      "final_jsd": 4.103282251822322e-06
+    },
+    {
+      "representation": "word2vec",
+      "masked": true,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "misterio",
+      "top3": "misterio, terror, drama",
+      "generation_top1": "terror, misterio, terror, terror, misterio, terror, misterio, misterio, terror, misterio",
+      "final_jsd": 5.6032790532562285e-05
+    },
+    {
+      "representation": "word2vec",
+      "masked": true,
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": "ficcao_cientifica, terror, misterio",
+      "generation_top1": "ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",
+      "final_jsd": 1.255232803608393e-05
+    },
+    {
+      "representation": "word2vec",
+      "masked": true,
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": "acao, drama, misterio",
+      "generation_top1": "acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",
+      "final_jsd": 8.683098185539558e-06
+    },
+    {
+      "representation": "bert",
+      "masked": true,
+      "title": "Jane Eyre",
+      "genre": "romance",
+      "predicted": "drama",
+      "top3": "drama, terror, filosofico",
+      "generation_top1": "drama, terror, drama, terror, terror, drama, terror, drama, drama, drama",
+      "final_jsd": 4.1928806996296714e-05
+    },
+    {
+      "representation": "bert",
+      "masked": true,
+      "title": "Little Women",
+      "genre": "drama",
+      "predicted": "filosofico",
+      "top3": "filosofico, drama, romance",
+      "generation_top1": "filosofico, filosofico, filosofico, filosofico, filosofico, filosofico, filosofico, filosofico, filosofico, filosofico",
+      "final_jsd": 2.938174342665854e-05
+    },
+    {
+      "representation": "bert",
+      "masked": true,
+      "title": "Siddhartha",
+      "genre": "filosofico",
+      "predicted": "terror",
+      "top3": "terror, filosofico, acao",
+      "generation_top1": "terror, terror, terror, terror, terror, terror, terror, terror, terror, terror",
+      "final_jsd": 1.4490847026477744e-05
+    },
+    {
+      "representation": "bert",
+      "masked": true,
+      "title": "The Mysterious Affair at Styles",
+      "genre": "misterio",
+      "predicted": "misterio",
+      "top3": "misterio, drama, filosofico",
+      "generation_top1": "misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio, misterio",
+      "final_jsd": 1.547059840099473e-05
+    },
+    {
+      "representation": "bert",
+      "masked": true,
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "genre": "terror",
+      "predicted": "misterio",
+      "top3": "misterio, terror, drama",
+      "generation_top1": "misterio, misterio, misterio, terror, misterio, misterio, misterio, misterio, misterio, misterio",
+      "final_jsd": 3.435775427522837e-05
+    },
+    {
+      "representation": "bert",
+      "masked": true,
+      "title": "The War of the Worlds",
+      "genre": "ficcao_cientifica",
+      "predicted": "ficcao_cientifica",
+      "top3": "ficcao_cientifica, misterio, terror",
+      "generation_top1": "ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica, ficcao_cientifica",
+      "final_jsd": 2.023039123587344e-05
+    },
+    {
+      "representation": "bert",
+      "masked": true,
+      "title": "Treasure Island",
+      "genre": "acao",
+      "predicted": "acao",
+      "top3": "acao, drama, misterio",
+      "generation_top1": "acao, acao, acao, acao, acao, acao, acao, acao, acao, acao",
+      "final_jsd": 2.365598850320174e-05
+    }
+  ],
+  "best": {
+    "representation": "tfidf",
+    "model": "logreg",
+    "masked": false
+  }
+}

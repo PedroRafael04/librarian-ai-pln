@@ -1,14 +1,36 @@
-"""Testes das etapas de coleta e pre-processamento (sem rede)."""
+"""Testes do pacote librarian_ai: coleta, pre-processamento, gabarito,
+agregacao e classificadores sem treino (sem rede e sem GPU)."""
 
 from __future__ import annotations
 
 from pathlib import Path
 
+import numpy as np
 import pytest
 
+from librarian_ai.aggregation import (
+    aggregate,
+    confidence,
+    convergence_curve,
+    entropy,
+    jensen_shannon,
+    normalize,
+    top_k,
+)
+from librarian_ai.catalog import CATALOG, entries, genre_of, lookup
+from librarian_ai.classifiers import chunk_pages as chunk_pages_reexportado
+from librarian_ai.classifiers.tfidf import TfidfClassifier
 from librarian_ai.corpus import clean_page_text, parse_filename
 from librarian_ai.ground_truth import Candidate, build_ground_truth, score_match
-from librarian_ai.preprocess import STOPWORDS, chunk_pages, remove_stopwords, tokenize
+from librarian_ai.preprocess import (
+    STOPWORDS,
+    chunk_pages,
+    mask_proper_nouns,
+    proper_noun_vocabulary,
+    remove_stopwords,
+    split_sentences,
+    tokenize,
+)
 from librarian_ai.taxonomy import GENRE_IDS, N_GENRES, map_external_terms
 
 
@@ -176,3 +198,146 @@ def test_registros_sem_categoria_mapeavel_nao_contam():
 
 def test_sem_candidatos_devolve_nao_encontrado():
     assert not build_ground_truth([], "teste").found
+
+
+# -- agregacao -------------------------------------------------------------
+
+def test_normalize_projeta_no_simplexo():
+    v = normalize(np.array([2.0, -1.0, 3.0]))
+    assert v.sum() == pytest.approx(1.0)
+    assert (v >= 0).all()
+
+
+def test_vetor_nulo_vira_uniforme():
+    v = normalize(np.zeros(4))
+    assert v == pytest.approx(np.full(4, 0.25))
+
+
+def test_entropia_maxima_na_uniforme():
+    assert entropy(np.full(N_GENRES, 1 / N_GENRES)) == pytest.approx(1.0)
+
+
+def test_confianca_maxima_na_distribuicao_degenerada():
+    d = np.zeros(N_GENRES)
+    d[0] = 1.0
+    assert confidence(d) == pytest.approx(1.0)
+
+
+def test_jsd_e_zero_para_distribuicoes_iguais():
+    d = normalize(np.arange(1, N_GENRES + 1, dtype=float))
+    assert jensen_shannon(d, d) == pytest.approx(0.0, abs=1e-9)
+
+
+def test_jsd_e_um_para_suportes_disjuntos():
+    a, b = np.zeros(4), np.zeros(4)
+    a[0], b[3] = 1.0, 1.0
+    assert jensen_shannon(a, b) == pytest.approx(1.0)
+
+
+def test_jsd_e_simetrico():
+    a = normalize(np.array([0.7, 0.2, 0.1]))
+    b = normalize(np.array([0.1, 0.5, 0.4]))
+    assert jensen_shannon(a, b) == pytest.approx(jensen_shannon(b, a))
+
+
+@pytest.mark.parametrize("metodo", ["mean", "weighted_mean", "log_pool"])
+def test_agregacao_devolve_distribuicao_valida(metodo):
+    dists = [normalize(np.random.default_rng(i).random(N_GENRES)) for i in range(5)]
+    out = aggregate(dists, method=metodo)
+    assert out.sum() == pytest.approx(1.0)
+    assert (out >= 0).all()
+
+
+def test_agregacao_pondera_a_favor_da_geracao_confiante():
+    confiante = np.zeros(N_GENRES)
+    confiante[0] = 1.0
+    difusa = np.full(N_GENRES, 1 / N_GENRES)
+    out = aggregate([confiante, difusa], method="weighted_mean", weight_by_confidence=True)
+    simples = aggregate([confiante, difusa], method="mean")
+    assert out[0] > simples[0]
+
+
+def test_convergencia_cai_quando_as_geracoes_se_repetem():
+    d = normalize(np.array([0.6] + [0.4 / (N_GENRES - 1)] * (N_GENRES - 1)))
+    curva = convergence_curve([d] * 6)
+    assert curva[-1] < 1e-6
+
+
+def test_top_k_devolve_em_ordem_decrescente():
+    d = normalize(np.arange(N_GENRES, dtype=float))
+    pares = top_k(d, 3)
+    assert [p for _, p in pares] == sorted([p for _, p in pares], reverse=True)
+
+
+# -- classificadores sem treino --------------------------------------------
+
+def test_classifiers_reexporta_o_chunking_do_preprocess():
+    assert chunk_pages_reexportado is chunk_pages
+
+
+def test_lexico_tfidf_reconhece_vocabulario_de_terror():
+    texto = "The vampire left blood on the grave. A ghost and a corpse in the horror of night."
+    dist = TfidfClassifier().classify([texto]).distribution
+    assert GENRE_IDS[int(np.argmax(dist))] == "terror"
+    assert dist.sum() == pytest.approx(1.0)
+
+
+def test_lexico_tfidf_sem_texto_devolve_uniforme():
+    dist = TfidfClassifier().classify(["", "  "]).distribution
+    assert dist == pytest.approx(np.full(N_GENRES, 1 / N_GENRES))
+
+
+# -- catalogo --------------------------------------------------------------
+
+def test_catalogo_so_usa_generos_da_taxonomia():
+    assert all(e.genre in GENRE_IDS for e in CATALOG)
+
+
+def test_base_e_holdout_sao_disjuntos_e_cobrem_os_mesmos_generos():
+    base, holdout = entries("base"), entries("holdout")
+    assert not {e.gutenberg_id for e in base} & {e.gutenberg_id for e in holdout}
+    assert {e.genre for e in base} == {e.genre for e in holdout}
+
+
+def test_busca_no_catalogo_ignora_caixa_e_pontuacao():
+    assert genre_of("the time machine") == "ficcao_cientifica"
+    assert lookup("Dracula!").author == "Bram Stoker"
+    assert genre_of("Livro Inexistente") is None
+
+
+def test_nome_de_arquivo_do_catalogo_e_reconhecido_pelo_corpus():
+    for e in CATALOG:
+        assert parse_filename(Path(e.filename)) == (e.title, e.author)
+
+
+def test_split_desconhecido_e_rejeitado():
+    with pytest.raises(ValueError):
+        entries("teste")
+
+
+# -- frases e nomes proprios -----------------------------------------------
+
+def test_segmenta_frases_por_pontuacao_terminal():
+    frases = split_sentences('He fled. "Who is there?" she asked! It was night.')
+    assert frases == ["He fled.", '"Who is there?" she asked!', "It was night."]
+
+
+def test_detecta_nomes_que_aparecem_capitalizados_no_meio_da_frase():
+    textos = ["Then Harker saw the night. Later Harker wrote to Mina in the night.",
+              "At night Harker and Mina left. Night fell and Mina slept."]
+    vocab = proper_noun_vocabulary(textos, min_count=2)
+    assert {"harker", "mina"} <= vocab
+    assert "night" not in vocab  # maiusculo so no inicio de frase
+
+
+def test_mascara_so_as_ocorrencias_capitalizadas():
+    texto = mask_proper_nouns("Harker met Mina. The rose was red.", frozenset({"harker", "mina", "rose"}))
+    assert texto == "X met X. The rose was red."
+    assert "harker" not in tokenize(mask_proper_nouns("Harker left", frozenset({"harker"})))
+
+
+def test_nome_apos_abreviacao_de_tratamento_nao_e_inicio_de_frase():
+    textos = ["She met Mr. Collins at noon. Then Mr. Collins left with Mrs. Hurst."]
+    vocab = proper_noun_vocabulary(textos, min_count=1)
+    assert {"collins", "hurst"} <= vocab
+    assert "then" not in vocab and "she" not in vocab
