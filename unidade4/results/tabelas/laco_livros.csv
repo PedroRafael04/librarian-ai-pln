@@ -1,0 +1,23 @@
+method,split,title,genre,predicted,top1_correct,top3_correct,top1_correct_7,top3_correct_7,rank,p_true,generation_accuracy,n_generations,pages_read,pages_distinct,pages_total,mean_reward,policy_entropy,final_jsd
+lexico,base,Dracula,terror,realismo,False,True,False,True,3,0.1329,0.0,7,229,127,150,0.6536,0.9989,0.00046
+lexico,base,Frankenstein,terror,filosofico,False,False,False,False,5,0.1058,0.0,7,223,114,150,0.6458,0.9985,0.00012
+lexico,base,Great Expectations,drama,realismo,False,False,False,False,6,0.0479,0.0,7,237,124,150,0.6712,0.9991,0.00012
+lexico,base,Moby Dick,acao,realismo,False,True,True,True,2,0.1878,0.0,7,276,127,150,0.6455,0.9995,0.00021
+lexico,base,Pride and Prejudice,romance,realismo,False,True,True,True,2,0.1359,0.0,7,215,109,150,0.6749,0.9984,0.00018
+lexico,base,The Adventures of Sherlock Holmes,misterio,realismo,False,True,True,True,2,0.1269,0.0,7,235,127,150,0.6564,0.9995,0.00038
+lexico,base,The Picture of Dorian Gray,filosofico,realismo,False,True,True,True,2,0.1514,0.1429,7,239,127,150,0.6467,0.9994,0.00045
+lexico,base,The Time Machine,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3379,0.8571,7,136,70,84,0.6507,0.9981,0.0006
+lexico,holdout,Jane Eyre,romance,realismo,False,True,True,True,2,0.1379,0.1429,7,229,127,150,0.6462,0.9989,0.00071
+lexico,holdout,Little Women,drama,realismo,False,True,False,True,3,0.1029,0.0,7,223,114,150,0.6645,0.9985,0.00036
+lexico,holdout,Siddhartha,filosofico,romance,False,True,False,True,3,0.0938,0.0,7,135,71,84,0.6667,0.9981,0.00042
+lexico,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.3934,1.0,7,276,127,150,0.6731,0.9995,0.0004
+lexico,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,realismo,False,True,False,True,3,0.1106,0.0,7,107,53,70,0.6462,0.9988,0.00236
+lexico,holdout,The War of the Worlds,ficcao_cientifica,realismo,False,False,False,True,4,0.0889,0.0,7,235,127,150,0.6603,0.9996,0.00029
+lexico,holdout,Treasure Island,acao,realismo,False,True,True,True,2,0.1914,0.2857,7,239,127,150,0.6654,0.9994,0.00087
+supervisionado,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1123,0.0,7,229,127,150,0.7141,0.9989,1e-05
+supervisionado,holdout,Little Women,drama,drama,True,True,True,True,1,0.2149,0.5714,7,223,114,150,0.7159,0.9985,2e-05
+supervisionado,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1835,0.0,7,135,71,84,0.7177,0.9982,0.0
+supervisionado,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2852,1.0,7,276,127,150,0.7215,0.9995,1e-05
+supervisionado,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.1975,0.1429,7,107,53,70,0.717,0.9987,7e-05
+supervisionado,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3125,1.0,7,235,127,150,0.7283,0.9995,1e-05
+supervisionado,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.1945,0.5714,7,239,127,150,0.715,0.9994,0.0

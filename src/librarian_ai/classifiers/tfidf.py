@@ -67,13 +67,17 @@ class TfidfClassifier(GenreClassifier):
         self.model_path = Path(model_path) if model_path else None
         self._model = None
         self._supervised = False
+        self._warmed = False
 
     def warmup(self) -> None:
-        if self._model is not None or self.model_path is None:
+        # Uma tentativa so: sem isso, um model_path ausente repetia o aviso a
+        # cada geracao de cada livro.
+        if self._warmed or self.model_path is None:
             return
+        self._warmed = True
         if not self.model_path.exists():
-            log.info("modelo supervisionado ausente (%s); usando modo lexical",
-                     self.model_path)
+            log.warning("modelo supervisionado ausente (%s); usando modo lexical. "
+                        "Treine com: python scripts/train_supervised.py", self.model_path)
             return
         try:
             import joblib

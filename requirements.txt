@@ -4,6 +4,7 @@ numpy>=1.26.0          # vetores de gênero do gabarito
 requests>=2.32.0       # Project Gutenberg, Google Books, Open Library
 rapidfuzz>=3.9.0       # casamento fuzzy título/autor
 matplotlib>=3.9.0      # renderização dos PDFs sintéticos e gráficos
+PyYAML>=6.0.1          # config.yaml do pipeline (python run.py)
 
 # Unidade 3: representações textuais e tarefas de PLN
 scikit-learn>=1.5.0    # BoW, TF-IDF, clusterização, PCA, classificadores
@@ -11,6 +12,9 @@ scipy>=1.13.0
 gensim>=4.3.3          # Word2Vec
 transformers>=4.46.0   # BERT (embeddings, NER, sentimento) e zero-shot NLI
 torch>=2.4.0           # CPU via PyPI; para CUDA, instale antes o requirements-cuda.txt
+
+# Unidade 4: backend LLM (Claude via API; opcional, exige ANTHROPIC_API_KEY)
+anthropic>=1.17.0
 
 # Desenvolvimento
 pytest>=8.0.0

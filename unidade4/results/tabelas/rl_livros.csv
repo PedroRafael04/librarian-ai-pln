@@ -1,0 +1,106 @@
+method,split,title,genre,predicted,top1_correct,top3_correct,top1_correct_7,top3_correct_7,rank,p_true,generation_accuracy,n_generations,pages_read,pages_distinct,pages_total,mean_reward,policy_entropy,final_jsd,seed,policy_max
+bandit,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1091,0.0,12,384,141,150,0.7433,0.9987,1e-05,0,0.1146
+bandit,holdout,Little Women,drama,drama,True,True,True,True,1,0.2168,0.5833,12,397,140,150,0.7456,0.9986,0.0,0,0.11
+bandit,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1829,0.0,12,237,81,84,0.7475,0.9976,1e-05,0,0.1244
+bandit,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2837,1.0,12,424,142,150,0.7503,0.9996,0.0,0,0.1054
+bandit,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2054,0.1667,12,185,63,70,0.7459,0.9984,2e-05,0,0.1157
+bandit,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3096,1.0,12,416,146,150,0.7559,0.9996,1e-05,0,0.1069
+bandit,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.193,0.5,12,432,143,150,0.7446,0.9993,0.0,0,0.114
+bandit,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1144,0.0,12,388,145,150,0.7433,0.9984,0.0,1,0.1199
+bandit,holdout,Little Women,drama,drama,True,True,True,True,1,0.2214,0.8333,12,419,142,150,0.7452,0.9991,0.0,1,0.111
+bandit,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1825,0.0,12,214,81,84,0.7474,0.9986,1e-05,1,0.1122
+bandit,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2935,1.0,12,415,144,150,0.7515,0.9993,0.0,1,0.1091
+bandit,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2053,0.1667,12,184,68,70,0.7462,0.9979,1e-05,1,0.1176
+bandit,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3148,1.0,12,448,143,150,0.7557,0.9994,1e-05,1,0.1062
+bandit,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.2048,0.75,12,358,141,150,0.7446,0.9989,1e-05,1,0.1129
+bandit,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1113,0.0,12,428,144,150,0.744,0.9992,0.0,2,0.1127
+bandit,holdout,Little Women,drama,drama,True,True,True,True,1,0.2189,0.8333,12,390,142,150,0.7453,0.9993,0.0,2,0.1084
+bandit,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1828,0.0,12,264,81,84,0.7479,0.9989,0.0,2,0.1151
+bandit,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2867,1.0,12,407,146,150,0.7506,0.9996,0.0,2,0.1064
+bandit,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2092,0.4167,12,179,67,70,0.7448,0.9986,1e-05,2,0.1148
+bandit,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3069,1.0,12,426,144,150,0.7545,0.999,0.0,2,0.1108
+bandit,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.197,0.5,12,414,144,150,0.7446,0.9998,0.0,2,0.1049
+bandit,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1062,0.0,12,426,144,150,0.7438,0.9987,0.0,3,0.1109
+bandit,holdout,Little Women,drama,drama,True,True,True,True,1,0.2207,0.75,12,390,142,150,0.7457,0.9985,0.0,3,0.1146
+bandit,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1844,0.0,12,240,80,84,0.7477,0.9991,0.0,3,0.1118
+bandit,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2893,1.0,12,427,142,150,0.7512,0.9997,1e-05,3,0.1078
+bandit,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2039,0.0,12,198,66,70,0.7461,0.9982,1e-05,3,0.1151
+bandit,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3118,1.0,12,352,137,150,0.7548,0.9997,0.0,3,0.1065
+bandit,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.1991,0.75,12,383,146,150,0.7444,0.9996,1e-05,3,0.1075
+bandit,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1131,0.0,12,377,140,150,0.7436,0.9992,1e-05,4,0.1111
+bandit,holdout,Little Women,drama,drama,True,True,True,True,1,0.2217,0.9167,12,408,143,150,0.7455,0.9994,0.0,4,0.1109
+bandit,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.186,0.0,12,237,80,84,0.7477,0.9988,0.0,4,0.114
+bandit,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2897,1.0,12,412,142,150,0.7505,0.9988,1e-05,4,0.1106
+bandit,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2074,0.1667,12,172,62,70,0.745,0.9985,3e-05,4,0.1185
+bandit,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3132,1.0,12,419,140,150,0.7552,0.9992,1e-05,4,0.1069
+bandit,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.1968,0.75,12,431,141,150,0.7442,0.9989,0.0,4,0.112
+bandit_agressivo,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1131,0.0,12,384,135,150,0.7428,0.943,0.0,0,0.1883
+bandit_agressivo,holdout,Little Women,drama,filosofico,False,True,False,True,2,0.2099,0.4167,12,397,123,150,0.7457,0.9171,0.0,0,0.2195
+bandit_agressivo,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1778,0.0,12,237,74,84,0.7474,0.9264,0.0,0,0.2154
+bandit_agressivo,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2853,1.0,12,424,140,150,0.7506,0.9586,1e-05,0,0.1921
+bandit_agressivo,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2077,0.0833,12,185,56,70,0.7466,0.8286,1e-05,0,0.3071
+bandit_agressivo,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3008,1.0,12,416,138,150,0.7552,0.938,1e-05,0,0.2489
+bandit_agressivo,holdout,Treasure Island,acao,drama,False,True,False,True,2,0.1919,0.4167,12,432,139,150,0.7448,0.9727,0.0,0,0.1733
+bandit_agressivo,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1181,0.0,12,388,135,150,0.7424,0.9119,1e-05,1,0.2952
+bandit_agressivo,holdout,Little Women,drama,drama,True,True,True,True,1,0.2174,0.9167,12,419,137,150,0.7448,0.9653,1e-05,1,0.1729
+bandit_agressivo,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.177,0.0,12,214,74,84,0.7472,0.8375,0.0,1,0.3845
+bandit_agressivo,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2881,1.0,12,415,135,150,0.7513,0.9447,1e-05,1,0.2263
+bandit_agressivo,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.1951,0.1667,12,184,63,70,0.7467,0.9303,0.0,1,0.1908
+bandit_agressivo,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3166,1.0,12,448,140,150,0.7557,0.9555,0.0,1,0.2086
+bandit_agressivo,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.2127,0.9167,12,358,127,150,0.7446,0.8293,0.0,1,0.4244
+bandit_agressivo,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1126,0.0,12,428,137,150,0.7443,0.9225,0.0,2,0.3014
+bandit_agressivo,holdout,Little Women,drama,drama,True,True,True,True,1,0.2137,0.6667,12,390,136,150,0.7453,0.9577,0.0,2,0.1626
+bandit_agressivo,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1915,0.0,12,264,75,84,0.7486,0.8691,0.0,2,0.268
+bandit_agressivo,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.288,1.0,12,407,144,150,0.7503,0.9801,1e-05,2,0.1448
+bandit_agressivo,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2009,0.0,12,179,61,70,0.7456,0.9563,1e-05,2,0.1906
+bandit_agressivo,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3066,1.0,12,426,137,150,0.7547,0.8768,0.0,2,0.3624
+bandit_agressivo,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.1947,0.5,12,414,140,150,0.7447,0.982,0.0,2,0.1581
+bandit_agressivo,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1101,0.0,12,426,129,150,0.7434,0.9079,0.0,3,0.2856
+bandit_agressivo,holdout,Little Women,drama,drama,True,True,True,True,1,0.2232,0.8333,12,390,124,150,0.7458,0.9091,0.0,3,0.2852
+bandit_agressivo,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1755,0.0,12,240,76,84,0.7476,0.9097,0.0,3,0.2897
+bandit_agressivo,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2901,1.0,12,427,141,150,0.7511,0.9711,1e-05,3,0.1833
+bandit_agressivo,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.1958,0.0,12,198,57,70,0.7462,0.8889,1e-05,3,0.2544
+bandit_agressivo,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3171,1.0,12,352,137,150,0.7554,0.9821,0.0,3,0.1629
+bandit_agressivo,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.2033,0.75,12,383,143,150,0.7446,0.973,1e-05,3,0.2045
+bandit_agressivo,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1119,0.0,12,377,132,150,0.7432,0.9074,0.0,4,0.2773
+bandit_agressivo,holdout,Little Women,drama,drama,True,True,True,True,1,0.2156,0.8333,12,408,137,150,0.7453,0.9596,0.0,4,0.2181
+bandit_agressivo,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1837,0.0,12,237,75,84,0.7483,0.9,0.0,4,0.2713
+bandit_agressivo,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2869,1.0,12,412,126,150,0.7507,0.8995,0.0,4,0.2482
+bandit_agressivo,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.1949,0.1667,12,172,59,70,0.745,0.8847,1e-05,4,0.3564
+bandit_agressivo,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3162,1.0,12,419,136,150,0.7557,0.9592,1e-05,4,0.2005
+bandit_agressivo,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.1929,0.6667,12,431,140,150,0.744,0.9643,0.0,4,0.1827
+uniform,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1088,0.0,12,384,142,150,0.7432,1.0,1e-05,0,0.1
+uniform,holdout,Little Women,drama,drama,True,True,True,True,1,0.2181,0.75,12,397,142,150,0.7455,1.0,0.0,0,0.1
+uniform,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1803,0.0,12,237,81,84,0.7473,1.0,0.0,0,0.1
+uniform,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2835,1.0,12,424,143,150,0.7502,1.0,0.0,0,0.1
+uniform,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2069,0.1667,12,185,65,70,0.7461,1.0,1e-05,0,0.1
+uniform,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3082,1.0,12,416,145,150,0.7557,1.0,1e-05,0,0.1
+uniform,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.1919,0.5,12,432,145,150,0.7444,1.0,0.0,0,0.1
+uniform,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1135,0.0,12,388,145,150,0.7436,1.0,0.0,1,0.1
+uniform,holdout,Little Women,drama,drama,True,True,True,True,1,0.2247,0.9167,12,419,143,150,0.7453,1.0,0.0,1,0.1
+uniform,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1809,0.0,12,214,80,84,0.7476,1.0,1e-05,1,0.1
+uniform,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2934,1.0,12,415,145,150,0.7514,1.0,1e-05,1,0.1
+uniform,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2073,0.25,12,184,68,70,0.7462,1.0,1e-05,1,0.1
+uniform,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3177,1.0,12,448,144,150,0.756,1.0,1e-05,1,0.1
+uniform,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.2052,0.6667,12,358,140,150,0.7446,1.0,1e-05,1,0.1
+uniform,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1113,0.0,12,428,143,150,0.744,1.0,0.0,2,0.1
+uniform,holdout,Little Women,drama,drama,True,True,True,True,1,0.2193,0.8333,12,390,142,150,0.7452,1.0,0.0,2,0.1
+uniform,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1817,0.0,12,264,84,84,0.7475,1.0,0.0,2,0.1
+uniform,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2861,1.0,12,407,146,150,0.7506,1.0,1e-05,2,0.1
+uniform,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2083,0.25,12,179,67,70,0.745,1.0,1e-05,2,0.1
+uniform,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3078,1.0,12,426,144,150,0.7546,1.0,0.0,2,0.1
+uniform,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.197,0.5,12,414,145,150,0.7446,1.0,0.0,2,0.1
+uniform,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1075,0.0,12,426,142,150,0.7441,1.0,0.0,3,0.1
+uniform,holdout,Little Women,drama,drama,True,True,True,True,1,0.2209,0.6667,12,390,144,150,0.7456,1.0,0.0,3,0.1
+uniform,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1847,0.0,12,240,81,84,0.7479,1.0,0.0,3,0.1
+uniform,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2901,1.0,12,427,144,150,0.7512,1.0,1e-05,3,0.1
+uniform,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2045,0.0,12,198,66,70,0.7461,1.0,1e-05,3,0.1
+uniform,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3151,1.0,12,352,138,150,0.7551,1.0,0.0,3,0.1
+uniform,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.1986,0.75,12,383,145,150,0.7444,1.0,1e-05,3,0.1
+uniform,holdout,Jane Eyre,romance,terror,False,False,False,False,5,0.1137,0.0,12,377,141,150,0.7436,1.0,1e-05,4,0.1
+uniform,holdout,Little Women,drama,drama,True,True,True,True,1,0.2208,0.75,12,408,145,150,0.7455,1.0,0.0,4,0.1
+uniform,holdout,Siddhartha,filosofico,terror,False,True,False,True,2,0.1836,0.0,12,237,80,84,0.7476,1.0,0.0,4,0.1
+uniform,holdout,The Mysterious Affair at Styles,misterio,misterio,True,True,True,True,1,0.2899,1.0,12,412,144,150,0.7504,1.0,1e-05,4,0.1
+uniform,holdout,The Strange Case of Dr Jekyll and Mr Hyde,terror,misterio,False,True,False,True,2,0.2082,0.3333,12,172,65,70,0.7448,1.0,2e-05,4,0.1
+uniform,holdout,The War of the Worlds,ficcao_cientifica,ficcao_cientifica,True,True,True,True,1,0.3081,1.0,12,419,140,150,0.7547,1.0,1e-05,4,0.1
+uniform,holdout,Treasure Island,acao,acao,True,True,True,True,1,0.1969,0.75,12,431,143,150,0.7442,1.0,0.0,4,0.1

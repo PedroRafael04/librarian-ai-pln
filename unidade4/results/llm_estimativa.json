@@ -1,0 +1,262 @@
+{
+  "total": {
+    "model": "claude-opus-5-5",
+    "price_per_mtok": {
+      "input": 4.0,
+      "output": 20.0
+    },
+    "generations_max": 5,
+    "generations_likely": 3,
+    "books": 22,
+    "calls_max": 110,
+    "calls_likely": 66,
+    "input_tokens_max": 1958058,
+    "input_tokens_likely": 1133821,
+    "usd_max": 9.81,
+    "usd_likely": 5.72
+  },
+  "books": [
+    {
+      "method": "llm",
+      "split": "base",
+      "title": "Dracula",
+      "calls_max": 5.0,
+      "input_tokens_max": 124185,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 71798,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "base",
+      "title": "Frankenstein",
+      "calls_max": 5.0,
+      "input_tokens_max": 95609,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 53530,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "base",
+      "title": "Great Expectations",
+      "calls_max": 5.0,
+      "input_tokens_max": 132826,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 72355,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "base",
+      "title": "Moby Dick",
+      "calls_max": 5.0,
+      "input_tokens_max": 111323,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 71184,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "base",
+      "title": "Pride and Prejudice",
+      "calls_max": 5.0,
+      "input_tokens_max": 82453,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 50761,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "base",
+      "title": "The Adventures of Sherlock Holmes",
+      "calls_max": 5.0,
+      "input_tokens_max": 129216,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 71704,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "base",
+      "title": "The Picture of Dorian Gray",
+      "calls_max": 5.0,
+      "input_tokens_max": 123219,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 65703,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "base",
+      "title": "The Time Machine",
+      "calls_max": 5.0,
+      "input_tokens_max": 66507,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 38001,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "holdout",
+      "title": "Jane Eyre",
+      "calls_max": 5.0,
+      "input_tokens_max": 87161,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 51551,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "holdout",
+      "title": "Little Women",
+      "calls_max": 5.0,
+      "input_tokens_max": 80059,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 44019,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "holdout",
+      "title": "Siddhartha",
+      "calls_max": 5.0,
+      "input_tokens_max": 78492,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 51495,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "holdout",
+      "title": "The Mysterious Affair at Styles",
+      "calls_max": 5.0,
+      "input_tokens_max": 76543,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 48892,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "holdout",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "calls_max": 5.0,
+      "input_tokens_max": 47661,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 28066,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "holdout",
+      "title": "The War of the Worlds",
+      "calls_max": 5.0,
+      "input_tokens_max": 96710,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 53343,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm",
+      "split": "holdout",
+      "title": "Treasure Island",
+      "calls_max": 5.0,
+      "input_tokens_max": 85577,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 45591,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm_mascarado",
+      "split": "holdout",
+      "title": "Jane Eyre",
+      "calls_max": 5.0,
+      "input_tokens_max": 85594,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 50629,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm_mascarado",
+      "split": "holdout",
+      "title": "Little Women",
+      "calls_max": 5.0,
+      "input_tokens_max": 78672,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 43211,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm_mascarado",
+      "split": "holdout",
+      "title": "Siddhartha",
+      "calls_max": 5.0,
+      "input_tokens_max": 76002,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 49838,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm_mascarado",
+      "split": "holdout",
+      "title": "The Mysterious Affair at Styles",
+      "calls_max": 5.0,
+      "input_tokens_max": 73453,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 46900,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm_mascarado",
+      "split": "holdout",
+      "title": "The Strange Case of Dr Jekyll and Mr Hyde",
+      "calls_max": 5.0,
+      "input_tokens_max": 46812,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 27604,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm_mascarado",
+      "split": "holdout",
+      "title": "The War of the Worlds",
+      "calls_max": 5.0,
+      "input_tokens_max": 95404,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 52619,
+      "output_tokens_likely": 2700
+    },
+    {
+      "method": "llm_mascarado",
+      "split": "holdout",
+      "title": "Treasure Island",
+      "calls_max": 5.0,
+      "input_tokens_max": 84580,
+      "output_tokens_max": 4500,
+      "calls_likely": 3,
+      "input_tokens_likely": 45027,
+      "output_tokens_likely": 2700
+    }
+  ]
+}

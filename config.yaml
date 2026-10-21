@@ -1,0 +1,88 @@
+# ============================================================================
+# Librarian AI - configuracao do experimento
+# Todos os parametros do enunciado sao ajustaveis aqui (ou via flags da CLI).
+# ============================================================================
+
+corpus:
+  input_dir: data/raw          # PDFs de entrada
+  cache_dir: data/cache        # texto extraido, cacheado por hash do arquivo
+  min_chars_per_page: 120      # paginas com menos texto que isso sao descartadas
+                               # (capas, folhas de rosto, paginas so com imagem)
+  max_pages: null              # limite opcional de paginas por livro (debug)
+
+sampling:
+  # "entre 15 a 30% das paginas" -> a taxa e sorteada nesse intervalo a cada geracao
+  min_rate: 0.15
+  max_rate: 0.30
+  fixed_rate: null             # se definido, ignora o intervalo acima
+  segments: 10                 # nº de bracos do bandit (o livro e fatiado em K partes)
+
+generations:
+  n: 12                        # N geracoes
+  seed: 42
+  early_stop:
+    enabled: true
+    min_generations: 5
+    jsd_threshold: 0.01        # para quando a agregacao estabiliza
+    patience: 3
+
+agent:
+  strategy: bandit             # bandit | uniform
+  algorithm: reinforce         # reinforce | exp3
+  learning_rate: 0.35
+  temperature: 1.0
+  baseline_decay: 0.8          # media movel usada como baseline do REINFORCE
+  normalize_advantage: true    # divide a vantagem pelo desvio-padrao movel.
+                               # Sem isso a recompensa de consenso satura e a
+                               # politica final fica identica a uniforme
+  reward:
+    mode: auto                 # auto | consensus | supervised
+                               # auto = consensus (nao olha o rotulo externo);
+                               # supervised busca o ground truth antes do laco
+    confidence_weight: 0.3     # peso do termo de (baixa) entropia na recompensa
+
+classifier:
+  backend: zeroshot            # zeroshot | llm | tfidf
+  zeroshot:
+    model: facebook/bart-large-mnli
+    device: auto               # auto | cuda | cpu
+    fp16: true                 # metade da precisao: cabe folgado nos 8GB da 4060 Ti
+    batch_size: 8
+    max_chars_per_chunk: 3500  # ~900 tokens; paginas sao agrupadas em chunks
+    multi_label: false        # false = softmax entre generos; separa bem melhor
+                              # que sigmoides independentes (medido: gap 6x maior)
+    sharpen: 2.0              # contraste da distribuicao. Monotonico: nao muda o
+                              # ranking, so evita que o peso por confianca fique inerte
+    calibrate: true           # remove o vies a priori do modelo sobre os rotulos.
+                              # Sem isso, 'Drama' vence quase sempre (vies medido: 4.2x)
+    calibration_strength: 0.6 # expoente alpha da calibracao, em [0, 1]. 0 = desligada,
+                              # 1 = total (superamplifica generos raros como Tragedia).
+                              # Ajuste com scripts/tune_calibration.py no SEU dataset
+  llm:                         # Unidade 4: Claude via API (exige ANTHROPIC_API_KEY no .env)
+    model: claude-opus-5-5
+    effort: low                # low | medium | high: profundidade do raciocinio adaptativo
+    max_pages_per_call: 50     # paginas por chamada; uma geracao (15-30%) cabe em 1 chamada
+    max_tokens: 4096
+    mask_names: false          # true troca nomes proprios por "X" (controle de memorizacao)
+    cache_dir: data/cache/llm  # respostas gravadas: rodar de novo nao gasta tokens
+  tfidf:
+    # Sem o arquivo, o backend usa o lexico (sem treino). Com ele, o classificador
+    # supervisionado da Unidade 3 (scripts/train_supervised.py).
+    model_path: models/tfidf_genre.joblib
+
+aggregation:
+  method: weighted_mean        # weighted_mean | mean | log_pool
+  weight_by_confidence: true
+  ema_alpha: null              # se definido, aplica media movel exponencial nas geracoes
+
+ground_truth:
+  enabled: true
+  providers: [google_books, open_library]
+  timeout: 15
+  cache_dir: data/cache/ground_truth
+  google_books_api_key: null   # opcional; sem chave o limite de requisicoes e menor
+
+output:
+  dir: results
+  save_plots: true
+  save_per_generation: true
