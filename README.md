@@ -1,10 +1,12 @@
-# Librarian AI — coleta, pré-processamento e representações textuais
+# Librarian AI
 
 Classificação de gênero literário a partir de **amostragem parcial de páginas**
-de livros em PDF. Este repositório cobre as etapas práticas do projeto até a
-Unidade 3: **montar a base de dados textuais, extrair e limpar o texto, obter
-um gabarito externo** e **avaliar representações textuais (BoW, TF-IDF,
-Word2Vec, BERT) em tarefas de PLN**.
+de livros em PDF, guiada por um agente de aprendizado por reforço. Este
+repositório cobre todas as etapas práticas do projeto: **montar a base de dados
+textuais, extrair e limpar o texto, obter um gabarito externo**, **avaliar
+representações textuais (BoW, TF-IDF, Word2Vec, BERT) em tarefas de PLN**
+(Unidade 3) e **o laço completo com agente de RL e LLM, apresentado na Mostra
+Virtual** (Unidade 4).
 
 O que já está aqui:
 
@@ -20,16 +22,24 @@ O que já está aqui:
 5. **(Unidade 3)** a pasta [`unidade3/`](unidade3/), com o código, os
    resultados e o [relatório](unidade3/RELATORIO.md) da combinação de quatro
    representações textuais com clusterização + PCA, busca e recomendação,
-   classificação, análise de sentimento, NER e extração de relações.
+   classificação, análise de sentimento, NER e extração de relações;
+6. **(Unidade 4)** o **laço completo** da proposta: o agente de aprendizado por
+   reforço escolhe 15–30% das páginas por geração, um backend classifica, as
+   gerações são interpoladas até o veredito estabilizar (`python run.py`). Os
+   backends são o léxico, o zero-shot NLI, o supervisionado da Unidade 3 e um
+   **LLM (Claude Opus 5.5) com saída estruturada**. A pasta
+   [`unidade4/`](unidade4/) traz os experimentos, e [`docs/`](docs/) o
+   **pôster digital da Mostra Virtual**.
 
-A amostragem guiada por aprendizado por reforço será adicionada na próxima
-entrega.
+**Pôster da Mostra Virtual:** <https://pedrorafael04.github.io/librarian-ai-pln/>
+(publicado pelo GitHub Pages a partir de `docs/`; ver [seção 5](#5-unidade-4-laço-completo-llm-e-mostra-virtual)).
 
 ---
 
 ## Instalação
 
-Requer Python 3.11+ (testado em 3.12). Os modelos BERT da Unidade 3 rodam em
+Requer Python 3.11+ (testado em 3.12; no 3.14 o `gensim` ainda não tem pacote
+pronto para Windows e a instalação falha). Os modelos BERT da Unidade 3 rodam em
 CPU, mas uma GPU NVIDIA acelera bastante; nesse caso instale o PyTorch com
 CUDA **antes** do resto:
 
@@ -164,7 +174,7 @@ pode complementar as APIs.
 .venv\Scripts\python.exe -m pytest -q
 ```
 
-97 testes, todos sem rede e sem GPU (~3 s):
+124 testes, todos sem rede, sem GPU e sem chave de API (~5 s):
 
 - `test_core.py` (61): taxonomia e mapeamento de categorias, limpeza de texto,
   título/autor no nome do arquivo, tokenização, stopwords, segmentação em
@@ -174,7 +184,13 @@ pode complementar as APIs.
   representações (o BERT com um *encoder* falso, para testar janelas, pooling
   e cache sem baixar o modelo), métricas de clusterização, busca, fusão de
   rankings, recomendação, classificação supervisionada e leitura parcial,
-  limpeza do NER e coocorrência de personagens.
+  limpeza do NER e coocorrência de personagens;
+- `test_unidade4.py` (27): agente de RL, recompensa, avaliação pelo rótulo
+  curado, configuração, laço de gerações, classificador supervisionado
+  (treino, joblib e carga pelo backend), backend LLM com um cliente falso
+  (requisição com saída estruturada e sem `temperature`, esquema JSON, cache,
+  recusa, mascaramento, chave ausente) e o pôster (seções do enunciado, imagens,
+  nenhum segredo no HTML).
 
 ## Resultado da coleta no dataset de exemplo
 
@@ -203,6 +219,80 @@ comportam com **dados novos**: nunca entra no ajuste das representações nem no
 treino. A lista de obras e o gênero curado de cada uma ficam em
 `src/librarian_ai/catalog.py`.
 
+## 5. Unidade 4: laço completo, LLM e Mostra Virtual
+
+Modalidade escolhida: **pôster digital** (Modalidade A), uma página estática em
+[`docs/`](docs/) publicada pelo GitHub Pages:
+**<https://pedrorafael04.github.io/librarian-ai-pln/>**. Para ativar (dono do
+repositório): *Settings → Pages → Deploy from a branch → `main` / `/docs`*.
+
+### Como executar
+
+```powershell
+.venv\Scripts\python.exe scripts\train_supervised.py          # supervisionado da U3 -> models/ (só a base)
+.venv\Scripts\python.exe run.py --backend tfidf -i data\holdout   # laço completo nos livros novos
+.venv\Scripts\python.exe run.py -i data\holdout                # backend do config.yaml (zero-shot; GPU recomendada)
+.venv\Scripts\python.exe run.py --backend tfidf --strategy uniform   # baseline sem aprendizado
+.venv\Scripts\python.exe -m unidade4.run                       # experimentos locais: laço + RL x uniforme (~1 min)
+.venv\Scripts\python.exe -m unidade4.run --etapas llm          # só ESTIMA chamadas, tokens e custo do LLM
+.venv\Scripts\python.exe -m unidade4.run --etapas llm --executar-llm   # chama a API (pago)
+.venv\Scripts\python.exe -m unidade4.poster                    # gera docs/index.html a partir dos resultados
+```
+
+`run.py` é a linha de comando do laço (`--help` lista as opções). Ele grava
+`results/run_<data>/` com JSON, CSV, gráficos e um resumo, e avalia contra o
+**gênero curado** do catálogo e contra o gabarito das APIs.
+
+### LLM no processamento
+
+| Item | Configuração |
+|---|---|
+| Modelo | Claude Opus 5.5 (`claude-opus-5-5`), Anthropic |
+| Acesso | API (Messages API), SDK `anthropic` 1.17; chave em `.env` (ignorado pelo git) |
+| Prompt | papel de analista literário, definição dos 14 gêneros, regras de evidência e de honestidade sobre reconhecer a obra |
+| Saída | estruturada por JSON Schema (`output_config.format`): distribuição sobre os ids do gênero (`enum`), justificativa, até 3 citações, `recognized_work` e `work_guess` |
+| Demais | esforço `low` (raciocínio adaptativo), até 4.096 tokens de saída, até 50 páginas por chamada, *fallback* do servidor em recusas, respostas em cache local (`data/cache/llm/`) |
+| Controle | variante com nomes próprios mascarados, para medir memorização das obras |
+| Custo | estimado antes de qualquer chamada (`--etapas llm`); a execução exige `--executar-llm` e respeita `--limite-usd` |
+
+Sem `--executar-llm` nada é enviado à API, e o pôster marca o LLM como
+pendente em vez de mostrar números.
+
+### Quadro de técnicas (item 1 do enunciado)
+
+| Tecnologia ou abordagem | Utilizada? | Aplicação ou justificativa |
+|---|---|---|
+| LLMs e modelos de linguagem | Sim | Claude Opus 5.5 como backend do laço (`classifiers/llm.py`); modelos locais da família BERT/BART na U3 (zero-shot NLI, MiniLM, DistilBERT, BERT-NER) |
+| Prompt engineering e saídas estruturadas | Sim | *system prompt* com taxonomia e regras de evidência; JSON Schema garantido pela API |
+| RAG e recuperação de informações | Não (RAG) | a tarefa classifica as próprias páginas, que já chegam ao modelo; recuperação usada na U3 (busca híbrida TF-IDF + BERT); RAG com descrições de catálogo vazaria o rótulo |
+| Agentes e integração com ferramentas | Sim | agente de RL (bandit REINFORCE) que escolhe as regiões do livro; integração com Gutenberg, Google Books, Open Library e API da Anthropic |
+| Modelos locais ou quantizados | Sim (locais) | bart-large-mnli, MiniLM, DistilBERT e BERT-NER rodam localmente (fp16 no zero-shot com GPU); sem quantização inteira |
+| Processamento multimodal | Não | entradas são PDFs com camada de texto; OCR para PDFs digitalizados ficou fora do escopo |
+| Outras técnicas avançadas | Sim | calibração contextual, relações por implicação textual, fusão de rankings (RRF), mascaramento de nomes |
+
+### Resultados medidos (7 livros novos, rótulo curado)
+
+| Método no laço completo | Top-1 (7 gêneros) | Top-1 (14) | Acerto por geração | Páginas distintas lidas |
+|---|--:|--:|--:|--:|
+| Léxico (sem treino) | 3/7 | 1/7 | 20% | 83% |
+| TF-IDF + regressão logística, nomes mascarados | 4/7 | 4/7 | 47% | 83% |
+
+Agente de RL contra amostragem uniforme (5 sementes, 12 gerações): os dois
+acertam 4/7 em todas as sementes; uma versão mais agressiva do agente acerta
+3,6/7 em média. A recompensa de consenso satura na 2ª geração, então o agente
+não tem sinal para aprender. Cada geração lê 15–30%, mas as gerações somadas
+cobrem ~83% das páginas antes da parada. Análise completa no pôster e em
+[`unidade4/results/resumo.md`](unidade4/results/resumo.md).
+
+### Uso de IA generativa
+
+Fornecedor e modelo: Anthropic, **Claude Opus 5.5** (`claude-opus-5-5`), pela
+ferramenta Claude Code. Usos: implementação e testes do código da Unidade 4
+(porte do laço completo do pipeline, backend LLM, experimentos e gerador do
+pôster), execução dos experimentos e redação preliminar do pôster e deste
+README a partir dos resultados medidos; a equipe revisa as análises. Os
+principais prompts estão no próprio pôster (seção de referências).
+
 ## Estrutura
 
 ```
@@ -213,7 +303,12 @@ src/librarian_ai/
   preprocess.py     tokenização, stopwords, blocos, frases e nomes próprios
   ground_truth.py   Google Books + Open Library, com consolidação entre edições
   aggregation.py    interpolação de distribuições, JSD, entropia, top-k
-  classifiers/      classificadores sem treino: léxico TF-IDF e zero-shot NLI
+  agent.py          agente de RL (bandit REINFORCE/EXP3) que escolhe as páginas
+  pipeline.py       laço de gerações, recompensa e avaliação (curada e API)
+  supervised.py     treino do classificador supervisionado (melhor da U3)
+  config.py         carga e validação do config.yaml
+  cli.py, report.py linha de comando (run.py) e relatórios de cada execução
+  classifiers/      léxico TF-IDF / supervisionado, zero-shot NLI e LLM (Claude)
 unidade3/
   documents.py        blocos de páginas rotulados (unidade de análise)
   representations.py  BoW, TF-IDF, Word2Vec, BERT (fit/transform)
@@ -225,10 +320,20 @@ unidade3/
   run.py              executa as etapas e grava results/
   results/            figuras, tabelas (CSV) e resumo por etapa
   RELATORIO.md        respostas do trabalho da Unidade 3
+unidade4/
+  run.py              experimentos: laço por backend, RL x uniforme, LLM (com estimativa)
+  plots.py            figuras
+  poster.py           gera o pôster (docs/) a partir dos resultados
+  results/            JSON, tabelas, figuras e resumo.md
+docs/                 pôster digital publicado pelo GitHub Pages
+config.yaml           parâmetros do laço (amostragem, agente, backends)
+run.py                linha de comando do laço completo
 scripts/
-  fetch_samples.py  monta o dataset (base ou holdout) a partir do Gutenberg
-  build_corpus.py   extrai, limpa, cacheia e resume a base
+  fetch_samples.py    monta o dataset (base ou holdout) a partir do Gutenberg
+  build_corpus.py     extrai, limpa, cacheia e resume a base
+  train_supervised.py treina o supervisionado da U3 para o laço (models/)
 tests/
   test_core.py      pacote librarian_ai
   test_unidade3.py  pacote unidade3
+  test_unidade4.py  laço, agente, backends supervisionado e LLM, pôster
 ```

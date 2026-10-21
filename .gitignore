@@ -9,3 +9,9 @@ data/cache/*
 .env
 data/holdout/*
 !data/holdout/.gitkeep
+
+# Modelos treinados localmente (scripts/train_supervised.py)
+/models/
+
+# Saidas do pipeline (python run.py)
+/results/

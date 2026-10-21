@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Librarian AI</title>
+<meta name="description" content="Pôster digital do projeto Librarian AI (PLN, FURB 2026/2): classificação de gênero literário lendo parte do livro, com agente de RL, representações textuais e LLM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<style>
+/* Pôster científico em grade: faixa de páginas como herói, painéis na ordem do enunciado,
+   cor de pano de encadernação (estrutura) e tinta violeta de carimbo de biblioteca (destaque). */
+:root {
+  --paper: #F3F5F2; --paper-2: #E4E9E5; --panel: #FBFCFA; --ink: #17201D; --muted: #55625C;
+  --line: #CBD3CE; --cloth: #1C5C4D; --cloth-soft: #DCEAE4; --stamp: #5A46B0; --stamp-soft: #E8E3F8;
+  --plate: #FFFFFF;
+  --display: "Literata", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #101513; --paper-2: #1A221F; --panel: #151C19; --ink: #E3E9E6; --muted: #9BA9A3;
+    --line: #2C3833; --cloth: #6BC2A7; --cloth-soft: #1B332D; --stamp: #A797F1; --stamp-soft: #262044;
+    --plate: #E6EAE7; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #101513; --paper-2: #1A221F; --panel: #151C19; --ink: #E3E9E6; --muted: #9BA9A3;
+  --line: #2C3833; --cloth: #6BC2A7; --cloth-soft: #1B332D; --stamp: #A797F1; --stamp-soft: #262044;
+  --plate: #E6EAE7; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1240px; margin: 0 auto; }
+a { color: var(--cloth); text-underline-offset: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--stamp); outline-offset: 2px; border-radius: 2px; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--paper); padding: 8px 12px; }
+.skip:focus { left: max(16px, env(safe-area-inset-left, 0px)); top: env(safe-area-inset-top, 0px); z-index: 10; }
+code { font: 400 0.86em var(--mono); background: var(--paper-2); padding: 0.05em 0.35em; border-radius: 3px; overflow-wrap: anywhere; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; line-height: 1.2; margin: 0; }
+h2 { font-size: 1.55rem; color: var(--cloth); }
+h3 { font-size: 1.12rem; margin-top: 1.4rem; }
+p { margin: 0.6rem 0; }
+.eyebrow { font: 500 0.74rem/1.3 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); margin: 0 0 0.4rem; }
+.small { font-size: 0.88rem; color: var(--muted); }
+
+/* cabecalho */
+.masthead { padding-block: 40px 20px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px); gap: 28px; align-items: end; border-bottom: 2px solid var(--ink); }
+.masthead h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); letter-spacing: -0.02em; font-weight: 600; }
+.masthead h1 em { font-style: italic; font-weight: 400; color: var(--cloth); }
+.deck { font: 400 clamp(1.05rem, 2.2vw, 1.3rem)/1.5 var(--display); max-width: 46ch; margin-top: 0.8rem; }
+.byline { font-size: 0.95rem; color: var(--muted); }
+.byline strong { color: var(--ink); font-weight: 600; }
+.callno { font: 400 0.82rem/1.55 var(--mono); border: 1px solid var(--ink); padding: 12px 14px; background: var(--panel); }
+.callno div { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dotted var(--line); }
+.callno div:last-child { border-bottom: 0; }
+.callno span:first-child { color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 12px; font-size: 0.95rem; }
+
+/* heroi: a faixa de paginas */
+.hero { padding-block: 26px 10px; }
+.hero-head { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between; }
+.hero-head h2 { color: var(--ink); font-size: 1.35rem; }
+.strip-box { overflow-x: auto; margin-top: 10px; }
+.strip { width: 100%; min-width: 620px; height: 178px; display: block; }
+.strip .pg { fill: var(--paper-2); }
+.strip .pg.on { fill: var(--stamp); }
+.strip .bar { fill: var(--cloth); opacity: 0.85; }
+.strip .uniform { stroke: var(--ink); stroke-dasharray: 4 4; stroke-width: 1; opacity: 0.55; }
+.strip .seg { stroke: var(--ink); stroke-width: 1; opacity: 0.4; }
+.strip .lbl { fill: var(--muted); font: 400 13px var(--mono); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 0.88rem; color: var(--muted); margin-top: 6px; }
+.legend i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; }
+.legend .k1 { background: var(--stamp); } .legend .k2 { background: var(--cloth); } .legend .k3 { border-top: 2px dashed var(--ink); height: 0; width: 16px; vertical-align: 3px; }
+
+/* sumario */
+.toc { display: flex; flex-wrap: wrap; gap: 6px 16px; padding-block: 16px; border-block: 1px solid var(--line); margin-block: 22px; font-size: 0.92rem; }
+.toc a { color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--cloth); text-decoration: underline; }
+
+/* grade do poster */
+.poster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; padding-bottom: 40px; }
+.panel { background: var(--panel); border: 1px solid var(--line); padding: 22px clamp(16px, 3vw, 30px) 26px; min-width: 0; }
+.panel.full { grid-column: 1 / -1; }
+.panel.full > p { max-width: 80ch; }
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.cols > * { min-width: 0; }
+.cols.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+ul.ticks, ol.flow, ul.plain, ul.prompts, ul.quotes { margin: 0.6rem 0; padding-left: 1.2rem; }
+ul.ticks li, ol.flow li { margin: 0.35rem 0; }
+ol.flow span { font-weight: 600; color: var(--cloth); }
+ul.plain { padding-left: 1rem; }
+ul.prompts li { font: 400 0.86rem/1.5 var(--mono); color: var(--muted); margin: 0.5rem 0; }
+
+/* achados */
+.finding-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 10px; }
+.finding { border-top: 3px solid var(--stamp); padding-top: 8px; min-width: 0; }
+.finding .big { font: 600 2rem/1.1 var(--display); color: var(--stamp); margin: 0.2rem 0; font-variant-numeric: tabular-nums; }
+.finding p:last-child { font-size: 0.92rem; color: var(--muted); }
+
+/* tabelas */
+.table-wrap { overflow-x: auto; margin: 12px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+caption { text-align: left; color: var(--muted); font-size: 0.85rem; padding-bottom: 6px; caption-side: bottom; padding-top: 6px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font: 500 0.76rem/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); border-bottom: 2px solid var(--ink); }
+tbody th { font-weight: 500; }
+.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tag { font: 500 0.7rem var(--mono); color: var(--stamp); background: var(--stamp-soft); padding: 1px 6px; border-radius: 3px; white-space: nowrap; }
+
+/* figuras */
+.fig-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.fig { margin: 14px 0; min-width: 0; }
+.plate { background: var(--plate); border: 1px solid var(--line); padding: 8px; }
+.plate img { display: block; width: 100%; height: auto; max-width: 100%; }
+figcaption { font-size: 0.86rem; color: var(--muted); margin-top: 6px; }
+
+/* blocos de exemplo */
+.example, .mask-demo, .pending, .json { background: var(--cloth-soft); padding: 14px 16px; min-width: 0; }
+.pending { background: var(--stamp-soft); border-left: 4px solid var(--stamp); }
+.mask-demo .k { font: 500 0.72rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--stamp); margin-right: 8px; }
+.mask-demo p { font-family: var(--display); }
+.mask-demo .small { font-family: var(--body); }
+.quotes li { font-family: var(--display); font-style: italic; }
+
+/* perguntas */
+dl.qa { margin: 0.4rem 0 0; }
+dl.qa dt { font-weight: 600; margin-top: 0.9rem; color: var(--cloth); }
+dl.qa dd { margin: 0.25rem 0 0; }
+
+footer { border-top: 2px solid var(--ink); padding-block: 18px 34px; font-size: 0.88rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+@media (max-width: 980px) {
+  .finding-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cols.three { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .masthead { grid-template-columns: minmax(0, 1fr); }
+  .poster, .cols, .fig-row { grid-template-columns: minmax(0, 1fr); }
+  .finding-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="wrap">
+<header class="masthead">
+  <div>
+    <p class="eyebrow">Mostra Virtual de PLN · FURB · 2026/2</p>
+    <h1>Librarian <em>AI</em></h1>
+    <p class="deck">Classificar o gênero de um livro lendo só parte dele: um agente escolhe as
+    páginas, modelos de linguagem classificam, e as leituras se acumulam até o veredito parar de
+    mudar.</p>
+    <p class="byline"><strong>Pedro Rafael, Leonardo Dal&#x27;Olmo, Marlon Moser, Rafael Ehlert</strong><br>Ciência da Computação, Universidade Regional
+    de Blumenau · Processamento de Linguagem Natural · Prof. Maiko Spiess</p>
+    <nav class="links" aria-label="Links do projeto">
+      <a href="https://github.com/PedroRafael04/librarian-ai-pln">Repositório no GitHub</a>
+      <a href="https://github.com/PedroRafael04/librarian-ai-pln#readme">README e instruções</a>
+      <a href="https://github.com/PedroRafael04/librarian-ai-pln/blob/main/unidade3/RELATORIO.md">Relatório da Unidade 3</a>
+      <a href="https://github.com/PedroRafael04/librarian-ai-pln/tree/main/unidade4">Código da Unidade 4</a>
+    </nav>
+  </div>
+  <div class="callno" aria-label="Ficha do projeto">
+    <div><span>Entrada</span><span>PDF de clássico</span></div>
+    <div><span>Leitura por geração</span><span>15–30% das páginas</span></div>
+    <div><span>Gêneros</span><span>14 na taxonomia</span></div>
+    <div><span>Livros novos</span><span>7, fora do treino</span></div>
+    <div><span>Melhor no laço</span><span>4/7 acertos</span></div>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="h-hero">
+  <div class="hero-head">
+    <h2 id="h-hero">Uma geração do laço, página por página</h2>
+    <p class="small"><em>Treasure Island</em> · geração 7 · 34 de 150 páginas (22%)
+    · gênero curado Ação/Aventura · veredito Ação/Aventura</p>
+  </div>
+  <div class="strip-box"><svg class="strip" viewBox="0 0 1000 178" role="img" aria-labelledby="strip-title strip-desc" preserveAspectRatio="none"><title id="strip-title">Páginas lidas em uma geração</title><desc id="strip-desc">34 de 150 páginas de Treasure Island sorteadas pelo agente, distribuídas pelos 10 segmentos do livro.</desc><rect class="bar" x="3.0" y="45.1" width="94.0" height="22.9"/><rect class="bar" x="103.0" y="44.1" width="94.0" height="23.9"/><rect class="bar" x="203.0" y="44.1" width="94.0" height="23.9"/><rect class="bar" x="303.0" y="45.5" width="94.0" height="22.5"/><rect class="bar" x="403.0" y="44.9" width="94.0" height="23.1"/><rect class="bar" x="503.0" y="46.9" width="94.0" height="21.1"/><rect class="bar" x="603.0" y="42.4" width="94.0" height="25.6"/><rect class="bar" x="703.0" y="45.9" width="94.0" height="22.1"/><rect class="bar" x="803.0" y="45.2" width="94.0" height="22.8"/><rect class="bar" x="903.0" y="46.0" width="94.0" height="22.0"/><line class="uniform" x1="0" x2="1000" y1="45.0" y2="45.0"/><rect class="pg" x="0.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="6.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="13.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="20.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="26.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="33.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="40.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="46.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="53.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="60.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="66.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="73.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="80.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="86.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="93.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="100.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="106.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="113.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="120.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="126.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="133.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="140.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="146.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="153.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="160.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="166.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="173.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="180.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="186.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="193.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="200.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="206.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="213.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="220.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="226.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="233.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="240.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="246.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="253.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="260.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="266.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="273.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="280.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="286.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="293.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="300.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="306.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="313.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="320.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="326.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="333.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="340.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="346.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="353.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="360.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="366.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="373.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="380.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="386.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="393.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="400.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="406.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="413.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="420.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="426.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="433.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="440.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="446.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="453.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="460.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="466.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="473.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="480.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="486.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="493.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="500.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="506.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="513.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="520.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="526.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="533.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="540.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="546.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="553.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="560.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="566.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="573.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="580.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="586.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="593.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="600.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="606.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="613.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="620.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="626.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="633.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="640.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="646.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="653.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="660.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="666.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="673.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="680.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="686.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="693.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="700.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="706.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="713.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="720.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="726.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="733.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="740.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="746.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="753.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="760.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="766.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="773.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="780.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="786.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="793.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="800.00" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="806.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="813.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="820.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="826.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="833.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="840.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="846.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="853.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="860.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="866.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="873.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="880.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="886.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="893.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="900.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="906.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="913.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="920.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="926.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="933.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="940.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="946.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="953.33" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="960.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="966.67" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="973.33" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="980.00" y="78.0" width="6.07" height="52.0"/><rect class="pg" x="986.67" y="78.0" width="6.07" height="52.0"/><rect class="pg on" x="993.33" y="78.0" width="6.07" height="52.0"/><line class="seg" x1="100.0" x2="100.0" y1="74.0" y2="134.0"/><line class="seg" x1="200.0" x2="200.0" y1="74.0" y2="134.0"/><line class="seg" x1="300.0" x2="300.0" y1="74.0" y2="134.0"/><line class="seg" x1="400.0" x2="400.0" y1="74.0" y2="134.0"/><line class="seg" x1="500.0" x2="500.0" y1="74.0" y2="134.0"/><line class="seg" x1="600.0" x2="600.0" y1="74.0" y2="134.0"/><line class="seg" x1="700.0" x2="700.0" y1="74.0" y2="134.0"/><line class="seg" x1="800.0" x2="800.0" y1="74.0" y2="134.0"/><line class="seg" x1="900.0" x2="900.0" y1="74.0" y2="134.0"/><text class="lbl" x="50.0" y="150.0" text-anchor="middle">1</text><text class="lbl" x="150.0" y="150.0" text-anchor="middle">2</text><text class="lbl" x="250.0" y="150.0" text-anchor="middle">3</text><text class="lbl" x="350.0" y="150.0" text-anchor="middle">4</text><text class="lbl" x="450.0" y="150.0" text-anchor="middle">5</text><text class="lbl" x="550.0" y="150.0" text-anchor="middle">6</text><text class="lbl" x="650.0" y="150.0" text-anchor="middle">7</text><text class="lbl" x="750.0" y="150.0" text-anchor="middle">8</text><text class="lbl" x="850.0" y="150.0" text-anchor="middle">9</text><text class="lbl" x="950.0" y="150.0" text-anchor="middle">10</text><text class="lbl" x="0" y="168.0">página 1</text><text class="lbl" x="1000" y="168.0" text-anchor="end">página 150</text><text class="lbl" x="500" y="168.0" text-anchor="middle">segmentos do livro (braços do agente)</text></svg></div>
+  <p class="legend"><span><i class="k1"></i>página sorteada nesta geração</span>
+  <span><i class="k2"></i>probabilidade do segmento na política do agente</span>
+  <span><i class="k3"></i>política uniforme (1/10)</span></p>
+</section>
+
+<nav class="toc" aria-label="Seções do pôster">
+  <a href="#introducao">Introdução</a><a href="#objetivos">Objetivos</a>
+  <a href="#metodologia">Dados e metodologia</a><a href="#tecnicas">Técnicas avançadas</a>
+  <a href="#resultados">Resultados</a><a href="#discussao">Discussão</a>
+  <a href="#avaliacao">Avaliação crítica</a><a href="#conclusoes">Conclusões</a>
+  <a href="#referencias">Referências</a>
+</nav>
+
+<main id="conteudo" class="poster">
+
+<section id="introducao" class="panel half" aria-labelledby="h-intro">
+  <h2 id="h-intro">Introdução</h2>
+  <p>Acervos digitais guardam milhares de livros em PDF sem metadados de gênero. Catálogos
+  públicos ajudam, mas são incompletos e divergem entre edições. Classificar uma obra lendo-a
+  inteira com um modelo de linguagem custa tempo e dinheiro.</p>
+  <p>O <strong>Librarian AI</strong> testa um caminho mais barato: ler só uma fração das páginas,
+  escolhida por um agente que aprende onde vale a pena ler, e acumular leituras até o veredito
+  parar de mudar.</p>
+</section>
+
+<section id="objetivos" class="panel half" aria-labelledby="h-obj">
+  <h2 id="h-obj">Objetivos</h2>
+  <ul class="ticks">
+    <li>Classificar o gênero predominante de clássicos em PDF lendo de 15% a 30% das páginas
+    por geração.</li>
+    <li>Usar um agente de aprendizado por reforço para escolher as regiões do livro.</li>
+    <li>Interpolar as gerações até a distribuição estabilizar e validar contra catálogos e
+    rótulos curados.</li>
+    <li>Comparar representações textuais (U3) e incorporar um LLM com saída estruturada (U4).</li>
+  </ul>
+</section>
+
+<section id="metodologia" class="panel full" aria-labelledby="h-met">
+  <h2 id="h-met">Dados e metodologia</h2>
+  <div class="cols">
+    <div>
+      <h3>Base textual</h3>
+      <p>15 clássicos de domínio público do Project Gutenberg, convertidos em PDF paginado com
+      camada de texto (até 150 páginas por obra, amostragem explicitada). A <strong>base</strong>
+      (8 obras, 1.134 páginas úteis) treina e ajusta; os <strong>livros novos</strong> (7 obras,
+      904 páginas, autores diferentes sempre que possível) só testam. A lista completa, com o
+      gênero curado de cada obra, está na tabela abaixo.</p>
+    <div>
+      <h3>Pré-processamento</h3>
+      <p>Extração com <code>pypdf</code> página a página, junção de hifenização, descarte de
+      páginas com menos de 120 caracteres e cache por hash. Tokenização, <em>stopwords</em> PT/EN
+      e mascaramento de nomes próprios são opcionais, aplicados só onde ajudam: modelos de
+      linguagem recebem a prosa intacta.</p>
+      <h3>Representações (U3)</h3>
+      <p>BoW, TF-IDF sublinear, Word2Vec <em>skip-gram</em> treinado no corpus (média ponderada
+      pelo IDF) e BERT (<code>all-MiniLM-L6-v2</code>, <em>mean pooling</em>), aplicadas a
+      agrupamento, busca, recomendação e classificação.</p>
+      <h3>O laço de gerações (U1 → U4)</h3>
+      <ol class="flow">
+        <li><span>Agente</span> sorteia 15–30% das páginas entre 10 segmentos, segundo sua política.</li>
+        <li><span>Classificador</span> devolve uma distribuição sobre 14 gêneros.</li>
+        <li><span>Recompensa</span> de consenso atualiza a política (REINFORCE).</li>
+        <li><span>Interpolação</span> das gerações, ponderada pela confiança.</li>
+        <li><span>Parada</span> quando a divergência de Jensen-Shannon entre vereditos fica abaixo
+        de 0,01 por 3 gerações.</li>
+      </ol>
+      <h3>Avaliação</h3>
+      <p>Gênero curado pela equipe (o gabarito das APIs é ruidoso e muda com o tempo), acerto
+      por livro (top-1, top-3) nos livros novos e acerto de cada geração isolada. Métodos sem
+      treino são lidos de dois jeitos: restritos aos 7 gêneros do catálogo, como na U3, e na
+      taxonomia inteira de 14 gêneros.</p>
+    </div>
+  </div>
+  <div class="table-wrap"><table><caption>Base textual: 8 obras de treino e 7 livros novos, um por gênero.</caption><thead><tr><th scope="col">Obra</th><th scope="col">Autor</th><th scope="col">Gênero curado</th><th scope="col">Conjunto</th></tr></thead><tbody><tr><th scope="row"><em>Dracula</em></th><td>Bram Stoker</td><td>Terror/Horror</td><td>base</td></tr><tr><th scope="row"><em>Frankenstein</em></th><td>Mary Shelley</td><td>Terror/Horror</td><td>base</td></tr><tr><th scope="row"><em>Pride and Prejudice</em></th><td>Jane Austen</td><td>Romance</td><td>base</td></tr><tr><th scope="row"><em>The Adventures of Sherlock Holmes</em></th><td>Arthur Conan Doyle</td><td>Mistério/Policial</td><td>base</td></tr><tr><th scope="row"><em>Moby Dick</em></th><td>Herman Melville</td><td>Ação/Aventura</td><td>base</td></tr><tr><th scope="row"><em>Great Expectations</em></th><td>Charles Dickens</td><td>Drama</td><td>base</td></tr><tr><th scope="row"><em>The Picture of Dorian Gray</em></th><td>Oscar Wilde</td><td>Filosófico/Existencial</td><td>base</td></tr><tr><th scope="row"><em>The Time Machine</em></th><td>H G Wells</td><td>Ficção Científica</td><td>base</td></tr><tr><th scope="row"><em>The Strange Case of Dr Jekyll and Mr Hyde</em></th><td>Robert Louis Stevenson</td><td>Terror/Horror</td><td>novo (holdout)</td></tr><tr><th scope="row"><em>Jane Eyre</em></th><td>Charlotte Bronte</td><td>Romance</td><td>novo (holdout)</td></tr><tr><th scope="row"><em>The Mysterious Affair at Styles</em></th><td>Agatha Christie</td><td>Mistério/Policial</td><td>novo (holdout)</td></tr><tr><th scope="row"><em>Treasure Island</em></th><td>Robert Louis Stevenson</td><td>Ação/Aventura</td><td>novo (holdout)</td></tr><tr><th scope="row"><em>Little Women</em></th><td>Louisa May Alcott</td><td>Drama</td><td>novo (holdout)</td></tr><tr><th scope="row"><em>Siddhartha</em></th><td>Hermann Hesse</td><td>Filosófico/Existencial</td><td>novo (holdout)</td></tr><tr><th scope="row"><em>The War of the Worlds</em></th><td>H G Wells</td><td>Ficção Científica</td><td>novo (holdout)</td></tr></tbody></table></div>
+</section>
+
+<section id="tecnicas" class="panel full" aria-labelledby="h-tec">
+  <h2 id="h-tec">Técnicas avançadas (Unidade 4)</h2>
+  <div class="table-wrap"><table><thead><tr><th scope="col">Tecnologia ou abordagem</th><th scope="col">Utilizada?</th><th scope="col">Aplicação ou justificativa</th></tr></thead><tbody><tr><th scope="row">LLMs e modelos de linguagem</th><td>Sim (implementado; execução pendente)</td><td>Backend <code>llm</code> com Claude Opus 5.5 via API, implementado e testado offline; a execução no laço aguarda aprovação de custo (estimativa no pôster). Modelos locais da família BERT/BART já usados: zero-shot NLI, MiniLM, DistilBERT (sentimento) e BERT-NER.</td></tr><tr><th scope="row">Prompt engineering e saídas estruturadas</th><td>Sim</td><td><em>System prompt</em> com papel, definição dos 14 gêneros e regras de evidência; resposta em JSON Schema garantido (<code>output_config.format</code>), com ids do gênero em <code>enum</code>, justificativa, citações e o campo de controle <code>recognized_work</code>.</td></tr><tr><th scope="row">RAG e recuperação de informações</th><td>Não (RAG)</td><td>A tarefa classifica as próprias páginas do livro, que já chegam ao modelo como evidência. Recuperação foi usada na U3 (busca híbrida TF-IDF + BERT por <em>Reciprocal Rank Fusion</em>, P@3 0,89), e um RAG com descrições de catálogo arriscaria vazar o rótulo.</td></tr><tr><th scope="row">Agentes e integração com ferramentas</th><td>Sim</td><td>Agente de aprendizado por reforço (bandit REINFORCE) que decide quais regiões do livro ler; integração com Project Gutenberg, Google Books, Open Library e API da Anthropic. Não é um agente LLM com ferramentas.</td></tr><tr><th scope="row">Modelos locais ou quantizados</th><td>Sim (locais)</td><td>bart-large-mnli, all-MiniLM-L6-v2, DistilBERT-SST2 e bert-base-NER rodam na máquina (CPU ou GPU, fp16 no zero-shot). Sem quantização inteira (int8/int4).</td></tr><tr><th scope="row">Processamento multimodal</th><td>Não</td><td>As entradas são PDFs com camada de texto. PDFs digitalizados exigiriam OCR, dificuldade prevista na Unidade 1 e fora do escopo.</td></tr><tr><th scope="row">Outras técnicas avançadas de PLN</th><td>Sim</td><td>Calibração contextual do zero-shot (Zhao et al., 2021), extração de relações por implicação textual (Sainz et al., 2021), fusão de rankings (RRF) e mascaramento de nomes próprios contra memorização.</td></tr></tbody></table></div>
+</section>
+
+<section id="resultados" class="panel full" aria-labelledby="h-res">
+  <h2 id="h-res">Resultados</h2>
+
+  <h3>Representações e tarefas (Unidade 3)</h3>
+  <div class="finding-grid">
+    <div class="finding"><p class="big">0,93</p>
+      <p>NMI entre clusters TF-IDF (k = 7) e livro de origem; 0,88
+      com o gênero. Os grupos reproduzem livros, puxados pelos nomes de personagens.</p></div>
+    <div class="finding"><p class="big">0,89</p>
+      <p>P@3 da busca híbrida TF-IDF + BERT, contra 0,70 e 0,78
+      de cada um sozinho: eles erram em consultas diferentes.</p></div>
+    <div class="finding"><p class="big">5/7</p>
+      <p>livros novos acertados pelo melhor supervisionado. Validação cruzada de
+      85%–100% contra 36%–51%
+      por documento nos livros novos: sem mascarar nomes, o modelo decora personagens.</p></div>
+    <div class="finding"><p class="big">+0,12</p>
+      <p>valência média de <em>Pride and Prejudice</em>, a mais positiva; <em>The Time
+      Machine</em> fica em -0,22. O sentimento acompanha o tom, mas não
+      separa gêneros sozinho.</p></div>
+  </div>
+  <div class="fig-row">
+    <figure class="fig"><div class="plate"><img src="assets/clusterizacao_pca.png" alt="Projeções PCA dos documentos coloridas por livro e por cluster para BoW, TF-IDF, Word2Vec e BERT." loading="lazy"></div><figcaption>Agrupamento: projeção PCA por representação; os grupos seguem os livros de origem.</figcaption></figure>
+    <figure class="fig"><div class="plate"><img src="assets/relacoes_personagens.png" alt="Grafos de personagens de quatro livros com arestas rotuladas como romântica, familiar, amizade ou conflito." loading="lazy"></div><figcaption>Relações entre personagens extraídas por coocorrência e tipadas por implicação textual (NLI).</figcaption></figure>
+  </div>
+  <div class="fig-row">
+    <figure class="fig"><div class="plate"><img src="assets/busca_metricas.png" alt="Barras de P@3, P@5 e MRR para BoW, TF-IDF, Word2Vec, BERT e busca híbrida; a híbrida tem o maior P@3." loading="lazy"></div><figcaption>Busca: precisão nos 3 e 5 primeiros resultados e MRR por representação.</figcaption></figure>
+    <figure class="fig"><div class="plate"><img src="assets/classificacao_acuracia.png" alt="Barras de acurácia na validação cruzada e nos livros novos para 16 combinações de representação e modelo; a validação cruzada fica perto de 100% e os livros novos entre 36% e 51%." loading="lazy"></div><figcaption>Classificação: validação cruzada engana; os livros novos mostram a generalização real.</figcaption></figure>
+  </div>
+
+  <h3>O laço completo nos 7 livros novos (Unidade 4)</h3>
+  <p>Mesmas sementes e mesmas amostras de páginas para todos os métodos. O supervisionado da U3,
+  agora dentro do laço, acerta <strong>4/7</strong> lendo amostras de 15–30%, e uma
+  geração isolada acerta 47% das vezes: interpolar as gerações
+  corrige parte dos erros de cada amostra.</p>
+  <div class="table-wrap"><table><caption>Livros novos acertados. As linhas da U3 classificam documentos de 3 páginas e agregam por livro.</caption><thead><tr><th scope="col">Método</th><th scope="col" class="n">Top-1 (7 gêneros)</th><th scope="col" class="n">Top-1 (14)</th><th scope="col" class="n">Top-3 (14)</th><th scope="col" class="n">Acerto por geração</th><th scope="col" class="n">Páginas distintas lidas</th></tr></thead><tbody><tr><th scope="row">Zero-shot BART-MNLI (U3, por documento)</th><td class="n">2/7</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr><tr><th scope="row">Léxico (U3, por documento)</th><td class="n">4/7</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr><tr><th scope="row">TF-IDF + reg. log., nomes masc. (U3, livro inteiro)</th><td class="n">5/7</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr><tr><th scope="row">Léxico (sem treino) <span class='tag'>laço U4</span></th><td class="n">3/7</td><td class="n">1/7</td><td class="n">6/7</td><td class="n">20%</td><td class="n">83%</td></tr><tr><th scope="row">TF-IDF + regressão logística, nomes mascarados <span class='tag'>laço U4</span></th><td class="n">4/7</td><td class="n">4/7</td><td class="n">6/7</td><td class="n">47%</td><td class="n">83%</td></tr></tbody></table></div>
+  <figure class="fig wide"><div class="plate"><img src="assets/comparacao_metodos.png" alt="Barras de livros novos acertados por método: zero-shot 2 de 7, léxico 3 de 7 restrito aos gêneros do catálogo e 1 de 7 na taxonomia inteira, supervisionado 4 de 7." loading="lazy"></div><figcaption>Livros novos acertados por método no laço completo; a linha tracejada é o acerto de uma geração isolada.</figcaption></figure>
+
+  <h3>LLM com saída estruturada</h3>
+  <div class="pending"><p class="eyebrow">Execução pendente</p><p>O backend está implementado e coberto por testes automatizados com um cliente simulado (sem rede). A execução real depende de uma chave de API paga e aguarda aprovação de custo pela equipe. Estimativa para o experimento completo (22 execuções de livro, 3–5 gerações cada): <strong>~66 chamadas, ~1.1 milhão de tokens de entrada, cerca de US$ 5,72</strong> (teto de US$ 9,81). Nenhum número de LLM é apresentado aqui antes da execução.</p></div>
+
+  <h3>O agente aprende onde ler?</h3>
+  <p>Com 5 sementes e 12 gerações sem parada antecipada, o agente e a amostragem uniforme
+  acertam os mesmos livros. A recompensa de consenso sobe de 0,30 para
+  0,79 na 2ª geração e fica estável a partir daí: sem variação, o agente não tem
+  sinal para aprender, e sua política termina quase uniforme. Uma versão com passo maior se
+  afasta da uniforme sem acertar mais.</p>
+  <div class="table-wrap"><table><thead><tr><th scope="col">Estratégia</th><th scope="col" class="n">Livros novos (média)</th><th scope="col" class="n">Acerto por geração</th><th scope="col" class="n">Recompensa média</th><th scope="col" class="n">Maior P(segmento)</th></tr></thead><tbody><tr><th scope="row">Agente (padrão)</th><td class="n">4,0/7</td><td class="n">52%</td><td class="n">0,748</td><td class="n">0,112</td></tr><tr><th scope="row">Agente agressivo</th><td class="n">3,6/7</td><td class="n">50%</td><td class="n">0,748</td><td class="n">0,242</td></tr><tr><th scope="row">Amostragem uniforme</th><td class="n">4,0/7</td><td class="n">52%</td><td class="n">0,748</td><td class="n">0,100</td></tr></tbody></table></div>
+  <div class="fig-row">
+    <figure class="fig"><div class="plate"><img src="assets/rl_vs_uniforme.png" alt="Curvas de recompensa por geração praticamente sobrepostas para agente e uniforme, estáveis em cerca de 0,79 a partir da 2ª geração; barras de acerto por semente iguais a 4 de 7, exceto uma semente do agente agressivo com 2 de 7." loading="lazy"></div><figcaption>Recompensa por geração e acerto final por semente.</figcaption></figure>
+    <figure class="fig"><div class="plate"><img src="assets/politica_agente.png" alt="Sete pequenos gráficos de barras com a política final do agente por segmento em cada livro novo, todas próximas da linha uniforme de 0,1." loading="lazy"></div><figcaption>Política final por livro: perto da uniforme (linha vermelha).</figcaption></figure>
+  </div>
+
+  <h3>Exemplos de processamento</h3>
+  <div class="cols">
+    <div class="example">
+      <p class="eyebrow">Uma geração, Treasure Island</p>
+      <p>Geração 7 de 7: taxa 22%,
+      34 páginas lidas. Classificação desta amostra:
+      Ação/Aventura (0,20),
+      Drama (0,19),
+      Mistério/Policial (0,18).
+      Veredito final: <strong>Ação/Aventura</strong>
+      (gênero curado: Ação/Aventura).</p>
+    </div>
+    <div class="mask-demo"><p class="eyebrow">Mascaramento de nomes, trecho real</p><p class="before"><span class="k">antes</span> Ah, he looked a shark, he did! If we run down this Black Dog, now, there’ll be news for Cap’n Trelawney! Ben’s a good runner; few seamen run better than Ben.</p><p class="after"><span class="k">depois</span> Ah, he looked a shark, he did! If we run down this Black Dog, now, there’ll be news for Cap’n X! X’s a good runner; few seamen run better than X.</p><p class="small">Nomes detectados nas próprias páginas sorteadas: Admiral, Ben, Benbow, Bill, Blandly, Bristol, Dick, Flint, Gunn, Hawkins, Hispaniola, Hunter.</p></div>
+  </div>
+</section>
+
+<section id="discussao" class="panel half" aria-labelledby="h-disc">
+  <h2 id="h-disc">Discussão</h2>
+  <p><strong>O que funcionou.</strong> Treinar com os próprios dados e mascarar nomes próprios
+  transformou um detector de personagens num classificador de gênero, que acerta livros nunca
+  vistos. A busca híbrida e o BERT capturam semelhança de cena, não só de palavras.</p>
+  <p><strong>Onde erra.</strong> <em>Siddhartha</em> sai como terror em todos os
+  supervisionados: o único exemplo filosófico do treino é <em>Dorian Gray</em>. <em>Jekyll and
+  Hyde</em> vira mistério, e a novela é de fato narrada como uma investigação.</p>
+  <p><strong>Leitura parcial.</strong> Cada geração lê 15–30%, mas as gerações somadas cobrem
+  83% das páginas distintas antes da parada. A economia real exige parar
+  antes: na U3, a divergência já ficava abaixo do limiar na 2ª geração.</p>
+  <p><strong>Limitações.</strong> 15 livros e um livro por gênero na base; rótulos curados pela
+  própria equipe; só inglês; PDFs sintéticos, sem OCR; o gabarito das APIs mudou entre execuções
+  (<em>Pride and Prejudice</em> passou a sair como Drama); e LLMs conhecem estes clássicos, o que
+  exige o controle de memorização.</p>
+</section>
+
+<section id="avaliacao" class="panel half" aria-labelledby="h-aval">
+  <h2 id="h-aval">Avaliação crítica</h2>
+  <dl class="qa">
+    <dt>1. Os objetivos iniciais foram alcançados?</dt>
+    <dd>Em parte. O sistema proposto na Unidade 1 está completo e testado, e classifica livros
+    novos bem acima do acaso (4/7 contra 1/7). O diferencial do agente não se
+    confirmou nestes dados, e a leitura parcial vale por geração, não no total.</dd>
+    <dt>2. Quais técnicas foram mais adequadas?</dt>
+    <dd>TF-IDF com regressão logística e nomes mascarados para classificar; busca híbrida
+    TF-IDF + BERT para recuperar trechos; BERT para semelhança temática entre livros.</dd>
+    <dt>3. As técnicas avançadas e os LLMs trouxeram melhorias?</dt>
+    <dd>Novas possibilidades, sim: a saída estruturada acrescenta justificativa e citações verificáveis a cada geração, e o campo de reconhecimento da obra permite medir memorização. Melhoria de acerto ainda não pode ser afirmada: a execução com a API está pendente, e o pôster não antecipa números.</dd>
+    <dt>4. Principais limitações</dt>
+    <dd>Base pequena e desbalanceada, rótulos curados por nós, recompensa de consenso que satura,
+    dependência de API paga e risco de memorização no LLM.</dd>
+    <dt>5. Como a qualidade foi verificada?</dt>
+    <dd>Livros novos separados do treino, rótulos curados, mesmas sementes para todos os métodos,
+    124 testes automatizados sem rede nem GPU e reexecução da U3 em CPU, que reproduziu BoW, TF-IDF e Word2Vec com números
+    idênticos (BERT difere só na 3ª casa decimal).</dd>
+    <dt>6. Aprimoramentos futuros</dt>
+    <dd>Mais livros por gênero; uma recompensa que meça ganho de informação; parada por orçamento
+    de páginas; modelo multilíngue para obras em português; OCR para PDFs digitalizados; Batch API
+    para baratear o LLM.</dd>
+  </dl>
+</section>
+
+<section id="conclusoes" class="panel full" aria-labelledby="h-conc">
+  <h2 id="h-conc">Conclusões</h2>
+  <p>O projeto entrega um pipeline reprodutível, do PDF ao veredito: coleta, extração, quatro
+  representações, três famílias de classificadores e um LLM com saída estruturada, todos no
+  mesmo laço de gerações e avaliados nos mesmos livros novos. O resultado mais sólido é
+  metodológico: separar livros de teste e mascarar nomes muda a conclusão sobre qual modelo
+  funciona. O agente de reforço está implementado, mas, com a recompensa atual, ainda não
+  supera o sorteio uniforme. O estágio é de protótipo de pesquisa funcional, pronto para uma
+  base maior.</p>
+</section>
+
+
+<section id="referencias" class="panel full" aria-labelledby="h-ref">
+  <h2 id="h-ref">Referências e informações técnicas</h2>
+  <div class="cols three">
+    <div>
+      <h3>Dados e catálogos</h3>
+      <ul class="plain">
+        <li>Project Gutenberg, gutenberg.org (obras de domínio público)</li>
+        <li>Google Books API e Open Library Search API (gabarito externo)</li>
+      </ul>
+      <h3>Modelos</h3>
+      <ul class="plain">
+        <li><code>facebook/bart-large-mnli</code> (zero-shot NLI)</li>
+        <li><code>sentence-transformers/all-MiniLM-L6-v2</code> (BERT)</li>
+        <li><code>distilbert-base-uncased-finetuned-sst-2-english</code> (sentimento)</li>
+        <li><code>dslim/bert-base-NER</code> (entidades)</li>
+        <li><code>claude-opus-5-5</code>, Anthropic (LLM)</li>
+      </ul>
+    </div>
+    <div>
+      <h3>LLM no processamento</h3>
+      <ul class="plain">
+        <li>Modelo: Claude Opus 5.5 (<code>claude-opus-5-5</code>)</li>
+        <li>Acesso: API da Anthropic (Messages API), SDK <code>anthropic</code> 1.17</li>
+        <li>Esforço <code>low</code>, raciocínio adaptativo, até 4.096 tokens de saída</li>
+        <li>Saída estruturada por JSON Schema; <em>fallback</em> do servidor em recusas</li>
+        <li>Até 50 páginas por chamada; respostas em cache local</li>
+        <li>Chave lida de <code>.env</code>, fora do repositório</li>
+      </ul>
+      <h3>Bibliotecas</h3>
+      <p class="small">Python 3.12, pypdf, scikit-learn, gensim, transformers, PyTorch, rapidfuzz,
+      matplotlib, PyYAML, anthropic.</p>
+    </div>
+    <div>
+      <h3>Literatura</h3>
+      <ul class="plain small">
+        <li>Williams (1992). REINFORCE, <em>Machine Learning</em> 8.</li>
+        <li>Mikolov et al. (2013). Word2Vec.</li>
+        <li>Devlin et al. (2019). BERT.</li>
+        <li>Reimers e Gurevych (2019). Sentence-BERT.</li>
+        <li>Lewis et al. (2020). BART.</li>
+        <li>Zhao et al. (2021). Calibrate Before Use.</li>
+        <li>Sainz et al. (2021). Relation extraction as textual entailment.</li>
+        <li>Cormack et al. (2009). Reciprocal Rank Fusion.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Uso de IA generativa</h3>
+  <p>Fornecedor e modelo: Anthropic, Claude Opus 5.5 (<code>claude-opus-5-5</code>), pela
+  ferramenta Claude Code. Usos: implementação e testes do código das Unidades 3 e 4, execução
+  dos experimentos e redação preliminar deste pôster a partir dos resultados medidos; a equipe
+  revisa as análises. Principais prompts da Unidade 4:</p>
+  <ul class="prompts"><li>vou te passar o trabalho aos poucos, inicialmente olhe nosso trabalho de Processamento de linguagem natural: [link do repositório] leia ele avalie e entenda</li><li>Antes de iniciar a atividade, gostaria que você analisasse o projeto com calma e, assim que terminar essa análise inicial, execute e teste o projeto para entender seu funcionamento na prática. [...] Antes de começar o desenvolvimento, apresente sua avaliação [...] Depois dessa avaliação, desenvolva a solução escolhida, seguindo as orientações do professor e respeitando a arquitetura, as tecnologias e os padrões já utilizados no projeto. [...] Ao final, apresente um resumo do que foi desenvolvido [...] (acompanhado do PDF do enunciado da Unidade 4)</li><li>antes de usar os tokens do opus 5 me avise, como vai funcionar, pois quero validar</li></ul>
+  <p class="small">O prompt da Unidade 3 está no <a href="https://github.com/PedroRafael04/librarian-ai-pln/blob/main/unidade3/RELATORIO.md">relatório da U3</a>.</p>
+</section>
+
+</main>
+
+<footer>
+  <span>Librarian AI · Pedro Rafael, Leonardo Dal&#x27;Olmo, Marlon Moser, Rafael Ehlert</span>
+  <span>Gerado por <code>python -m unidade4.poster</code> a partir dos resultados do repositório.</span>
+</footer>
+</div>
+</body>
+</html>

@@ -177,3 +177,23 @@ def mask_proper_nouns(text: str, vocabulary: frozenset[str], placeholder: str = 
         return placeholder if word[0].isupper() and word.lower() in vocabulary else word
 
     return _TOKEN.sub(_swap, text or "")
+
+
+def terms(text: str) -> list[str]:
+    """Tokens sem stopwords: o analisador dos metodos classicos (BoW/TF-IDF).
+
+    Funcao de modulo (e nao lambda) para que um ``TfidfVectorizer`` que a use
+    possa ser serializado com joblib.
+    """
+    return remove_stopwords(tokenize(text))
+
+
+def mask_proper_nouns_auto(texts: list[str]) -> list[str]:
+    """Mascara os nomes proprios de cada texto com o vocabulario dele mesmo.
+
+    E a versao "em producao" de ``mask_proper_nouns``: diante de um livro novo
+    nao ha lista de personagens, entao os nomes sao detectados no proprio
+    trecho lido (as 15-30% de paginas de uma geracao). Usada como primeiro passo
+    do classificador supervisionado (``librarian_ai.supervised``).
+    """
+    return [mask_proper_nouns(t, proper_noun_vocabulary([t])) for t in texts]
